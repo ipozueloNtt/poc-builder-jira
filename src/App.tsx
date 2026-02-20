@@ -3,9 +3,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useABTest } from './hooks/useABTest'
+import PokemonView from './components/PokemonView'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [showPokemon, setShowPokemon] = useState(false)
 
   // A/B Test para el botón principal
   const { variant, trackEvent } = useABTest({
@@ -36,6 +38,10 @@ function App() {
 
   const config = variantConfig[variant]
 
+  if (showPokemon) {
+    return <PokemonView onBack={() => setShowPokemon(false)} />
+  }
+
   return (
     <>
       <div>
@@ -65,6 +71,11 @@ function App() {
           {config.description}
         </p>
       </div>
+
+      <button className="pokemon-nav-btn" onClick={() => setShowPokemon(true)}>
+        <span className="pokemon-nav-ball">⬤</span>
+        Ver Pokédex
+      </button>
 
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
