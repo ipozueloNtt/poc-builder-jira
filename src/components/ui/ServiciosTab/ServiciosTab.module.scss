@@ -1,0 +1,72 @@
+@use 'tokens' as t;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+  width: 100%;
+}
+
+.heading {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-medium;
+  color: t.$color-gray-dark;
+  line-height: t.$line-height-tight;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: t.$spacing-md;
+  padding: t.$spacing-md;
+  border-radius: t.$radius-sm;
+  background: t.$color-primary-very-light;
+}
+
+.icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-xs;
+}
+
+.itemLabel {
+  font-family: t.$font-body;
+  font-size: t.$font-size-md;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-gray-dark;
+}
+
+.itemDesc {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-regular;
+  color: t.$color-gray-mid;
+  line-height: t.$line-height-normal;
+}
+
+@media (min-width: t.$bp-tablet) {
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: t.$spacing-md;
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

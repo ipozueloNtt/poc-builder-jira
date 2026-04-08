@@ -1,0 +1,227 @@
+@use 'tokens' as t;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+  width: 100%;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: t.$spacing-sm;
+}
+
+.heading {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-medium;
+  line-height: t.$line-height-tight;
+  color: t.$color-gray-dark;
+}
+
+.pdfBtn {
+  font-family: t.$font-body;
+  font-size: t.$font-size-md;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-primary;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+
+  &:focus-visible {
+    outline: 2px solid t.$color-primary;
+    outline-offset: 2px;
+    border-radius: t.$radius-xs;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ─── Map + list layout ───────────────────────────────────────
+.mapAndList {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+}
+
+// ─── Map ─────────────────────────────────────────────────────
+.mapContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 328 / 215;
+  border-radius: t.$radius-md;
+  overflow: hidden;
+  background: #c4c4c4;
+}
+
+.mapImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: t.$radius-md;
+}
+
+.trailOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// ─── POI list ────────────────────────────────────────────────
+.poiList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+.poiItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: t.$spacing-sm;
+  min-height: 64px;
+}
+
+.poiLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: t.$spacing-sm;
+  flex: 1;
+  min-width: 0;
+}
+
+.poiMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.markerCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid t.$color-primary;
+  background: t.$color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.markerNum {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-primary;
+  line-height: 1;
+}
+
+.markerLine {
+  width: 2px;
+  flex: 1;
+  min-height: 28px;
+  background: repeating-linear-gradient(
+    to bottom,
+    t.$color-primary 0,
+    t.$color-primary 6px,
+    transparent 6px,
+    transparent 14px
+  );
+  margin-top: 4px;
+}
+
+.poiInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.poiName {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-gray-dark;
+  line-height: t.$line-height-normal;
+}
+
+.poiDistance {
+  font-family: t.$font-body;
+  font-size: t.$font-size-xs;
+  font-weight: t.$font-weight-regular;
+  color: t.$color-gray-dark;
+  line-height: 24px;
+}
+
+.detailBtn {
+  font-family: t.$font-body;
+  font-size: t.$font-size-md;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-primary;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+
+  &:focus-visible {
+    outline: 2px solid t.$color-primary;
+    outline-offset: 2px;
+    border-radius: t.$radius-xs;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: t.$color-gray-light;
+  margin: 0;
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (min-width: t.$bp-tablet) {
+  .mapAndList {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: t.$spacing-lg;
+  }
+
+  .mapContainer {
+    flex: 1 1 50%;
+    aspect-ratio: 328 / 215;
+  }
+
+  .poiList {
+    flex: 1 1 50%;
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .mapContainer {
+    flex: 1 1 55%;
+  }
+
+  .poiList {
+    flex: 1 1 45%;
+  }
+}

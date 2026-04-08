@@ -1,0 +1,84 @@
+// ============================================================
+// Design Tokens — Senderos Naturales
+// ============================================================
+
+// ─── Colors ─────────────────────────────────────────────────
+// Primary palette
+$color-primary:             #087021;
+$color-primary-light:       #C4DDCA;
+$color-primary-very-light:  #F7FBF8;
+
+// Neutral
+$color-white:               #FFFFFF;
+$color-gray-dark:           #333333;
+$color-gray-mid:            #6E6E6E;
+$color-gray-light:          #EEEEEE;
+$color-gray-container:      #EEEEEE;
+
+// Accent
+$color-purple:              #928DCC;
+
+// Weather card backgrounds
+$color-weather-calima:      #C9302C;
+$color-weather-sol:         #F0AD4E;
+$color-weather-nuboso:      #1F7E9A;
+$color-weather-lluvia:      #1F7E9A;
+
+// Shadows
+$shadow-card:               0 3px 12px 0 rgba(0, 0, 0, 0.08);
+$shadow-card-elevated:      0 4px 16px 0 rgba(0, 0, 0, 0.12);
+
+// ─── Typography ─────────────────────────────────────────────
+$font-heading:   'Noto Sans HK', -apple-system, Roboto, Helvetica, sans-serif;
+$font-body:      'Source Sans 3', 'Source Sans Pro', -apple-system, Roboto, Helvetica, sans-serif;
+
+$font-size-xs:   12px;
+$font-size-sm:   14px;
+$font-size-md:   16px;
+$font-size-lg:   18px;
+$font-size-xl:   20px;
+$font-size-2xl:  24px;
+
+$font-weight-regular:   400;
+$font-weight-medium:    500;
+$font-weight-semibold:  600;
+$font-weight-bold:      700;
+
+$line-height-tight:   1.4;   // headings
+$line-height-normal:  1.5;   // body text
+
+// ─── Spacing ────────────────────────────────────────────────
+$spacing-2xs:   2px;
+$spacing-xs:    4px;
+$spacing-sm:    8px;
+$spacing-md:    16px;
+$spacing-lg:    24px;
+$spacing-xl:    32px;
+$spacing-2xl:   48px;
+
+// ─── Border radius ──────────────────────────────────────────
+$radius-xs:     4px;
+$radius-sm:     8px;
+$radius-md:     16px;
+$radius-full:   48px;
+
+// ─── Breakpoints ────────────────────────────────────────────
+$bp-mobile:    375px;
+$bp-tablet:    768px;
+$bp-desktop:   1024px;
+$bp-wide:      1280px;
+
+// ─── Layout ─────────────────────────────────────────────────
+$content-max-width:     1200px;
+$content-padding-h:     16px;  // horizontal page padding (mobile)
+$content-inner-width:   328px; // inner width at 360px mobile viewport
+
+// ─── Z-index ────────────────────────────────────────────────
+$z-base:    0;
+$z-card:    1;
+$z-overlay: 10;
+$z-fixed:   100;
+
+// ─── Transitions ────────────────────────────────────────────
+$transition-base:  0.25s ease;
+$transition-slide: 0.35s cubic-bezier(0.4, 0, 0.2, 1);

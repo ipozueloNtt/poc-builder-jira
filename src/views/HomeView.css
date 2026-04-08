@@ -3,17 +3,69 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  background-color: #ffffff;
+  width: 100%;
+  position: relative;
+  background-color: #0066cc;
+  overflow: hidden;
+}
+
+.home-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 16px;
 }
 
 .home-title {
   text-align: center;
-  color: #000000;
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.home-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.home-trail-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 32px;
+  background: #087021;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  max-width: 320px;
+  width: 100%;
+  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.home-trail-btn:hover {
+  background: #065c1a;
+  transform: translateY(-2px);
+}
+
+.home-trail-btn:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+.home-trail-btn__label {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.home-trail-btn__sub {
+  font-size: 0.8rem;
+  opacity: 0.85;
 }
 
 .logo-left {
@@ -21,8 +73,7 @@
   left: 40px;
   top: 40px;
   height: 60px;
-  width: 160px;
-  object-fit: contain;
+  width: auto;
 }
 
 .logo-right {
@@ -30,15 +81,13 @@
   right: 40px;
   top: 40px;
   height: 60px;
-  width: 160px;
-  object-fit: contain;
+  width: auto;
 }
 
 @media (max-width: 768px) {
   .logo-left,
   .logo-right {
     height: 40px;
-    width: 110px;
     top: 20px;
   }
 
@@ -48,5 +97,9 @@
 
   .logo-right {
     right: 20px;
+  }
+
+  .home-title {
+    font-size: 1.5rem;
   }
 }

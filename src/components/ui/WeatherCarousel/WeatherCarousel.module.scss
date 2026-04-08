@@ -1,0 +1,93 @@
+@use 'tokens' as t;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+  width: 100%;
+}
+
+.heading {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-medium;
+  line-height: t.$line-height-tight;
+  color: t.$color-gray-dark;
+}
+
+// ─── Carousel wrapper ────────────────────────────────────────
+.carouselWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: 8px;
+  transition: transform t.$transition-slide;
+  will-change: transform;
+}
+
+// Each slot sizes the card correctly
+// Mobile: show 2 full cards + half of 3rd  =>  (100% - 2*gap) / 2.5
+.cardSlot {
+  flex: 0 0 calc((100% - 16px) / 2.5);
+  min-width: 0;
+
+  // Stretch the inner card to fill the slot
+  > article {
+    width: 100%;
+  }
+}
+
+// ─── Dots ────────────────────────────────────────────────────
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: t.$spacing-sm;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #bbbbbb;
+  opacity: 0.6;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background t.$transition-base, opacity t.$transition-base;
+
+  &:focus-visible {
+    outline: 2px solid t.$color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.dotActive {
+  background: t.$color-primary;
+  opacity: 1;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: t.$color-gray-light;
+  margin: 0;
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (min-width: t.$bp-tablet) {
+  .cardSlot {
+    // tablet: show 3 cards
+    flex: 0 0 calc((100% - 16px) / 3);
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .cardSlot {
+    // desktop: show 4 cards
+    flex: 0 0 calc((100% - 24px) / 4);
+  }
+}

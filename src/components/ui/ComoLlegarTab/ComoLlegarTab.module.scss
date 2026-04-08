@@ -1,0 +1,72 @@
+@use 'tokens' as t;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+  width: 100%;
+}
+
+.heading {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-medium;
+  color: t.$color-gray-dark;
+  line-height: t.$line-height-tight;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-sm;
+  padding: t.$spacing-md;
+  border-radius: t.$radius-sm;
+  border-left: 3px solid t.$color-primary;
+  background: t.$color-primary-very-light;
+}
+
+.blockHeader {
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-sm;
+}
+
+.blockIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.blockTitle {
+  font-family: t.$font-body;
+  font-size: t.$font-size-md;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-gray-dark;
+}
+
+.blockText {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-regular;
+  color: t.$color-gray-dark;
+  line-height: t.$line-height-normal;
+}
+
+.blockNote {
+  font-family: t.$font-body;
+  font-size: t.$font-size-xs;
+  color: t.$color-gray-mid;
+  line-height: t.$line-height-normal;
+}
+
+@media (min-width: t.$bp-tablet) {
+  .blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}

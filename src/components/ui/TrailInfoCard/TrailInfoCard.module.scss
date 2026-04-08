@@ -1,0 +1,197 @@
+@use 'tokens' as t;
+
+.card {
+  width: 100%;
+  max-width: 560px;
+  padding: t.$spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-sm;
+  border-radius: t.$radius-md;
+  background: t.$color-white;
+  box-shadow: t.$shadow-card;
+}
+
+// ─── Title row ───────────────────────────────────────────────
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-xs;
+}
+
+.title {
+  flex: 1;
+  font-family: t.$font-heading;
+  font-size: t.$font-size-xl;
+  font-weight: t.$font-weight-bold;
+  line-height: t.$line-height-tight;
+  color: t.$color-gray-dark;
+}
+
+// ─── Completed check ─────────────────────────────────────────
+.completedCheck {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.checkBorder {
+  position: absolute;
+  inset: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.checkInner {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: t.$color-primary;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
+// ─── Location ────────────────────────────────────────────────
+.location {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-regular;
+  line-height: t.$line-height-normal;
+  color: t.$color-gray-dark;
+}
+
+// ─── Meta row ────────────────────────────────────────────────
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: t.$spacing-sm;
+  flex-wrap: wrap;
+}
+
+.metaText {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-regular;
+  color: t.$color-gray-dark;
+  white-space: nowrap;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-xs;
+  flex-shrink: 0;
+}
+
+.tagMedia {
+  display: flex;
+  height: 24px;
+  padding: 6px 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: t.$radius-sm;
+  background: t.$color-purple;
+  font-family: t.$font-body;
+  font-size: t.$font-size-xs;
+  font-weight: t.$font-weight-semibold;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+  color: t.$color-white;
+  line-height: 1;
+}
+
+.tagLineal {
+  display: flex;
+  height: 24px;
+  padding: 6px 8px;
+  align-items: center;
+  gap: t.$spacing-xs;
+  border-radius: t.$radius-sm;
+  background: t.$color-primary-light;
+  font-family: t.$font-body;
+  font-size: t.$font-size-xs;
+  font-weight: t.$font-weight-semibold;
+  letter-spacing: 0.25px;
+  text-transform: uppercase;
+  color: t.$color-gray-dark;
+  line-height: 1;
+}
+
+// ─── Rating row ──────────────────────────────────────────────
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-sm;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-xs;
+}
+
+.starIcon {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.ratingText {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  color: t.$color-primary;
+  line-height: t.$line-height-normal;
+
+  strong {
+    font-weight: t.$font-weight-semibold;
+  }
+}
+
+.separator {
+  color: t.$color-gray-dark;
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+}
+
+.accessible {
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-xs;
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  color: t.$color-gray-dark;
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (min-width: t.$bp-tablet) {
+  .card {
+    max-width: 700px;
+    padding: t.$spacing-lg;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .card {
+    max-width: 800px;
+  }
+
+  .metaRow {
+    flex-wrap: nowrap;
+  }
+}

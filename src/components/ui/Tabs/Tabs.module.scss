@@ -1,0 +1,75 @@
+@use 'tokens' as t;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  background: t.$color-white;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: t.$font-body;
+  font-size: t.$font-size-md;
+  font-weight: t.$font-weight-regular;
+  color: t.$color-gray-dark;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color t.$transition-base;
+  padding: 0 t.$spacing-sm;
+  white-space: nowrap;
+
+  &:focus-visible {
+    outline: 2px solid t.$color-primary;
+    outline-offset: -2px;
+    border-radius: t.$radius-xs;
+  }
+}
+
+.tabActive {
+  color: t.$color-primary;
+  font-weight: t.$font-weight-semibold;
+}
+
+.underline {
+  height: 2px;
+  background: t.$color-gray-light;
+  border-radius: t.$radius-sm;
+  margin: 0 t.$spacing-md;
+}
+
+.indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: t.$color-primary;
+  border-radius: t.$radius-sm;
+  transition: left t.$transition-base, width t.$transition-base;
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (min-width: t.$bp-tablet) {
+  .tab {
+    font-size: 17px;
+    padding: 0 t.$spacing-md;
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .tab {
+    font-size: t.$font-size-md;
+  }
+}

@@ -1,0 +1,86 @@
+@use 'tokens' as t;
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: t.$z-fixed;
+  background: t.$color-white;
+  border-top: 1px solid t.$color-gray-light;
+  box-shadow: 0 -3px 12px 0 rgba(0, 0, 0, 0.08);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-sm;
+  padding: t.$spacing-md;
+  max-width: t.$content-max-width;
+  margin: 0 auto;
+}
+
+.note {
+  font-family: t.$font-body;
+  font-size: t.$font-size-md;
+  font-weight: t.$font-weight-regular;
+  color: t.$color-gray-dark;
+  line-height: t.$line-height-normal;
+}
+
+.reservarBtn {
+  width: 100%;
+  max-width: 480px;
+  height: 48px;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: t.$radius-sm;
+  background: t.$color-primary;
+  font-family: t.$font-body;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-white;
+  border: none;
+  cursor: pointer;
+  transition: background t.$transition-base;
+  line-height: 24px;
+
+  &:hover {
+    background: #065a1b;
+  }
+
+  &:focus-visible {
+    outline: 2px solid t.$color-primary;
+    outline-offset: 3px;
+  }
+
+  &:active {
+    background: #054a16;
+  }
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (min-width: t.$bp-tablet) {
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .note {
+    flex: 1;
+  }
+
+  .reservarBtn {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .reservarBtn {
+    min-width: 240px;
+  }
+}

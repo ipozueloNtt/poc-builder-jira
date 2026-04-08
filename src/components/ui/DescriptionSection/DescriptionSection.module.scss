@@ -1,0 +1,66 @@
+@use 'tokens' as t;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+  width: 100%;
+}
+
+.heading {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-medium;
+  line-height: t.$line-height-tight;
+  color: t.$color-gray-dark;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-sm;
+}
+
+.text {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-regular;
+  line-height: t.$line-height-normal;
+  color: t.$color-gray-dark;
+}
+
+.extraText {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-sm;
+}
+
+.toggleBtn {
+  align-self: flex-start;
+  font-family: t.$font-body;
+  font-size: t.$font-size-md;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-primary;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: t.$line-height-normal;
+
+  &:focus-visible {
+    outline: 2px solid t.$color-primary;
+    outline-offset: 2px;
+    border-radius: t.$radius-xs;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: t.$color-gray-light;
+  margin: 0;
+}

@@ -1,0 +1,79 @@
+@use 'tokens' as t;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+  width: 100%;
+}
+
+.heading {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-medium;
+  line-height: t.$line-height-tight;
+  color: t.$color-gray-dark;
+}
+
+// ─── Rating badge ────────────────────────────────────────────
+.ratingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$spacing-xs;
+  padding: t.$spacing-sm t.$spacing-md;
+  border-radius: t.$radius-sm;
+  background: t.$color-primary-very-light;
+}
+
+.ratingScore {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  color: t.$color-gray-dark;
+  line-height: t.$line-height-normal;
+
+  strong {
+    font-weight: t.$font-weight-semibold;
+  }
+}
+
+// ─── User rating ─────────────────────────────────────────────
+.userRating {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-xs;
+}
+
+.userRatingLabel {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  color: t.$color-gray-mid;
+  line-height: t.$line-height-normal;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.starBtn {
+  display: flex;
+  align-items: center;
+  padding: 10px 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid t.$color-primary;
+    outline-offset: 2px;
+    border-radius: t.$radius-xs;
+  }
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background: t.$color-gray-light;
+  margin: 0;
+}

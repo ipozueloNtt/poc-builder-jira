@@ -1,0 +1,114 @@
+@use 'tokens' as t;
+
+.card {
+  display: flex;
+  height: 130px;
+  padding: t.$spacing-sm;
+  gap: t.$spacing-sm;
+  align-items: flex-start;
+  border-radius: t.$radius-sm;
+  flex: 0 0 auto; // carousel sizing handled by parent
+  position: relative;
+  overflow: hidden;
+}
+
+// ─── Color variants ──────────────────────────────────────────
+.cardCalima { background: t.$color-weather-calima; }
+.cardSol    { background: t.$color-weather-sol; }
+.cardNuboso { background: t.$color-weather-nuboso; }
+.cardLluvia { background: t.$color-weather-lluvia; }
+
+// ─── Text variants ───────────────────────────────────────────
+.textLight { color: t.$color-white; }
+.textDark  { color: t.$color-gray-dark; }
+
+// ─── Content ─────────────────────────────────────────────────
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 66px;
+  height: 100%;
+  gap: t.$spacing-md;
+}
+
+.dateBlock {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-2xs;
+}
+
+.dayLabel {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-semibold;
+  line-height: t.$line-height-normal;
+}
+
+.dateNum {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-xl;
+  font-weight: t.$font-weight-bold;
+  line-height: t.$line-height-tight;
+}
+
+.weatherBlock {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-2xs;
+}
+
+.weatherLabel {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-bold;
+  line-height: t.$line-height-normal;
+}
+
+.tempLabel {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-semibold;
+  line-height: t.$line-height-normal;
+}
+
+// ─── Icon ────────────────────────────────────────────────────
+.iconWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.iconBg {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (min-width: t.$bp-tablet) {
+  .card {
+    height: 140px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .card {
+    height: 150px;
+    padding: 12px;
+  }
+}

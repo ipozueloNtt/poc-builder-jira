@@ -1,0 +1,124 @@
+@use 'tokens' as t;
+
+// ─── Page wrapper ────────────────────────────────────────────
+.page {
+  position: relative;
+  min-height: 100vh;
+  background: t.$color-white;
+  display: flex;
+  flex-direction: column;
+}
+
+// ─── Hero ────────────────────────────────────────────────────
+.hero {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  flex-shrink: 0;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0 0 t.$radius-md t.$radius-md;
+}
+
+.heroBar {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 t.$spacing-md;
+}
+
+.heroBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: t.$radius-full;
+  background: t.$color-white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: t.$shadow-card;
+  flex-shrink: 0;
+  transition: background t.$transition-base;
+
+  &:hover {
+    background: t.$color-gray-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid t.$color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-sm;
+}
+
+// ─── Content area (overlaps hero by 25px) ────────────────────
+.contentArea {
+  position: relative;
+  z-index: t.$z-card;
+  margin-top: -25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: t.$spacing-lg;
+  padding: 0 t.$spacing-md;
+  padding-bottom: 140px; // space for fixed footer
+  width: 100%;
+}
+
+// ─── Tab panel ───────────────────────────────────────────────
+.tabPanel {
+  width: 100%;
+}
+
+.generalContent {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-lg;
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (min-width: t.$bp-tablet) {
+  .hero {
+    height: 400px;
+  }
+
+  .contentArea {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: t.$spacing-lg;
+    padding-right: t.$spacing-lg;
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .hero {
+    height: 460px;
+  }
+
+  .contentArea {
+    max-width: 960px;
+    padding-left: t.$spacing-xl;
+    padding-right: t.$spacing-xl;
+  }
+
+  .generalContent {
+    gap: t.$spacing-xl;
+  }
+}

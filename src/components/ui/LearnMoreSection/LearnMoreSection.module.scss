@@ -1,0 +1,145 @@
+@use 'tokens' as t;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-md;
+  width: 100%;
+}
+
+.heading {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-lg;
+  font-weight: t.$font-weight-medium;
+  line-height: t.$line-height-tight;
+  color: t.$color-gray-dark;
+}
+
+// ─── Cards container ─────────────────────────────────────────
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-sm;
+}
+
+// ─── Card ────────────────────────────────────────────────────
+.card {
+  display: flex;
+  align-items: stretch;
+  height: 111px;
+  border-radius: t.$radius-sm;
+  background: t.$color-white;
+  box-shadow: t.$shadow-card-elevated;
+  overflow: hidden;
+}
+
+.cardImageWrapper {
+  width: 104px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: t.$radius-sm 0 0 t.$radius-sm;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.cardBody {
+  flex: 1;
+  min-width: 0;
+  padding: t.$spacing-sm t.$spacing-md t.$spacing-sm t.$spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-sm;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-family: t.$font-heading;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-bold;
+  color: t.$color-gray-dark;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.cardDesc {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-regular;
+  color: t.$color-gray-dark;
+  line-height: 20px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+// ─── Profile list (card 2) ───────────────────────────────────
+.profileList {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-xs;
+}
+
+.profileItem {
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-sm;
+  line-height: 20px;
+}
+
+.profileIcon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #d9d9d9;
+  border-radius: 2px;
+}
+
+.profileKey {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-semibold;
+  color: t.$color-gray-dark;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.profileVal {
+  font-family: t.$font-body;
+  font-size: t.$font-size-sm;
+  font-weight: t.$font-weight-regular;
+  color: t.$color-gray-dark;
+}
+
+// ─── Responsive ──────────────────────────────────────────────
+@media (min-width: t.$bp-tablet) {
+  .cards {
+    flex-direction: row;
+    gap: t.$spacing-md;
+  }
+
+  .card {
+    flex: 1 1 50%;
+    height: auto;
+    min-height: 111px;
+  }
+
+  .cardImageWrapper {
+    width: 120px;
+  }
+}
+
+@media (min-width: t.$bp-desktop) {
+  .cardImageWrapper {
+    width: 140px;
+  }
+}
