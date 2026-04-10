@@ -1,0 +1,31 @@
+Crea components/carousel/ con:
+
+- Carousel.tsx
+- Carousel.scss
+- Carousel.test.tsx
+
+Implementa un Carousel:
+- responsive (mobile 1, tablet 2, desktop 3+ cards)
+- con cards y navegación (dots + interacción)
+- sin slides vacíos ni puntos sin contenido
+- accesible y estable
+- estilos en SCSS
+
+Añádelo en la vista Home sin romper el layout ni el responsive.
+
+Tests:
+- render
+- navegación
+- dots correctos
+- sin slides vacíos
+- comportamiento con distinto número de cards
+
+Coverage:
+- deja configurado cómo ver el coverage
+- indica comando para tests y coverage
+
+Entrega:
+
+- código completo de los archivos
+- comandos para test y coverage
+- breve explicación

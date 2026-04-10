@@ -1,0 +1,371 @@
+Contexto general:
+- Dedica recursos a cada punto y revisa que realmente esté bien antes de marcarlo como checked por tu parte, cuando añado muchos puntos olvidas la mitad, el propósito es conseguir todo perfecto con esta sola iteración.
+- Seguir una arquitectura orientada a componentes reutilizables, funcionales y desacoplados.
+- añade un boton el la home que navegue a la nueva vista 
+- arquitectura de proyecto :
+src/
+  app/
+    router/
+      index.jsx
+    providers/
+    store/
+      index.js
+    styles/
+      globals.css
+      reset.css
+      tokens.css
+      theme.css
+
+  pages/
+    Home/
+      Home.jsx
+      Home.module.css
+
+  components/
+    ui/
+      Ejemplo/
+        Ejemplo.jsx
+        Ejemplo.module.css
+    layout/
+      Header/
+        Header.jsx
+        Header.module.css
+      Sidebar/
+        Sidebar.jsx
+        Sidebar.module.css
+
+  hooks/
+  services/
+  context/
+  utils/
+  assets/
+    images/
+    icons/
+    fonts/
+
+  types/
+
+  main.jsx
+ 
+ 
+Accesibilidad:
+Todo el HTML debe seguir las guías de WCAG 2.2 AA.
+Usar elementos semánticos correctos (button, header, main, section, etc.).
+Proveer labels, aria-label o aria-labelledby cuando corresponda.
+Asegurar que todos los elementos interactivos sean accesibles mediante teclado.
+Mantener el orden de tabulación lógico.
+Usar roles solo cuando sea estrictamente necesario y no suplanten semántica nativa.
+Añadir atributos para estados accesibles (aria-expanded, aria-selected, etc.) cuando aplique.
+Para listas, carruseles o tabs, seguir patrones ARIA reconocidos.
+ 
+ 
+Buenas prácticas de HTML y CSS:
+Evitar divs innecesarios.
+Seguir prácticas de CSS modernas: flexbox, grid, variables CSS si el diseño lo requiere.
+El CSS debe reproducir fielmente el diseño de Figma pero sin comprometer accesibilidad o semántica.
+Evitar !important, usarlo solo como último recurso.
+Asegúrate de que haya gaps para evitar que en cambios de pantalla dos elementos aparezcan pegados.
+Asegúrate de que el contenido no haga overflow en el componente, a no ser que sea el carrusel, este muestra media weather-card cuando no caben 3.
+Haz que los botones tengan un max-width para que en desktop no ocupen todo el width de la pantalla.
+Las cards de "Saber más" deben tener exactamente la misma altura y ancho en todas las medidas de pantalla.
+ 
+ 
+Buenas prácticas de UX:
+Mantener consistencia en spacing, tamaños y tipografías según Figma.
+Juega con los bloques para hacer un responsive armonioso (si en mobile un bloque está encima de otro, en tablet/desktop colócalos lado a lado con gap).
+Haz que los componentes tipo card, en pantallas grandes, sean más anchas.
+No cortes el texto de ninguna card.
+Asegúrate de que todas las secciones tengan el mismo ancho para que el contenido esté alineado.
+ 
+ 
+Tokens y estilos globales:
+Todos los componentes generados irán con tokens en su archivo scss (genera el nombre de los tokens a partir de best practices).
+Genera un archivo global de tokens scss con los colores, fuentes y breakpoints detectados. Si consideras que hubiera que añadir algún otro dato más, inclúyelo también. Los tokens de los archivos .scss de los componentes serán estos.
+ 
+ 
+Componentes a generar y responsive:
+Genérame los componentes que detectes como componentes de React a partir de la pantalla de Figma en tamaño mobile.
+Sobre los componentes, sabemos únicamente cómo son en mobile; en base a su diseño y prácticas comunes, haz también la vista en desktop y tablet, utiliza los breakpoints más comunes en el desarrollo web.
+Juega con los bloques: por ejemplo, "Puntos de interés" con el mapa arriba y la información abajo en mobile; en pantallas más grandes debe aparecer uno a la izquierda y otro a la derecha con un gap de separación.
+Genera más weather-cards en el carrusel para que se vea el componente correctamente.
+El carrusel debe ser funcional, con animación para pasar al siguiente slide de cards; al clicar en los puntos debe pasar de diapositiva mostrando las siguientes cards.
+El carrusel puede mostrar media weather-card cuando no caben enteras.
+Rellena contenido e información en las tabs de servicios y cómo llegar.
+Las tabs estarán centradas en el medio y tendrán la raya de activo debajo de la tab que esté activa; cuando la tab activa cambie a otra, el indicador se actualizará correctamente.
+Al hacer click en el botón de “Ver descripción completa”, veremos un par de párrafos más de descripción y abajo un botón de “Ver menos”, al cual al hacer click se volverá a recoger la descripción.
+Crea un componente separado TrailDetailComponent para la página principal.
+ 
+ 
+Cards, imágenes y media:
+La card principal (app-trail-info-card), la primera de arriba, hace algo de overflow por encima de la imagen de arriba; respeta ese comportamiento visual tal como aparece en Figma.
+ 
+El check que marca que la ruta que vemos la hemos completado tendrá el tick centrado verticalmente y horizontalmente en el recuadro del check.
+Mejora las cards de "Saber más", que no se salgan de la sección y que sean lo más parecidas posibles al Figma con su estructura y sus iconos en caso de llevarlos.
+Una de las cards de “Saber más” muestra iconos y negrita de forma estructurada. Déjala exactamente igual al Figma.
+Asegúrate de que en las cards de “Saber más” se vea una imagen y que no salga rota.
+Usa las imágenes que se usan en el Figma para que sea lo más parecido posible a la versión de la web.
+ 
+ 
+Mapa y SVGs:
+Haz que los svg del mapa queden como el Figma, que sigan los puntos y la raya de la imagen mapa, que no salgan descolocados.
+ 
+ 
+Weather-cards y estado visual:
+En las weather-cards el tiempo (calima, sol, nuboso) va vinculado con el color de la card (rojo, amarillo, azul) y el icono correspondiente (calima, sol, nubes).
+Aplica el color correcto en cada una de las weather-cards.
+Verifica que todas las weather-cards en mobile tengan el mismo ancho y alto y que salgan 2 cards y media en el primer slide del carrusel.
+ 
+Asegúrate de que las weather-cards sean más anchas en desktop y que salgan por slide 4 en desktop.
+ 
+ 
+Iconos:
+Genera una carpeta icons en public/icons/.
+Genera los iconos igual que están en el Figma en formato svg y mételos en la carpeta que acabas de crear.
+En base a la información dada, genera también un icono para la card en modo azul.
+Genera más iconos si consideras que hacen falta.
+Asegúrate de que los iconos estén en public/icons/ para que carguen correctamente.
+Revisa de nuevo y modifica en caso de ser necesario que los iconos estén igual que en el Figma.
+ 
+ 
+Tests:
+Genera para cada componente sus test unitarios.
+ 
+ 
+Comprobaciones finales y calidad:
+Revisa que la página principal se vea exactamente igual que el Figma.
+Revisa no tener errores en la consola y en caso de tenerlos soluciónalos.
+Verifica punto por punto lo siguiente:
+- Hayas creado todos los componentes.
+- La página principal se vea como el Figma.
+- No haya errores por consola.
+ 
+ 
+Entrega de assets y otros:
+Genera en public/icons/ los svgs y colócalos correctamente para su carga.
+Genera más weather-cards en el carrusel y asegura la animación funcional para pasar al siguiente slide de cards.
+Asegúrate de que las weather-cards, las cards de "Saber más" y la app-trail-info-card respeten las reglas de diseño, accesibilidad y responsive indicadas.
+Revisa que los iconos estén igual que en Figma y que no haya imágenes rotas.
+ 
+ 
+IMPORTANTE: Una vez hayas terminado todo, verifica que no veamos la pantalla por defecto de React.
+
+__________________________________________________________________________
+
+I need you to implement a complete React trail detail page from scratch, matching a Figma design.
+The project already has: Vite + React + TypeScript + React Router DOM.
+
+---
+
+## SETUP (install first)
+npm install -D sass vitest @testing-library/react @testing-library/jest-dom @types/jest jsdom
+
+---
+
+## FILE CONFIGURATION
+
+### vite.config.ts
+Add SCSS loadPaths so all SCSS files can use `@use 'tokens' as t;` without relative paths:
+css.preprocessorOptions.scss.loadPaths = ['src/styles']
+
+### vitest.config.ts (new file)
+Use `defineConfig` from 'vitest/config', include react plugin, same SCSS loadPaths,
+test: { globals: true, environment: 'jsdom', setupFiles: ['./src/test/setup.ts'], css: true }
+
+### src/test/setup.ts (new file)
+import '@testing-library/jest-dom'
+
+### tsconfig.app.json
+Add to compilerOptions.types: ["vite/client", "vitest/globals", "@testing-library/jest-dom"]
+
+### package.json
+Add scripts: "test": "vitest run", "test:watch": "vitest"
+
+### index.html
+- lang="es"
+- Google Fonts: Noto Sans HK (400,500,700) + Source Sans 3 (400,600,700 + italic 400)
+
+---
+
+## DESIGN TOKENS — src/styles/_tokens.scss
+Create a complete token system with:
+- Colors: $color-primary: #087021, $color-primary-light: #C4DDCA
+- Weather colors: $color-weather-calima: #C9302C, $color-weather-sol: #F0AD4E, $color-weather-nuboso: #1F7E9A
+- Fonts: $font-heading: 'Noto Sans HK', $font-body: 'Source Sans 3'
+- Breakpoints: $bp-tablet: 768px, $bp-desktop: 1024px
+- Spacing scale: $spacing-xs:4px $spacing-sm:8px $spacing-md:16px $spacing-lg:24px $spacing-xl:32px $spacing-2xl:48px
+- Radius: $radius-sm:4px $radius-md:12px $radius-lg:20px $radius-full:50%
+- Shadows: $shadow-card: 0 3px 12px 0 rgba(0,0,0,0.08)
+- Z-index: $z-card:1 $z-overlay:10 $z-modal:100 $z-fixed:200
+- Transitions: $transition-fast:0.15s ease $transition-slide:0.35s cubic-bezier(0.4,0,0.2,1)
+
+---
+
+## SVG ICONS — public/icons/
+Generate these SVG icon files (24x24 viewBox unless noted):
+- back.svg — left arrow chevron, stroke #1a1a1a
+- share.svg — share/export icon, stroke #1a1a1a
+- download.svg — download arrow icon, stroke #1a1a1a
+- heart.svg — heart outline, stroke #1a1a1a
+- star-active.svg — filled star, fill #F0AD4E
+- star-inactive.svg — outline star, stroke #ccc
+- star-sm-active.svg — small filled star 16x16, fill #F0AD4E
+- sol.svg — sun with rays, stroke/fill #F0AD4E
+- calima.svg — haze/fog icon, fill #C9302C
+- nuboso.svg — cloud icon, fill #1F7E9A
+- lluvia.svg — rain cloud, fill #1F7E9A
+- elevation.svg — mountain/elevation icon, stroke #087021
+- wheelchair.svg — accessibility icon, fill #087021
+- transfer.svg — two arrows crossing, stroke #555
+- arrow-up-double.svg — double chevron up, stroke #087021
+- arrow-down-double.svg — double chevron down, stroke #087021
+
+---
+
+## GLOBAL STYLES — src/index.css
+Full CSS reset: box-sizing border-box, margin/padding 0, body uses $font-body,
+background #ffffff, #root min-height 100vh. Remove all Vite default styles.
+
+---
+
+## COMPONENTS — src/components/ui/
+Each component gets: ComponentName.tsx + ComponentName.module.scss + ComponentName.test.tsx
+All SCSS files use `@use 'tokens' as t;` at the top.
+Mobile-first responsive design. WCAG 2.2 AA accessibility.
+
+### 1. TrailInfoCard
+Shows: trail name "Laguna del Acebuche", rating (4.1 stars with star-active/star-sm-active icons),
+review count "(125 reseñas)", distance "7,4 km", duration "3h 30min", difficulty chip "Fácil" (green),
+accessibility badge with wheelchair icon "Accesible".
+White card, border-radius $radius-md, padding $spacing-md, shadow $shadow-card.
+On desktop: two-column layout.
+
+### 2. Tabs
+Props: tabs (array of {id, label}), activeTab, onTabChange callback.
+Three tabs: "General" | "Servicios" | "Cómo llegar"
+Animated underline indicator using useLayoutEffect (synchronous positioning).
+Centered tabs, role="tablist", aria-selected, keyboard navigation.
+Indicator uses $color-primary, transition $transition-slide.
+
+### 3. DescriptionSection
+Expandable text: collapsed shows 3 lines, "Leer más" button expands to full text.
+aria-expanded on button. Uses arrow-down-double / arrow-up-double icons.
+Full description: "El sendero de la Laguna del Acebuche discurre por uno de los espacios más 
+emblemáticos del Parque Nacional de Doñana. Esta ruta circular de dificultad baja permite 
+descubrir una rica biodiversidad..."
+
+### 4. WeatherCard
+Props: day (string), date (number), type ('calima'|'sol'|'nuboso'|'lluvia'), label (string), tempHigh (string), tempLow (string).
+Background colors: calima=#C9302C (white text), sol=#F0AD4E, nuboso/lluvia=#1F7E9A (white text).
+Shows icon from /icons/{type}.svg, day name, date, label, high/low temps.
+Border-radius $radius-md.
+
+### 5. WeatherCarousel
+Sliding carousel with 7 WeatherCards:
+  {day:'Lun', date:28, type:'calima', label:'Calima', tempHigh:'23º', tempLow:'15º'}
+  {day:'Mar', date:29, type:'sol', label:'Soleado', tempHigh:'26º', tempLow:'14º'}
+  {day:'Mié', date:30, type:'nuboso', label:'Nuboso', tempHigh:'20º', tempLow:'13º'}
+  {day:'Jue', date:1, type:'lluvia', label:'Lluvia', tempHigh:'18º', tempLow:'12º'}
+  {day:'Vie', date:2, type:'sol', label:'Soleado', tempHigh:'24º', tempLow:'15º'}
+  {day:'Sáb', date:3, type:'nuboso', label:'Nuboso', tempHigh:'21º', tempLow:'14º'}
+  {day:'Dom', date:4, type:'calima', label:'Calima', tempHigh:'25º', tempLow:'16º'}
+Card widths: mobile=2.5 visible (calc((100% - 16px) / 2.5)), tablet=3, desktop=4.
+Dot navigation at bottom, prev/next arrow buttons.
+CSS transform translateX for sliding, transition $transition-slide.
+aria-label on container, aria-label on nav buttons.
+
+### 6. MapSection
+Section title "Mapa y puntos de interés".
+Background: trail image (use a placeholder map image or solid #E8F5E9 background).
+SVG overlay with:
+  - Trail path: green stroke #087021, strokeWidth 2, path roughly:
+    M296.335 90.013 C252.024 106.246 125.446 189.146 126.481 147.179 C127.775 94.721 144.738 60.051 29 120.49
+  - 4 numbered circle markers (white fill, green stroke, green text) at approx positions:
+    1: cx=248 cy=113, 2: cx=160 cy=150, 3: cx=130 cy=80, 4: cx=60 cy=110
+  - Start/end dots (filled green circles)
+POI list below map:
+  1. Laguna del Acebuche — Observatorio de aves
+  2. Laguna de la Dulce — Zona de descanso
+  3. Marismas del Rocío — Punto panorámico
+  4. Palacio del Acebrón — Centro de visitantes
+
+### 7. ReviewSection
+Section title "Opiniones" with overall rating "4.1" and star icons.
+2-3 sample review cards, each with: reviewer name, date, star rating, comment text.
+Sample reviews:
+  - María G. · hace 2 días · 5 stars · "Sendero precioso, la laguna estaba llena de flamencos..."
+  - Carlos M. · hace 1 semana · 4 stars · "Muy bien señalizado y accesible..."
+
+### 8. LearnMoreSection
+Title "Saber más". Grid of 3 info cards:
+  - "Flora y Fauna" with description
+  - "Historia" with description  
+  - "Recomendaciones" with description
+Cards have icon (use elevation.svg or similar), title, short description, "Ver más" link button.
+On desktop: 3-column grid.
+
+### 9. ServiciosTab
+Content for Servicios tab:
+Section: "Servicios disponibles" — list of services with icons:
+  - Aparcamiento, Aseos, Centro de visitantes, Zona de picnic, Tienda, Cafetería
+Each as icon + label in a 2-column grid.
+Section: "Información adicional" — opening hours, prices, contact info.
+
+### 10. ComoLlegarTab
+Content for Cómo llegar tab:
+Section "En coche": from Almonte via A-483, ~45 min from Huelva. Address: Centro de Visitantes Acebuche, A-483, km 1.3.
+Section "En transporte público": Bus line from Almonte, stops at main entrance.
+Section "GPS Coordenadas": 37.0123° N, 6.5456° W — copy button.
+Show transfer.svg icon for transport section.
+
+### 11. FooterReserva
+Fixed bottom footer (position:fixed, bottom:0, z-index $z-fixed).
+White background, subtle top border/shadow.
+Full-width green button "Reservar plaza" (max-width 480px, centered).
+Button: background $color-primary, color white, border-radius $radius-md, padding 16px.
+Hover: darken to #065a1b. Use hardcoded hex values (avoid SCSS darken() - deprecated).
+
+---
+
+## TRAIL DETAIL VIEW — src/views/TrailDetailView.tsx
+
+Layout:
+1. Hero image section (height 330px, rounded bottom corners radius 24px)
+   - Back button (top-left), Share + Download + Heart buttons (top-right)
+   - All buttons: white circle, shadow, icons from public/icons/
+2. Content area: margin-top: -25px (overlaps hero by 25px), z-index 1, padding 0 16px, padding-bottom 140px
+3. TrailInfoCard
+4. Tabs (General | Servicios | Cómo llegar) in a <nav>
+5. Tab content:
+   - General: DescriptionSection + WeatherCarousel + MapSection + ReviewSection + LearnMoreSection
+   - Servicios: ServiciosTab
+   - Cómo llegar: ComoLlegarTab
+6. FooterReserva (fixed)
+
+Route: /sendero/laguna-del-acebuche
+
+---
+
+## HOME PAGE — src/views/HomeView.tsx
+Add a navigation button/card that navigates to /sendero/laguna-del-acebuche:
+  - Label: "🏞️ Laguna del Acebuche"
+  - Subtitle: "Espacio Natural de Doñana · Ver sendero"
+  - Style: white card, green left border, subtle shadow, full-width, cursor pointer
+  - onClick: useNavigate() to /sendero/laguna-del-acebuche
+
+---
+
+## APP.TSX ROUTING
+Add route: <Route path="/sendero/laguna-del-acebuche" element={<TrailDetailView />} />
+
+---
+
+## UNIT TESTS
+Every component must have a .test.tsx file with meaningful tests.
+Use: describe / it / expect / render / screen / fireEvent from vitest + testing-library.
+Test accessibility attributes (aria-selected, aria-expanded, role).
+Test interactive behavior (tab switching, carousel navigation, read more/less toggle).
+For text queries that could match multiple elements, use { selector: 'p' } or { selector: 'span' } option.
+Total target: 75+ passing tests across 12 test files.
+
+Run at the end: `npm test` — all tests must pass.
+Run `npm run build` — must complete with no errors or warnings.
