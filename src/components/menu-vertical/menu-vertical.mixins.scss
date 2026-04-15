@@ -1,0 +1,15 @@
+@mixin menuVerticalGap($appearance) {
+  &-#{$appearance} {
+    gap: var(--ath-spacing-menu-vertical-row-gap-#{$appearance});
+  }
+}
+
+@mixin paddingLevel($level, $appearance) {
+  &.#{$appearance} {
+    @if $level == '2' {
+      padding-left: var(--ath-spacing-menu-vertical-item-level-padding-left-level-#{$level});
+    } @else {
+      padding-left: var(--ath-spacing-menu-vertical-item-level-padding-left-level-#{$level}-#{$appearance});
+    }
+  }
+}

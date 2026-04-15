@@ -1,0 +1,80 @@
+:host {
+  .ath-menu-vertical {
+    &__wrapper-title {
+      cursor: pointer;
+      --color-title: var(--ath-color-fg-default);
+      --font-weight-title: var(--ath-font-weight-regular);
+      &:focus-visible {
+        --bg-title: var(--ath-color-drop-shadow-focus);
+      }
+
+      &.selected {
+        --bg-title: var(--ath-color-menu-vertical-item-level-bg-selected);
+        --color-title: var(--ath-color-fg-inverse-default);
+        --font-weight-title: var(--ath-font-weight-medium);
+      }
+
+      &:hover:not(.selected, .disabled, .open) {
+        --bg-title: var(--ath-color-menu-vertical-item-level-bg-hovered);
+        font-weight: var(--ath-font-weight-medium);
+      }
+
+      &:active:not(.disabled, .open) {
+        --bg-title: var(--ath-color-menu-vertical-item-level-bg-pressed);
+        --font-weight-title: var(--ath-font-weight-medium);
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+        --color-title: var(--ath-color-fg-disabled);
+      }
+    }
+    &__level-1 {
+      cursor: pointer;
+      --color-text: var(--ath-color-fg-default);
+      --font-weight-text: var(--ath-font-weight-regular);
+      --color-icon: var(--ath-color-icon-default);
+
+      &:hover:not(.selected, .disabled, .open) {
+        .ath-menu-vertical__level-1__icon {
+          --bg-icon: var(--ath-color-menu-vertical-item-level-1-bg-hovered);
+          --color-icon: var(--ath-color-icon-inverse-default);
+        }
+
+        .ath-menu-vertical__level-1__text {
+          font-weight: var(--ath-font-weight-medium);
+        }
+      }
+
+      &.selected {
+        .ath-menu-vertical__level-1__icon {
+          --bg-icon: var(--ath-color-menu-vertical-item-level-1-bg-selected);
+          --color-icon: var(--ath-color-icon-inverse-default);
+        }
+        .ath-menu-vertical__level-1__text {
+          font-weight: var(--ath-font-weight-medium);
+        }
+      }
+
+      &:active:not(.disabled, .open) {
+        .ath-menu-vertical__level-1__icon {
+          --bg-icon: var(--ath-color-menu-vertical-item-level-1-bg-pressed);
+          --color-icon: var(--ath-color-icon-inverse-default);
+        }
+        .ath-menu-vertical__level-1__text {
+          font-weight: var(--ath-font-weight-medium);
+        }
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+        .ath-menu-vertical__level-1__icon {
+          --color-icon: var(--ath-color-fg-disabled);
+        }
+        .ath-menu-vertical__level-1__text {
+          --color-text: var(--ath-color-fg-disabled);
+        }
+      }
+    }
+  }
+}

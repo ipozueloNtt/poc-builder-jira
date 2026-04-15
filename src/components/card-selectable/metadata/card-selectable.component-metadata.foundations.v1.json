@@ -1,0 +1,224 @@
+{
+  "references": [
+    {
+      "id": "figma:card-selectable-docs-40008130:6501",
+      "version": "2026-02-27",
+      "scope": "content"
+    },
+    {
+      "id": "figma:card-selectable-canvas-40007867:67767",
+      "version": "2026-02-27",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:card-selectable-component-40007878:159810",
+      "version": "2026-02-27",
+      "scope": "tokens"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:--ath-color-card-content-bg",
+      "token:--ath-color-fg-subtle",
+      "token:--ath-color-fg-primary-heading",
+      "token:--ath-color-fg-default",
+      "token:--ath-color-fg-disabled",
+      "token:--ath-color-icon-primary-default",
+      "token:--ath-color-icon-disabled",
+      "token:--ath-color-border-alpha-bolder-default",
+      "token:--ath-color-card-selectable-border-selected",
+      "token:--ath-color-card-border-hovered",
+      "token:--ath-color-card-border-pressed",
+      "token:--ath-color-card-drop-shadow-hovered",
+      "token:--ath-color-card-drop-shadow-pressed",
+      "token:--ath-color-drop-shadow-focus",
+      "token:--ath-color-border-focus",
+      "token:--ath-color-checkbox-border-default",
+      "token:--ath-color-checkbox-border-checked",
+      "token:--ath-color-checkbox-bg-default",
+      "token:--ath-color-checkbox-bg-checked",
+      "token:--ath-color-checkbox-icon-default",
+      "token:--ath-color-bg-alpha-boldest-disabled"
+    ],
+    "spacing": [
+      "token:--ath-spacing-card-gap",
+      "token:--ath-spacing-card-content-header-body-row-gap",
+      "token:--ath-spacing-card-selectable-indicator-col-gap",
+      "token:--ath-spacing-card-header-row-gap",
+      "token:--ath-spacing-card-header-titles-row-gap"
+    ],
+    "typography": [
+      "token:--ath-font-family-overline",
+      "token:--ath-font-size-overline",
+      "token:--ath-font-weight-overline",
+      "token:--ath-font-line-height-overline",
+      "token:--ath-font-family-heading",
+      "token:--ath-font-size-card-title",
+      "token:--ath-font-size-card-subtitle",
+      "token:--ath-font-weight-heading",
+      "token:--ath-font-line-height-card-title",
+      "token:--ath-font-line-height-card-subtitle"
+    ],
+    "radius": [
+      "token:--ath-border-radius-card",
+      "token:--ath-border-radius-checkbox",
+      "token:--ath-border-width-card"
+    ],
+    "shadow": [
+      "token:--ath-box-shadow-position-x-0",
+      "token:--ath-box-shadow-position-y-4",
+      "token:--ath-box-shadow-blur-8",
+      "token:--ath-box-shadow-spread-0"
+    ],
+    "motion": []
+  },
+  "semanticVariants": [
+    {
+      "axis": "size",
+      "option": "sm",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-spacing-card-gap",
+        "token:--ath-spacing-card-content-header-body-row-gap"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "md",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-spacing-card-gap",
+        "token:--ath-spacing-card-content-header-body-row-gap"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "hover",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-color-card-border-hovered",
+        "token:--ath-color-card-drop-shadow-hovered"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "active",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-color-card-border-pressed",
+        "token:--ath-color-card-drop-shadow-pressed"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "focus",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-color-drop-shadow-focus",
+        "token:--ath-color-border-focus"
+      ]
+    },
+    {
+      "axis": "selected",
+      "option": "true",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-color-card-selectable-border-selected"
+      ]
+    },
+    {
+      "axis": "disabled",
+      "option": "true",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-color-fg-disabled",
+        "token:--ath-color-icon-disabled",
+        "token:--ath-color-bg-alpha-boldest-disabled"
+      ]
+    },
+    {
+      "axis": "type",
+      "option": "multiselect",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-color-checkbox-border-default",
+        "token:--ath-color-checkbox-bg-default",
+        "token:--ath-color-checkbox-icon-default",
+        "token:--ath-color-checkbox-border-checked",
+        "token:--ath-color-checkbox-bg-checked"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "form-control",
+    "regionAffinity": [
+      "form",
+      "content",
+      "list-item",
+      "card"
+    ]
+  },
+  "accessibilitySignals": {
+    "landmarkRole": "group-item",
+    "requiresLabel": true,
+    "keyboardModel": "enter-space-activation",
+    "focusOrder": "managed"
+  },
+  "plannerHints": {
+    "priority": "high",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "form",
+      "content",
+      "list-item",
+      "card"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "root.background",
+        "token": "token:--ath-color-card-content-bg"
+      },
+      {
+        "target": "root.borderRadius",
+        "token": "token:--ath-border-radius-card"
+      },
+      {
+        "target": "root.borderWidth",
+        "token": "token:--ath-border-width-card"
+      },
+      {
+        "target": "text.overline.color",
+        "token": "token:--ath-color-fg-subtle"
+      },
+      {
+        "target": "text.headline.color",
+        "token": "token:--ath-color-fg-primary-heading"
+      },
+      {
+        "target": "text.subheadline.color",
+        "token": "token:--ath-color-fg-default"
+      },
+      {
+        "target": "state.hover.borderColor",
+        "token": "token:--ath-color-card-border-hovered",
+        "state": "hover"
+      },
+      {
+        "target": "state.active.borderColor",
+        "token": "token:--ath-color-card-border-pressed",
+        "state": "active"
+      },
+      {
+        "target": "state.selected.borderColor",
+        "token": "token:--ath-color-card-selectable-border-selected",
+        "state": "selected"
+      }
+    ]
+  }
+}

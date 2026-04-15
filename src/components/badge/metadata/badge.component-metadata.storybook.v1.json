@@ -1,0 +1,155 @@
+{
+  "stories": [
+    {
+      "id": "componentes-badge--playground",
+      "name": "Playground",
+      "args": {
+        "color": "accent",
+        "type": "numeric",
+        "value": 5,
+        "label": "Mensajes pendientes",
+        "defaultSlot": "<ath-button>Button</ath-button>"
+      },
+      "controls": {
+        "color": {
+          "type": "radio",
+          "options": [
+            "accent",
+            "danger",
+            "warning",
+            "success",
+            "info",
+            "disabled"
+          ]
+        },
+        "type": {
+          "type": "radio",
+          "options": [
+            "dot",
+            "numeric"
+          ]
+        },
+        "value": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "position": {
+          "type": "radio",
+          "options": [
+            "right",
+            "top-right"
+          ]
+        },
+        "distance-x": {
+          "type": "number"
+        },
+        "distance-y": {
+          "type": "number"
+        },
+        "label": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-badge--type",
+      "name": "Type",
+      "args": {
+        "type": "numeric",
+        "color": "accent",
+        "value": 5,
+        "defaultSlot": "<ath-button>Button</ath-button>"
+      },
+      "controls": {
+        "type": {
+          "type": "radio",
+          "options": [
+            "dot",
+            "numeric"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-badge--color",
+      "name": "Color",
+      "args": {
+        "type": "numeric",
+        "color": "accent",
+        "value": 5,
+        "defaultSlot": "<ath-button>Button</ath-button>"
+      },
+      "controls": {
+        "color": {
+          "type": "radio",
+          "options": [
+            "accent",
+            "danger",
+            "warning",
+            "success",
+            "info",
+            "disabled"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-badge--position",
+      "name": "Position",
+      "args": {
+        "position": "top-right",
+        "type": "numeric",
+        "color": "accent",
+        "value": 5,
+        "defaultSlot": "<ath-button>Button</ath-button>"
+      },
+      "controls": {
+        "position": {
+          "type": "radio",
+          "options": [
+            "right",
+            "top-right"
+          ]
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-badge--docs",
+  "documentedStates": [
+    {
+      "name": "numeric",
+      "args": {
+        "type": "numeric",
+        "value": 5
+      }
+    },
+    {
+      "name": "dot",
+      "args": {
+        "type": "dot"
+      }
+    },
+    {
+      "name": "disabled-color",
+      "args": {
+        "color": "disabled"
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "color",
+      "distanceX",
+      "distanceY",
+      "label",
+      "max",
+      "position",
+      "type",
+      "value"
+    ],
+    "missingProps": [],
+    "invalidArgs": []
+  }
+}

@@ -1,0 +1,8 @@
+@mixin pictogram-size($size) {
+  .ath-pictogram--#{$size} {
+    img {
+      width: var(--ath-size-pictogram-#{$size});
+      height: auto;
+    }
+  }
+}

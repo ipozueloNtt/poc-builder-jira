@@ -1,0 +1,477 @@
+{
+  "version": "v1",
+  "tag": "ath-card-selectable",
+  "filePath": "src/components/card-selectable/card-selectable.tsx",
+  "encapsulation": "scoped",
+  "componentType": "interactive",
+  "docs": "Card selectable con comportamiento de checkbox/radio para seleccion individual o multiple en contextos de listado.",
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "disabled",
+      "attribute": "disabled",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Indicates whether the card is disabled",
+      "description": "Indicates whether the card is disabled",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "headingText",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "heading-text",
+      "attribute": "heading-text",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "headline of the card",
+      "description": "headline of the card",
+      "docsTags": [],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "overline",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "overline",
+      "attribute": "overline",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "overline of the card",
+      "description": "overline of the card",
+      "docsTags": [],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "selected",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": true,
+      "attr": "selected",
+      "attribute": "selected",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Indicates whether the card is selected",
+      "description": "Indicates whether the card is selected",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "size",
+      "type": "\"md\" | \"sm\"",
+      "complexType": {
+        "original": "CardSelectableSizes",
+        "resolved": "\"md\" | \"sm\"",
+        "references": {
+          "CardSelectableSizes": {
+            "location": "import",
+            "path": "./card-selectable.model",
+            "id": "src/components/card-selectable/card-selectable.model.ts::CardSelectableSizes",
+            "referenceLocation": "CardSelectableSizes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "size",
+      "attribute": "size",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Size of the card",
+      "description": "Size of the card",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "CardSelectableSize.Small"
+        }
+      ],
+      "default": "CardSelectableSize.Small",
+      "values": [
+        {
+          "value": "md",
+          "type": "string"
+        },
+        {
+          "value": "sm",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "subtitle",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "subtitle",
+      "attribute": "subtitle",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "subtitle of the card",
+      "description": "subtitle of the card",
+      "docsTags": [],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "tag",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "tag",
+      "attribute": "tag",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "tag of the card",
+      "description": "tag of the card",
+      "docsTags": [],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "type",
+      "type": "\"multiselect\" | \"single\"",
+      "complexType": {
+        "original": "CardSelectableTypes",
+        "resolved": "\"multiselect\" | \"single\"",
+        "references": {
+          "CardSelectableTypes": {
+            "location": "import",
+            "path": "./card-selectable.model",
+            "id": "src/components/card-selectable/card-selectable.model.ts::CardSelectableTypes",
+            "referenceLocation": "CardSelectableTypes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "type",
+      "attribute": "type",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "type of card",
+      "description": "type of card",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "CardSelectableType.Single"
+        }
+      ],
+      "default": "CardSelectableType.Single",
+      "values": [
+        {
+          "value": "multiselect",
+          "type": "string"
+        },
+        {
+          "value": "single",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    }
+  ],
+  "requiredProps": [],
+  "propConstraints": [
+    {
+      "type": "implies",
+      "when": {
+        "prop": "type",
+        "equals": "single"
+      },
+      "then": {
+        "role": "radio"
+      },
+      "message": "Cuando type=single, el host usa role=radio para accesibilidad en seleccion exclusiva."
+    },
+    {
+      "type": "implies",
+      "when": {
+        "prop": "type",
+        "equals": "multiselect"
+      },
+      "then": {
+        "role": "checkbox"
+      },
+      "message": "Cuando type=multiselect, el host usa role=checkbox para seleccion multiple."
+    }
+  ],
+  "variantPropBindings": {
+    "size": {
+      "prop": "size",
+      "mapping": {
+        "sm": "sm",
+        "md": "md"
+      }
+    },
+    "type": {
+      "prop": "type",
+      "mapping": {
+        "single select": "single",
+        "multiselect": "multiselect"
+      }
+    },
+    "selected": {
+      "prop": "selected",
+      "mapping": {
+        "false": false,
+        "true": true
+      }
+    },
+    "disabled": {
+      "prop": "disabled",
+      "mapping": {
+        "false": false,
+        "true": true
+      }
+    }
+  },
+  "methods": [
+    {
+      "name": "select",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "complexType": {
+        "signature": "(firstLoad: boolean) => Promise<void>",
+        "parameters": [
+          {
+            "name": "firstLoad",
+            "type": "boolean",
+            "docs": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "signature": "select(firstLoad: boolean) => Promise<void>",
+      "parameters": [
+        {
+          "name": "firstLoad",
+          "type": "boolean",
+          "docs": ""
+        }
+      ],
+      "docs": "",
+      "description": "",
+      "docsTags": [],
+      "internal": false
+    },
+    {
+      "name": "unselect",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "signature": "unselect() => Promise<void>",
+      "parameters": [],
+      "docs": "",
+      "description": "",
+      "docsTags": [],
+      "internal": false
+    }
+  ],
+  "events": [
+    {
+      "event": "athBlur",
+      "name": "athBlur",
+      "detail": "void",
+      "detailType": "void",
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Se emite al quitar el foco de la card-selectable.",
+      "description": "Se emite al quitar el foco de la card-selectable.",
+      "docsTags": [],
+      "internal": false
+    },
+    {
+      "event": "athChange",
+      "name": "athChange",
+      "detail": "any",
+      "detailType": "any",
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Se emite al hacer click, Enter o Space sobre la card-selectable.",
+      "description": "Se emite al cambiar el estado de seleccion de la card-selectable.",
+      "docsTags": [],
+      "internal": false
+    },
+    {
+      "event": "athFocus",
+      "name": "athFocus",
+      "detail": "void",
+      "detailType": "void",
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Se emite al hacer foco en la card-selectable.",
+      "description": "Se emite al hacer foco en la card-selectable.",
+      "docsTags": [],
+      "internal": false
+    }
+  ],
+  "listeners": [],
+  "styles": [],
+  "slots": [
+    {
+      "name": "body",
+      "docs": "Slot para contenido adicional de la card-selectable."
+    }
+  ],
+  "slotPolicies": [],
+  "parts": [],
+  "childrenPolicy": {
+    "mode": "slot-only",
+    "minChildren": 0,
+    "maxChildren": 1,
+    "allowTextNodes": false
+  },
+  "contentModel": {
+    "kind": "slot-only",
+    "allowedInlineComponents": [
+      "ath-text",
+      "ath-link",
+      "ath-icon",
+      "ath-tag"
+    ]
+  },
+  "allowedParents": [],
+  "forbiddenParents": [],
+  "dependents": [],
+  "dependencies": [
+    "ath-icon",
+    "ath-tag"
+  ],
+  "dependencyGraph": {
+    "ath-card-selectable": [
+      "ath-icon",
+      "ath-tag"
+    ],
+    "ath-tag": [
+      "ath-icon"
+    ]
+  },
+  "typeLibrary": {}
+}

@@ -1,0 +1,67 @@
+:host {
+  .ath-radiobutton {
+    --border: 1px solid var(--ath-color-radiobutton-border-default);
+    --background: var(--ath-color-radiobutton-bg-default);
+    --color: var(--ath-color-fg-default);
+    --font-weight: var(--ath-font-weight-regular);
+    --after-background-color: none;
+
+    &--checked {
+      --font-weight: var(--ath-font-weight-medium);
+      --background: var(--ath-color-radiobutton-bg-default);
+    }
+
+    &--checked:not(.ath-radiobutton--read-only):not(.ath-radiobutton--disabled) {
+      --border: none;
+      --after-box-shadow: 0px 0px 0px 7px var(--ath-color-radiobutton-bg-checked);
+      --after-background-color: var(--ath-color-radiobutton-bg-default);
+    }
+
+    &--read-only {
+      cursor: not-allowed;
+      --background: var(--ath-color-radiobutton-bg-readonly);
+      --border: 1px solid var(--ath-color-radiobutton-border-readonly);
+      --color: var(--ath-color-fg-default);
+      .ath-radiobutton-item {
+        cursor: not-allowed;
+      }
+      .ath-input__label {
+        cursor: not-allowed;
+      }
+    }
+
+    &--read-only.ath-radiobutton--checked {
+      --background: var(--ath-color-radiobutton-bg-readonly);
+      --border: 1px solid var(--ath-color-radiobutton-border-readonly);
+      --after-background-color: var(--ath-color-radiobutton-bg-checked);
+      .ath-radiobutton-item {
+        cursor: not-allowed;
+      }
+      .ath-input__label {
+        cursor: not-allowed;
+      }
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+      --background: var(--ath-color-radiobutton-bg-disabled-default);
+      --border: 1px solid var(--ath-color-radiobutton-border-disabled);
+      --color: var(--ath-color-text---disabled, var(--ath-color-fg-disabled));
+      .ath-radiobutton-item {
+        cursor: not-allowed;
+      }
+      .ath-input__label {
+        cursor: not-allowed;
+      }
+    }
+
+    &--checked.ath-radiobutton--disabled {
+      --border: none;
+      --after-box-shadow: 0px 0px 0px 7px var(--ath-color-radiobutton-bg-disabled-checked);
+      --after-background-color: var(--ath-color-radiobutton-indicator-disabled);
+      .ath-radiobutton-item {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

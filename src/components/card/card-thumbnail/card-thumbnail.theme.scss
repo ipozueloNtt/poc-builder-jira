@@ -1,0 +1,33 @@
+:host {
+  --object-fit: cover;
+  .fluid {
+    --object-fit: fill;
+  }
+
+  .vertical {
+    --thumbanail-min-width: 402px;
+    --thumbanail-min-height: 226.132px;
+    --img-position: absolute;
+    --img-top: 50%;
+    --img-left: 50%;
+    --img-transform: translate(-50%, -50%);
+    --img-width: 100%;
+    &:not(.fixed) {
+      --aspect-ratio: 16/9;
+    }
+  }
+
+  .horizontal {
+    --thumbanail-min-height: 226px;
+    --thumbanail-min-width: 345px;
+    --img-position: absolute;
+    --img-top: 50%;
+    --img-left: 50%;
+    --img-transform: translate(-50%, -50%);
+    --img-width: auto;
+    &:not(.fixed) {
+      --thumbanail-min-width: 226px;
+      --aspect-ratio: 1/1;
+    }
+  }
+}

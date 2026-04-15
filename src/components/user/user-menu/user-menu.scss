@@ -1,0 +1,29 @@
+:host {
+  display: inline-block;
+  width: fit-content;
+  .ath-user-menu {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ath-spacing-user-menu-col-gap);
+
+    &-container {
+      width: 100%;
+      position: relative;
+    }
+
+    &-overlay {
+      display: flex;
+      padding: var(--ath-spacing-menu-button-overlay-padding);
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--ath-spacing-menu-button-overlay-row-gap);
+      position: absolute;
+      right: 0;
+      top: 4px;
+      border-radius: var(--ath-border-radius-3xl);
+      border: var(--ath-border-width-xs) solid var(--ath-color-border-alpha-bolder-default);
+      background: var(--ath-color-menu-button-overlay-bg);
+      z-index: 1000;
+    }
+  }
+}

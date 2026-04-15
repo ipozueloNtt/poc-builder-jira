@@ -1,0 +1,171 @@
+{
+  "component": {
+    "tag": "ath-icon",
+    "name": "Icon",
+    "type": "display",
+    "category": "atoms",
+    "status": "stable",
+    "version": "v1",
+    "since": "2.0.0",
+    "filePath": "src/components/icon/icon.tsx",
+    "encapsulation": "shadow",
+    "description": "Icono SVG del sistema para reforzar significado visual y estados semanticos dentro de otros componentes.",
+    "links": {
+      "storybook": "https://aletehia.vercel.app/?path=/docs/componentes-icon--docs",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json",
+      "figma": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40015250-40828&m=dev"
+    }
+  },
+  "usage": {
+    "primaryIntent": "Aportar una senal visual rapida para reforzar significado, estado o accion en interfaces de alto contenido.",
+    "useCases": [
+      "Acompanar texto o accion en botones, enlaces, menus y listas.",
+      "Representar feedback semantico (success, error, warning, info).",
+      "Mostrar iconografia decorativa cuando el componente padre ya aporta texto suficiente."
+    ],
+    "antiPatterns": [
+      {
+        "scenario": "Sustituir informacion critica solo con iconos no universales.",
+        "reason": "Puede introducir ambiguedad y perdida de comprension.",
+        "alternative": "Acompanarlo con texto visible o etiquetado accesible segun contexto."
+      }
+    ]
+  },
+  "variants": {
+    "size": {
+      "options": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md",
+      "prop": "size"
+    },
+    "color": {
+      "options": [
+        "default",
+        "primary",
+        "info",
+        "accent",
+        "error",
+        "warning",
+        "success",
+        "inverse",
+        "disabled",
+        "inherit"
+      ],
+      "default": "default",
+      "prop": "color"
+    }
+  },
+  "composition": {
+    "layoutRole": "inline",
+    "allowedChildren": [],
+    "layoutRules": [
+      {
+        "rule": "No inyectar contenido hijo; el icono se define unicamente por sus props.",
+        "reason": "El componente renderiza un sprite SVG interno y no expone slots ni estructura compuesta."
+      }
+    ]
+  },
+  "artifacts": {
+    "code": {
+      "$ref": "./icon.component-metadata.code.v1.json"
+    },
+    "storybook": {
+      "$ref": "./icon.component-metadata.storybook.v1.json"
+    },
+    "foundations": {
+      "$ref": "./icon.component-metadata.foundations.v1.json"
+    },
+    "componentSpec": "./component-spec.md"
+  },
+  "childrenPolicy": {
+    "mode": "none",
+    "minChildren": 0,
+    "maxChildren": 0,
+    "allowTextNodes": false
+  },
+  "contentModel": {
+    "kind": "none",
+    "allowedTextFormats": [],
+    "allowedInlineComponents": []
+  },
+  "runtime": {
+    "planner": {
+      "layoutRole": "inline",
+      "regionAffinity": [
+        "content",
+        "list-item"
+      ],
+      "priority": "medium"
+    },
+    "resolver": {
+      "allowedRegions": [
+        "content",
+        "list-item",
+        "toolbar"
+      ],
+      "defaultRegion": "content"
+    },
+    "assembler": {
+      "nodeType": "component",
+      "maxDepth": 1,
+      "deterministicOrder": true
+    },
+    "validator": {
+      "schemaRefs": [
+        "https://aletheia.dev/schemas/ds/component-metadata.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.code.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.storybook.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.foundations.v1.schema.json"
+      ],
+      "strict": true
+    }
+  },
+  "examples": [
+    {
+      "name": "Playground",
+      "code": "<ath-icon icon=\"add\" size=\"sm\" color=\"default\"></ath-icon>",
+      "args": {
+        "icon": "add",
+        "size": "sm",
+        "color": "default"
+      },
+      "storyId": "componentes-icon--playground"
+    }
+  ],
+  "meta": {
+    "schemaVersion": "v1",
+    "generatedAt": "2026-02-20T09:47:01.152Z",
+    "sources": {
+      "stencilDocgen": "docs.json (ath-icon)",
+      "figma": "figma-mcp:get_design_context + figma-mcp:get_variable_defs + prompt figma-design-doc-to-operational-metadata (nodos 40015250:40828, 40015250:40972, 40015250:40845, 40015250:40829)",
+      "storybook": "fallback local: storybook-static/index.json + src/components/icon/stories/icon.stories.tsx (storybook-mcp manifest unavailable)",
+      "storybookDocsJson": "gap: storybook-mcp unavailable (404 manifest)"
+    },
+    "ownership": {
+      "usage": "design-agent",
+      "variants": "design-agent",
+      "props": "stencil-docgen",
+      "events": "stencil-docgen",
+      "composition": "human",
+      "storybook": "human",
+      "styling": "build-extractor",
+      "foundations": "reconciler",
+      "runtime": "human"
+    }
+  },
+  "docs": "Generado con fallback de Storybook por indisponibilidad del manifest MCP (404). No se inventaron stories fuera de index local. Root compacto: code/storybook/foundations se consumen por referencias en artifacts.$ref.",
+  "docsTags": [
+    {
+      "name": "figma-node",
+      "text": "40015250:40828"
+    },
+    {
+      "name": "storybook-gap",
+      "text": "mcp-manifest-404"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+@use '../../sharedfc/datepicker' as Datepicker;
+@use '../../sharedfc/input' as Input;
+
+@use '../../assets/scss/elements/accesibility';
+
+@include Input.fc-input-element-vars;
+
+@include Datepicker.fc-datepicker-item;
+@include Datepicker.fc-calendar;
+@include Datepicker.fc-calendar-month;
+@include Datepicker.fc-calendar-year;
+@include Input.fc-input-element;
+
+:host {
+  .ath-calendar {
+    display: flex;
+    border-radius: var(--ath-border-radius-input-datepicker-overlay);
+    width: 288px;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ath-spacing-input-datepicker-calendar-overlay-row-gap);
+
+    &__header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--ath-spacing-input-datepicker-calendar-header-col-gap);
+      align-self: stretch;
+      &__date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--ath-spacing-input-datepicker-calendar-header-date-col-gap);
+        flex: 1 0 0;
+      }
+    }
+    &__date {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--ath-spacing-input-datepicker-calendar-cell-group-row-gap);
+      align-self: stretch;
+    }
+    &__month,
+    &__year {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--ath-spacing-input-datepicker-calendar-cell-group-row-gap);
+      align-self: stretch;
+
+      height: 286px;
+    }
+  }
+}

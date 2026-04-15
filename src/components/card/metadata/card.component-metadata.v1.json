@@ -1,0 +1,442 @@
+{
+  "component": {
+    "tag": "ath-card",
+    "name": "Card",
+    "type": "container",
+    "category": "molecules",
+    "status": "stable",
+    "version": "v1",
+    "since": "2.0.0",
+    "filePath": "src/components/card/card.tsx",
+    "encapsulation": "scoped",
+    "description": "Contenedor de contenido agrupado con estructura de thumbnail, header, body y footer.",
+    "links": {
+      "storybook": "https://aletehia.vercel.app/?path=/docs/componentes-card-card--docs",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json",
+      "figma": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012082-13633&m=dev"
+    }
+  },
+  "usage": {
+    "primaryIntent": "Agrupar informacion relacionada en un bloque visual escaneable y reusable.",
+    "useCases": [
+      "Resumen de producto o servicio con imagen, titulo y acciones.",
+      "Bloques de contenido en listados, grids y landings.",
+      "Contenedores clickables para navegacion contextual."
+    ],
+    "antiPatterns": [
+      {
+        "scenario": "Usar Card para formularios complejos con muchos campos editables.",
+        "reason": "La card prioriza lectura y acciones breves, no flujos de entrada extensos.",
+        "alternative": "Usar contenedores de layout/form dedicados y componentes input especializados."
+      }
+    ]
+  },
+  "variants": {
+    "orientation": {
+      "options": [
+        "vertical",
+        "horizontal"
+      ],
+      "default": "vertical",
+      "prop": "orientation"
+    },
+    "size": {
+      "options": [
+        "sm",
+        "md"
+      ],
+      "default": "sm",
+      "prop": "size"
+    },
+    "clickable": {
+      "options": [
+        "no",
+        "yes"
+      ],
+      "default": "no",
+      "prop": "clickable"
+    },
+    "fluid": {
+      "options": [
+        "no",
+        "yes"
+      ],
+      "default": "no",
+      "prop": "fluid"
+    }
+  },
+  "composition": {
+    "layoutRole": "container",
+    "allowedChildren": [
+      "ath-card-thumbnail",
+      "ath-card-header",
+      "ath-icon",
+      "ath-tag",
+      "ath-button",
+      "ath-link",
+      "*"
+    ],
+    "layoutRules": [
+      {
+        "rule": "Mantener la jerarquia visual thumbnail -> header -> body -> footer cuando aplique.",
+        "reason": "Preserva consistencia de lectura y escaneo del contenido en card."
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "ariaLabelledBy",
+      "type": "string",
+      "attr": "aria-labelled-by",
+      "docs": "ancho maximo de la card",
+      "required": false
+    },
+    {
+      "name": "clickable",
+      "type": "boolean",
+      "attr": "clickable",
+      "docs": "Card is clickable",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "fluid",
+      "type": "boolean",
+      "attr": "fluid",
+      "docs": "if Card thumbnail is fluid",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "maxWidth",
+      "type": "string",
+      "attr": "max-width",
+      "docs": "ancho maximo de la card",
+      "required": false
+    },
+    {
+      "name": "orientation",
+      "type": "\"horizontal\" | \"vertical\"",
+      "attr": "orientation",
+      "docs": "Orientation Card",
+      "default": "CardOrientation.Vertical",
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "\"md\" | \"sm\"",
+      "attr": "size",
+      "docs": "Size of the card",
+      "default": "CardSize.Small",
+      "required": false
+    },
+    {
+      "name": "width",
+      "type": "string",
+      "attr": "width",
+      "docs": "ancho de la card",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "event": "athBlur",
+      "name": "athBlur",
+      "detail": "void",
+      "docs": "Emitted when card loses focus"
+    },
+    {
+      "event": "athClick",
+      "name": "athClick",
+      "detail": "void",
+      "docs": "Emitted when card is clicked"
+    },
+    {
+      "event": "athFocus",
+      "name": "athFocus",
+      "detail": "void",
+      "docs": "Emitted when card gains focus"
+    }
+  ],
+  "methods": [],
+  "listeners": [],
+  "slots": [
+    {
+      "name": "thumbnail",
+      "docs": "Slot para ath-card-thumbnail."
+    },
+    {
+      "name": "img",
+      "docs": "Slot para icono o elemento visual auxiliar del header."
+    },
+    {
+      "name": "tag",
+      "docs": "Slot para ath-tag contextual."
+    },
+    {
+      "name": "body",
+      "docs": "Slot principal de contenido."
+    },
+    {
+      "name": "footer",
+      "docs": "Slot de acciones o enlaces secundarios."
+    }
+  ],
+  "childrenPolicy": {
+    "mode": "slot-only",
+    "minChildren": 0,
+    "maxChildren": 5,
+    "allowTextNodes": false
+  },
+  "contentModel": {
+    "kind": "slot-only",
+    "allowedInlineComponents": [
+      "ath-icon",
+      "ath-tag",
+      "ath-button",
+      "ath-link"
+    ]
+  },
+  "dependencies": [
+    "ath-icon"
+  ],
+  "dependents": [],
+  "storybook": {
+    "stories": [
+      {
+        "id": "componentes-card-card--playground",
+        "name": "Playground",
+        "args": {
+          "orientation": "vertical",
+          "size": "sm",
+          "clickable": false,
+          "fluid": false
+        },
+        "controls": {
+          "orientation": {
+            "type": "radio",
+            "options": [
+              "vertical",
+              "horizontal"
+            ]
+          },
+          "size": {
+            "type": "radio",
+            "options": [
+              "sm",
+              "md"
+            ]
+          },
+          "clickable": {
+            "type": "boolean"
+          },
+          "fluid": {
+            "type": "boolean"
+          },
+          "width": {
+            "type": "text"
+          },
+          "max-width": {
+            "type": "text"
+          }
+        }
+      }
+    ],
+    "canonicalStoryId": "componentes-card-card--docs",
+    "documentedStates": [
+      {
+        "name": "default",
+        "args": {
+          "orientation": "vertical",
+          "size": "sm"
+        }
+      },
+      {
+        "name": "clickable",
+        "args": {
+          "clickable": true
+        }
+      },
+      {
+        "name": "horizontal",
+        "args": {
+          "orientation": "horizontal"
+        }
+      }
+    ],
+    "argValidation": {
+      "coveredProps": [
+        "orientation",
+        "size",
+        "clickable",
+        "fluid",
+        "width",
+        "maxWidth"
+      ],
+      "missingProps": [
+        "ariaLabelledBy"
+      ],
+      "invalidArgs": []
+    }
+  },
+  "foundations": {
+    "references": [
+      {
+        "id": "figma:card-docs-40012082:13633",
+        "version": "2026-02-27",
+        "scope": "content"
+      },
+      {
+        "id": "figma:card-canonical-2004:3748",
+        "version": "2026-02-27",
+        "scope": "layout"
+      },
+      {
+        "id": "figma:card-component-40004478:65252",
+        "version": "2026-02-27",
+        "scope": "tokens"
+      }
+    ],
+    "tokensUsed": {
+      "color": [
+        "token:--ath-color-card-content-bg",
+        "token:--ath-color-card-border-hovered",
+        "token:--ath-color-card-border-pressed"
+      ],
+      "spacing": [
+        "token:--ath-spacing-card-gap",
+        "token:--ath-spacing-card-content-padding-around-sm",
+        "token:--ath-spacing-card-content-padding-around-md",
+        "token:--ath-spacing-card-header-row-gap"
+      ],
+      "typography": [
+        "token:--ath-font-size-card-title",
+        "token:--ath-font-size-card-subtitle",
+        "token:--ath-font-line-height-card-title",
+        "token:--ath-font-line-height-card-subtitle"
+      ],
+      "radius": [
+        "token:--ath-border-radius-card"
+      ],
+      "shadow": [
+        "token:--ath-box-shadow-card-hovered-color",
+        "token:--ath-box-shadow-card-pressed-color"
+      ],
+      "motion": []
+    },
+    "layoutSignals": {
+      "layoutRole": "container",
+      "regionAffinity": [
+        "content",
+        "list-item"
+      ]
+    },
+    "plannerHints": {
+      "priority": "high",
+      "containerEligibility": true,
+      "regionAffinity": [
+        "content",
+        "list-item"
+      ]
+    },
+    "theming": {
+      "modes": [
+        "light"
+      ],
+      "defaultMode": "light",
+      "tokenBindings": [
+        {
+          "target": "root.background",
+          "token": "token:--ath-color-card-content-bg"
+        },
+        {
+          "target": "root.borderRadius",
+          "token": "token:--ath-border-radius-card"
+        },
+        {
+          "target": "root.spacing.gap",
+          "token": "token:--ath-spacing-card-gap"
+        }
+      ]
+    }
+  },
+  "runtime": {
+    "planner": {
+      "layoutRole": "container",
+      "regionAffinity": [
+        "content",
+        "list-item"
+      ],
+      "priority": "high"
+    },
+    "resolver": {
+      "allowedRegions": [
+        "content",
+        "list-item",
+        "card"
+      ],
+      "defaultRegion": "content"
+    },
+    "assembler": {
+      "nodeType": "component",
+      "maxDepth": 3,
+      "deterministicOrder": true
+    },
+    "validator": {
+      "schemaRefs": [
+        "https://aletheia.dev/schemas/ds/component-metadata.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.code.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.storybook.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.foundations.v1.schema.json"
+      ],
+      "strict": true
+    }
+  },
+  "examples": [
+    {
+      "name": "Playground",
+      "code": "<ath-card orientation=\"vertical\" size=\"sm\"></ath-card>",
+      "args": {
+        "orientation": "vertical",
+        "size": "sm"
+      },
+      "storyId": "componentes-card-card--playground"
+    }
+  ],
+  "meta": {
+    "schemaVersion": "v1",
+    "generatedAt": "2026-02-27T00:00:00.000Z",
+    "sources": {
+      "stencilDocgen": "docs.json (ath-card)",
+      "figma": "figma-mcp:get_component (docs node 40012082:13633, canonical node 2004:3748, component frame 40004478:65252)",
+      "storybook": "src/components/card/stories/card.stories.tsx",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json"
+    },
+    "ownership": {
+      "usage": "design-agent",
+      "variants": "design-agent",
+      "props": "stencil-docgen",
+      "events": "stencil-docgen",
+      "composition": "human",
+      "storybook": "human",
+      "styling": "build-extractor",
+      "foundations": "reconciler",
+      "runtime": "human"
+    }
+  },
+  "docs": "Metadata de ath-card generado desde fuentes de desarrollo (docs.json + stories) y Figma (nodo documental y canónico).",
+  "docsTags": [
+    {
+      "name": "figma-node",
+      "text": "40012082:13633"
+    },
+    {
+      "name": "figma-canonical-node",
+      "text": "2004:3748"
+    },
+    {
+      "name": "figma-component-node",
+      "text": "40004478:65252"
+    }
+  ]
+}

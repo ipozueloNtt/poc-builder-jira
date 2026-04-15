@@ -1,0 +1,219 @@
+{
+  "references": [
+    {
+      "id": "figma:tag-docs-40012185:9743",
+      "version": "2026-02-21",
+      "scope": "content"
+    },
+    {
+      "id": "figma:tag-component-page-40000956:12773",
+      "version": "2026-02-21",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:tag-design-token-snapshot",
+      "version": "2026-02-21",
+      "scope": "tokens"
+    },
+    {
+      "id": "figma:tag-accessibility-guidelines",
+      "version": "2026-02-21",
+      "scope": "a11y"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:ath-color-tag-bg-primary",
+      "token:ath-color-tag-bg-secondary",
+      "token:ath-color-bg-accent-default",
+      "token:ath-color-bg-danger-default",
+      "token:ath-color-bg-warning-default",
+      "token:ath-color-bg-success-default",
+      "token:ath-color-bg-alpha-disabled",
+      "token:ath-color-tag-fg-primary",
+      "token:ath-color-tag-fg-secondary",
+      "token:ath-color-tag-fg-accent",
+      "token:ath-color-tag-fg-danger",
+      "token:ath-color-tag-fg-warning",
+      "token:ath-color-tag-fg-success",
+      "token:ath-color-fg-disabled"
+    ],
+    "spacing": [
+      "token:ath-spacing-tag-col-gap",
+      "token:ath-spacing-tag-padding-x",
+      "token:ath-spacing-tag-padding-y-sm",
+      "token:ath-spacing-tag-padding-y-md"
+    ],
+    "typography": [
+      "token:ath-font-family-primary",
+      "token:ath-font-weight-medium",
+      "token:ath-font-size-comp-sm",
+      "token:ath-font-size-comp-md",
+      "token:ath-font-line-height-comp-sm",
+      "token:ath-font-line-height-comp-md"
+    ],
+    "radius": [
+      "token:ath-border-radius-tag"
+    ],
+    "shadow": [],
+    "motion": []
+  },
+  "semanticVariants": [
+    {
+      "axis": "color",
+      "option": "primary",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-tag-bg-primary",
+        "token:ath-color-tag-fg-primary"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "secondary",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-tag-bg-secondary",
+        "token:ath-color-tag-fg-secondary"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "accent",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-bg-accent-default",
+        "token:ath-color-tag-fg-accent"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "danger",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-bg-danger-default",
+        "token:ath-color-tag-fg-danger"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "warning",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-bg-warning-default",
+        "token:ath-color-tag-fg-warning"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "success",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-bg-success-default",
+        "token:ath-color-tag-fg-success"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "disabled",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-bg-alpha-disabled",
+        "token:ath-color-fg-disabled"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "sm",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-comp-sm",
+        "token:ath-spacing-tag-padding-y-sm"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "md",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-comp-md",
+        "token:ath-spacing-tag-padding-y-sm"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "lg",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-comp-md",
+        "token:ath-spacing-tag-padding-y-md"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "inline",
+    "regionAffinity": [
+      "content",
+      "list-item"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": true,
+    "keyboardModel": "none",
+    "focusOrder": "natural"
+  },
+  "plannerHints": {
+    "priority": "medium",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "content",
+      "list-item"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "root.backgroundColor",
+        "token": "token:ath-color-tag-bg-primary",
+        "variantAxis": "color",
+        "variantOption": "primary"
+      },
+      {
+        "target": "root.borderRadius",
+        "token": "token:ath-border-radius-tag"
+      },
+      {
+        "target": "root.gap",
+        "token": "token:ath-spacing-tag-col-gap"
+      },
+      {
+        "target": "root.paddingInline",
+        "token": "token:ath-spacing-tag-padding-x"
+      },
+      {
+        "target": "root.paddingBlock",
+        "token": "token:ath-spacing-tag-padding-y-sm",
+        "variantAxis": "size",
+        "variantOption": "sm"
+      },
+      {
+        "target": "root.paddingBlock",
+        "token": "token:ath-spacing-tag-padding-y-md",
+        "variantAxis": "size",
+        "variantOption": "lg"
+      },
+      {
+        "target": "root.fontFamily",
+        "token": "token:ath-font-family-primary"
+      },
+      {
+        "target": "root.fontWeight",
+        "token": "token:ath-font-weight-medium"
+      }
+    ]
+  }
+}

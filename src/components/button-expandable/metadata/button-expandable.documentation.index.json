@@ -1,0 +1,12 @@
+{
+  "componentTag": "ath-button-expandable",
+  "schemaVersion": "v1",
+  "generatedAt": "2026-02-27T00:00:00.000Z",
+  "artifacts": {
+    "root": "button-expandable.component-metadata.v1.json",
+    "code": "button-expandable.component-metadata.code.v1.json",
+    "storybook": "button-expandable.component-metadata.storybook.v1.json",
+    "foundations": "button-expandable.component-metadata.foundations.v1.json",
+    "componentSpec": "component-spec.md"
+  }
+}

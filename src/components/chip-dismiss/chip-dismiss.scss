@@ -1,0 +1,72 @@
+@use 'utilities';
+@use 'tools';
+@use './chip-dismiss.theme.scss';
+
+:host {
+  display: inline-flex;
+  height: fit-content;
+  width: fit-content;
+
+  .ath-chip-dismiss__container {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: var(--ath-border-radius-chip);
+    background: var(--ath-color-chip-dismiss-bg);
+    color: var(--ath-color-chip-dismiss-fg);
+
+    &--disabled {
+      background: var(--ath-color-bg-alpha-disabled);
+      color: var(--ath-color-fg-disabled);
+    }
+
+    .ath-chip-dismiss__text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: var(--ath-font-family-primary);
+      font-size: var(--ath-font-size-chip);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-regular);
+      line-height: var(--ath-font-line-height-chip);
+    }
+    .ath-chip-dismiss__button {
+      display: flex;
+      background-color: transparent;
+      border: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+      border-radius: var(--ath-border-radius-chip-dismiss-button);
+      color: var(--ath-color-chip-dismiss-button-icon-default);
+      cursor: pointer;
+
+      &:hover:enabled {
+        background: var(--ath-color-chip-dismiss-button-bg-hovered);
+        color: var(--ath-color-icon-default);
+      }
+
+      &:active:enabled {
+        background: var(--ath-color-chip-dismiss-button-bg-pressed);
+        color: var(--ath-color-icon-default);
+      }
+
+      &:focus:enabled:not(:active),
+      &:focus-visible:enabled:not(:active) {
+        box-shadow: 0px 0px 0px 2px var(--ath-color-border-inverse-focus);
+        outline: none;
+      }
+
+      &:disabled {
+        border-radius: var(--ath-border-radius-xs);
+        background: var(--ath-color-bg-alpha-default);
+        color: var(--ath-color-fg-disabled);
+        cursor: none;
+      }
+    }
+  }
+}

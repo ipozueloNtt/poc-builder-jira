@@ -1,0 +1,181 @@
+﻿{
+  "root": {
+    "id": "ath-radio-button",
+    "name": "Radio Button",
+    "tag": "ath-radio-button",
+    "schemaVersion": "v1",
+    "status": "stable",
+    "category": "Componentes",
+    "description": "Control de seleccion excluyente para formularios, pensado para elegir una unica opcion dentro de un grupo.",
+    "owners": [
+      "design-system"
+    ],
+    "links": {
+      "figmaDocumentation": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012244-146346&m=dev",
+      "figmaComponentSet": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40006151-113538&m=dev",
+      "storybookTitle": "Componentes/Radio Button/Radio Button",
+      "storybookDocsId": "componentes-radio-button-radio-button--docs"
+    },
+    "source": {
+      "componentPath": "packages/stencil-library/src/components/radio-button/radio-button.tsx",
+      "storiesPath": "packages/stencil-library/src/components/radio-button/stories/radio-button.stories.tsx",
+      "readmePath": "packages/stencil-library/src/components/radio-button/readme.md"
+    },
+    "versioning": {
+      "since": "2.0.0",
+      "lastUpdated": "2026-03-02"
+    },
+    "sourceOfTruth": {
+      "code": "docs.json",
+      "storybook": "storybook source",
+      "foundations": "figma-console",
+      "extractedAt": "2026-03-02T10:36:09.105Z"
+    }
+  },
+  "code": {
+    "props": [
+      {
+        "name": "ariaLabel",
+        "attribute": "aria-label",
+        "type": "string",
+        "reflect": false,
+        "description": "Accessible text (aria-label)"
+      },
+      {
+        "name": "checked",
+        "attribute": "checked",
+        "type": "boolean",
+        "default": "false",
+        "reflect": false,
+        "description": "Indicates if it is checked by default"
+      },
+      {
+        "name": "disabled",
+        "attribute": "disabled",
+        "type": "boolean",
+        "default": "false",
+        "reflect": false,
+        "description": "Indicates if it is disabled"
+      },
+      {
+        "name": "label",
+        "attribute": "label",
+        "type": "string",
+        "reflect": false,
+        "description": "Label text"
+      },
+      {
+        "name": "name",
+        "attribute": "name",
+        "type": "string",
+        "reflect": false,
+        "description": "Indicates the name of the radioButton"
+      },
+      {
+        "name": "readonly",
+        "attribute": "readonly",
+        "type": "boolean",
+        "default": "false",
+        "reflect": false,
+        "description": "Indicates if it is read-only"
+      },
+      {
+        "name": "value",
+        "attribute": "value",
+        "type": "string",
+        "reflect": false,
+        "description": "Indicates the value of the radioButton"
+      }
+    ],
+    "events": [
+      {
+        "name": "athBlur",
+        "payload": "void"
+      },
+      {
+        "name": "athChange",
+        "payload": "{ checked: boolean; value: string; }"
+      },
+      {
+        "name": "athFocus",
+        "payload": "void"
+      }
+    ],
+    "methods": [
+      {
+        "name": "setFocus",
+        "signature": "setFocus() => Promise<void>"
+      },
+      {
+        "name": "setTabindex",
+        "signature": "setTabindex(tabIndex: any) => Promise<void>"
+      },
+      {
+        "name": "unCheck",
+        "signature": "unCheck() => Promise<void>"
+      }
+    ],
+    "slots": [],
+    "dependencies": {
+      "uses": [],
+      "usedBy": [
+        "ath-table-row"
+      ]
+    },
+    "accessibility": {
+      "role": "radio",
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter",
+        "Space"
+      ],
+      "ariaInputs": [
+        "aria-label",
+        "aria-checked",
+        "aria-disabled"
+      ]
+    }
+  },
+  "foundations": {
+    "variants": {
+      "state": [
+        "default",
+        "checked",
+        "focus",
+        "disabled",
+        "readonly"
+      ],
+      "checked": [
+        "false",
+        "true"
+      ],
+      "disabled": [
+        "false",
+        "true"
+      ],
+      "readonly": [
+        "false",
+        "true"
+      ]
+    },
+    "tokens": {
+      "sourceOfTruth": "figma-console",
+      "references": {
+        "borderDefault": "token:ath/color/radiobutton/border/default",
+        "borderReadonly": "token:ath/color/radiobutton/border/readonly",
+        "borderDisabled": "token:ath/color/radiobutton/border/disabled",
+        "bgDefault": "token:ath/color/radiobutton/bg/default",
+        "bgChecked": "token:ath/color/radiobutton/bg/checked",
+        "radius": "token:ath/border/radius/radiobutton",
+        "textDefault": "token:ath/color/fg/default"
+      }
+    },
+    "evidence": {
+      "figmaDocumentationNodeId": "40012244:146346",
+      "figmaInstanceNodeId": "40015250:48432",
+      "figmaCanonicalNodeId": "40006151:113538",
+      "extractedAt": "2026-03-02T10:36:09.105Z"
+    }
+  }
+}

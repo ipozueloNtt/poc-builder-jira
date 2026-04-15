@@ -1,0 +1,16 @@
+@use 'action-bar.mixins.scss' as mixins;
+
+:host {
+  .ath-action-bar {
+    display: inline-flex;
+
+    width: 100%;
+    align-items: center;
+    gap: var(--ath-spacing-action-bar-col-gap);
+
+    @include mixins.ath-action-bar-alignment(left, flex-start);
+    @include mixins.ath-action-bar-alignment(center, center);
+    @include mixins.ath-action-bar-alignment(right, flex-end);
+    @include mixins.ath-action-bar-alignment(justify, space-between);
+  }
+}

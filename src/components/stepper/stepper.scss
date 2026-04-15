@@ -1,0 +1,67 @@
+@use './stepper.theme.scss';
+
+:host {
+  .ath-stepper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ath-spacing-stepper-row-gap);
+
+    &_heading {
+      display: flex;
+      align-items: center;
+      gap: var(--ath-spacing-stepper-header-col-gap);
+      align-self: stretch;
+
+      &-icon {
+        display: flex;
+        padding: var(--ath-spacing-stepper-header-icon-padding-around);
+        align-items: center;
+        gap: 8px;
+
+        border-radius: var(--ath-border-radius-stepper-header-icon);
+        border: 1px solid var(--ath-color-stepper-header-icon-border);
+        background: var(--ath-color-stepper-header-icon-bg);
+      }
+
+      &-text {
+        flex: 1 0 0;
+        color: var(--ath-color-stepper-header-fg);
+        font-family: var(--ath-font-family-heading);
+        font-size: var(--ath-font-size-heading-4);
+        font-style: normal;
+        font-weight: var(--ath-font-weight-heading);
+        line-height: var(--ath-font-line-height-heading-4);
+      }
+    }
+
+    .ath-step {
+      &_group {
+        display: flex;
+        flex-direction: var(--stepper-direction);
+        align-items: flex-start;
+        gap: var(--group-gap);
+        align-self: stretch;
+
+        margin: 0px;
+        padding: 0px;
+      }
+
+      &_steps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--ath-spacing-stepper-step-group-row-gap);
+        align-self: stretch;
+      }
+
+      &_progressbar {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--ath-spacing-stepper-step-group-progress-bar-col-gap);
+        align-self: stretch;
+      }
+    }
+  }
+}

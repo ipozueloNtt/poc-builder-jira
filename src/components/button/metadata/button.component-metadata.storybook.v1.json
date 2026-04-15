@@ -1,0 +1,221 @@
+{
+  "stories": [
+    {
+      "id": "componentes-button--playground",
+      "name": "Playground",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "defaultSlot": "Continuar"
+      },
+      "controls": {
+        "color": {
+          "type": "select",
+          "options": [
+            "primary",
+            "secondary"
+          ]
+        },
+        "size": {
+          "type": "radio",
+          "options": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "clear": {
+          "type": "boolean"
+        },
+        "icon-position": {
+          "type": "radio",
+          "options": [
+            "none",
+            "left",
+            "right",
+            "icon-only"
+          ]
+        },
+        "icon": {
+          "type": "select"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "full-width": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "select",
+          "options": [
+            "button",
+            "submit",
+            "reset"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-button--color",
+      "name": "Color",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "defaultSlot": "Continuar"
+      },
+      "controls": {
+        "color": {
+          "type": "select",
+          "options": [
+            "primary",
+            "secondary"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-button--size",
+      "name": "Size",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "defaultSlot": "Continuar"
+      },
+      "controls": {
+        "size": {
+          "type": "radio",
+          "options": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-button--clear",
+      "name": "Clear",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "clear": true,
+        "defaultSlot": "Continuar"
+      },
+      "controls": {
+        "clear": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "id": "componentes-button--with-icon",
+      "name": "Icon Position",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "icon": "download",
+        "icon-position": "left",
+        "defaultSlot": "Continuar"
+      },
+      "controls": {
+        "icon-position": {
+          "type": "radio",
+          "options": [
+            "none",
+            "left",
+            "right",
+            "icon-only"
+          ]
+        },
+        "icon": {
+          "type": "select"
+        }
+      }
+    },
+    {
+      "id": "componentes-button--disabled",
+      "name": "Disabled",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "disabled": true,
+        "defaultSlot": "Continuar"
+      },
+      "controls": {
+        "disabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "id": "componentes-button--autofocus",
+      "name": "Autofocus",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "autofocus": true,
+        "defaultSlot": "Continuar"
+      },
+      "controls": {
+        "autofocus": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "id": "componentes-button--full-width",
+      "name": "Full Width",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "full-width": true,
+        "defaultSlot": "Continuar"
+      },
+      "controls": {
+        "full-width": {
+          "type": "boolean"
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-button--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "color": "primary",
+        "size": "md"
+      }
+    },
+    {
+      "name": "disabled",
+      "args": {
+        "disabled": true
+      }
+    },
+    {
+      "name": "icon-only",
+      "args": {
+        "icon-position": "icon-only",
+        "icon": "download",
+        "aria-label": "Descargar"
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "color",
+      "clear",
+      "size",
+      "iconPosition",
+      "icon",
+      "disabled",
+      "fullWidth",
+      "type"
+    ],
+    "missingProps": [],
+    "invalidArgs": []
+  }
+}

@@ -1,0 +1,110 @@
+@use 'utilities';
+@use 'tools';
+@use '../../sharedfc/input/button-comp/fc-button-comp' as buttonComp;
+@use './alert.theme.scss';
+
+@include buttonComp.fc-button-comp-vars;
+@include buttonComp.fc-button-comp;
+
+:host {
+  .ath-alert {
+    display: flex;
+    position: relative;
+    width: auto;
+    padding: var(--padding);
+    gap: var(--gap);
+    border: var(--ath-border-width-alert) solid var(--border-color);
+    background: var(--background-color);
+    color: var(--font-color);
+    border-radius: var(--border-radius);
+    flex-direction: var(--flex-direction);
+    align-items: var(--align-items);
+    font-family: var(--ath-font-family-body);
+    font-size: var(--ath-font-size-body-md);
+    font-style: normal;
+
+    &__page {
+      border: none;
+      border-bottom: var(--ath-border-width-alert) solid var(--border-color);
+    }
+
+    &__content {
+      display: flex;
+      align-items: flex-start;
+      align-self: stretch;
+      gap: var(--col-gap);
+    }
+
+    &__icon {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: var(--flex-direction);
+      align-items: flex-start;
+      justify-content: var(--justify-content);
+      gap: var(--row-gap);
+      flex: 1 0 0;
+      font-family: var(--ath-font-family-body);
+      font-size: var(--ath-font-size-body-md);
+      padding-top: var(--ath-spacing-alert-text-padding-top);
+      font-weight: var(--ath-font-weight-body-regular);
+      line-height: var(--ath-font-line-height-body);
+    }
+
+    &__title {
+      padding-top: var(--ath-spacing-alert-title-padding-top);
+      gap: var(--ath-spacing-alert-title-padding-top);
+      font-family: var(--ath-font-family-heading);
+      font-weight: var(--ath-font-weight-heading);
+      line-height: var(--ath-font-line-height-heading-6);
+      font-size: var(--ath-font-size-heading-6);
+      margin: 0;
+    }
+
+    &__description {
+      font-family: var(--ath-font-family-body);
+      font-size: var(--ath-font-size-body-md);
+      padding-top: var(--ath-spacing-alert-text-padding-top);
+      font-weight: var(--ath-font-weight-body-regular);
+      line-height: var(--ath-font-line-height-body);
+    }
+
+    &__close {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    &__button {
+      display: flex;
+      padding-right: var(--button-padding-right);
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+      align-self: stretch;
+    }
+
+    &__frame {
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 0;
+      gap: var(--row-gap);
+    }
+
+    &__container {
+      container-type: inline-size;
+    }
+  }
+
+  ::slotted(ath-button[slot='button']) {
+    width: var(--button-width);
+    display: flex;
+    justify-content: center;
+  }
+}

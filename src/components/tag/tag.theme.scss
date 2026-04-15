@@ -1,0 +1,71 @@
+@use 'sass:map';
+
+$color: (
+  'primary': primary,
+  'secondary': secondary,
+  'accent': accent,
+  'danger': danger,
+  'warning': warning,
+  'success': success,
+  'disabled': disabled,
+);
+
+$colorBackground: (
+  'primary': tag-bg-primary,
+  'secondary': tag-bg-secondary,
+  'accent': bg-accent-default,
+  'danger': bg-danger-default,
+  'warning': bg-warning-default,
+  'success': bg-success-default,
+  'disabled': bg-alpha-disabled,
+);
+
+$size: (
+  'sm': sm,
+  'md': md,
+  'lg': lg,
+);
+
+$sizePadding: (
+  'sm': sm,
+  'md': sm,
+  'lg': md,
+);
+
+$sizeFont: (
+  'sm': sm,
+  'md': md,
+  'lg': md,
+);
+
+@mixin athTagColor($color) {
+  .ath-tag--#{$color} {
+    background-color: var(--ath-color-#{map.get($colorBackground, $color)});
+    @if ($color == 'disabled') {
+      color: var(--ath-color-fg-disabled);
+    } @else {
+      color: var(--ath-color-tag-fg-#{$color});
+    }
+  }
+}
+@mixin athTagSize($size) {
+  .ath-tag--#{$size} {
+    font-size: var(--ath-font-size-comp-#{map.get($sizeFont, $size)});
+    padding: var(--ath-spacing-tag-padding-y-#{map.get($sizePadding, $size)}) var(--ath-spacing-tag-padding-x);
+    line-height: var(--ath-font-line-height-comp-#{map.get($sizeFont, $size)});
+  }
+}
+
+:host {
+  @include athTagColor('primary');
+  @include athTagColor('secondary');
+  @include athTagColor('accent');
+  @include athTagColor('danger');
+  @include athTagColor('warning');
+  @include athTagColor('success');
+  @include athTagColor('disabled');
+
+  @include athTagSize('sm');
+  @include athTagSize('md');
+  @include athTagSize('lg');
+}

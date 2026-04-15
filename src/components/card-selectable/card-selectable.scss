@@ -1,0 +1,95 @@
+@use './card-selectable.mixins' as mixins;
+@use './card-selectable.theme.scss';
+
+:host {
+  display: inline-grid;
+  width: 100%;
+  cursor: pointer;
+
+  .ath-card-selectable {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ath-spacing-card-gap);
+
+    border-radius: var(--ath-border-radius-card);
+    border: var(--card-border);
+    background: var(--ath-color-card-content-bg);
+    box-shadow: var(--card-shadow);
+
+    @include mixins.cardSize('sm');
+    @include mixins.cardSize('md');
+
+    &_content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--ath-spacing-card-content-header-body-row-gap);
+      align-self: stretch;
+    }
+
+    &_header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: var(--ath-spacing-card-selectable-indicator-col-gap);
+      align-self: stretch;
+    }
+
+    &_headlines {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--ath-spacing-card-header-row-gap);
+      flex: 1 0 0;
+    }
+
+    &_overline {
+      color: var(--overline-color);
+      font-family: var(--ath-font-family-overline);
+      font-size: var(--ath-font-size-overline);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-overline);
+      line-height: var(--ath-font-line-height-overline);
+    }
+
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--ath-spacing-card-header-titles-row-gap);
+      align-self: stretch;
+    }
+
+    &_headline {
+      color: var(--headline-color);
+      font-family: var(--ath-font-family-heading);
+      font-size: var(--ath-font-size-card-title);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-heading);
+      line-height: var(--ath-font-line-height-card-title);
+    }
+
+    &_subheadline {
+      color: var(--subheadline-color);
+      font-family: var(--ath-font-family-heading);
+      font-size: var(--ath-font-size-card-subtitle);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-heading);
+      line-height: var(--ath-font-line-height-card-subtitle);
+    }
+
+    &_check {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: var(--ath-sizing-checkbox-box-width);
+      height: var(--ath-sizing-checkbox-box-width);
+      border-radius: var(--ath-border-radius-checkbox);
+
+      border: var(--icon-border);
+      background: var(--icon-background);
+      color: var(--icon-color);
+    }
+  }
+}

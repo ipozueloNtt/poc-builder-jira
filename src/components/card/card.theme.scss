@@ -1,0 +1,22 @@
+:host {
+  .ath-card {
+    &--vertical {
+      --flex-direction: column;
+      --height: 100%;
+      --gap-footer: var(--ath-spacing-between-100);
+      &--fluid {
+        --ratio: 16/9;
+      }
+    }
+
+    &--horizontal {
+      --flex-direction: row;
+      --gap-footer: var(--ath-spacing-card-footer-col-gap);
+      --height: 100%;
+      --width: 100%;
+      &--fluid {
+        --ratio: 1/1;
+      }
+    }
+  }
+}

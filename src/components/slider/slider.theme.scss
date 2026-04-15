@@ -1,0 +1,48 @@
+:host {
+  .ath-slider__filler {
+    --background-handle: var(--ath-color-slider-controller-indicator-bg-default);
+    --background-trail: var(--ath-color-slider-controller-trail-bg-selected);
+    --cursor: pointer;
+    --handle-transform: translateX(-50%);
+
+    &--disabled {
+      --background-handle: var(--ath-color-slider-controller-indicator-bg-disabled);
+      --background-trail: var(--ath-color-slider-controller-trail-bg-disabled);
+      --cursor: default;
+    }
+
+    &--readonly {
+      --display-handle: none;
+      --cursor: default;
+    }
+
+    &--range {
+      --handle-transform: translateX(-87%);
+    }
+
+    &:has(.ath-slider-handle-range:active, .ath-slider-handle-range2:active):not(.ath-slider__filler--disabled, .ath-slider__filler--readonly) {
+      --background-handle: var(--ath-color-slider-controller-indicator-bg-pressed);
+      --background-trail: var(--ath-color-slider-controller-trail-bg-pressed);
+
+      .ath-slider-handle-range:active,
+      .ath-slider-handle-range2:active {
+        transition: box-shadow 0.5s;
+        outline: none;
+        box-shadow:
+          0px 0px 0px 2px var(--ath-color-drop-shadow-focus),
+          0px 0px 0px 4px var(--ath-color-slider-controller-indicator-bg-pressed);
+      }
+    }
+
+    &:has(.ath-slider-handle-range:focus, .ath-slider-handle-range2:focus):not(.ath-slider__filler--disabled, .ath-slider__filler--readonly) {
+      .ath-slider-handle-range:focus,
+      .ath-slider-handle-range2:focus {
+        transition: box-shadow 0.5s;
+        outline: none;
+        box-shadow:
+          0px 0px 0px 2px var(--ath-color-drop-shadow-focus),
+          0px 0px 0px 4px var(--ath-color-border-focus);
+      }
+    }
+  }
+}

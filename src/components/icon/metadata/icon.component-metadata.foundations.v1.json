@@ -1,0 +1,322 @@
+{
+  "references": [
+    {
+      "id": "figma:icon-docs-40015250:40828",
+      "version": "2026-02-20",
+      "scope": "content"
+    },
+    {
+      "id": "figma:icon-overview-40015250:40972",
+      "version": "2026-02-20",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:icon-use-40015250:40845",
+      "version": "2026-02-20",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:icon-accessibility-40015250:40829",
+      "version": "2026-02-20",
+      "scope": "a11y"
+    },
+    {
+      "id": "figma:icon-variable-defs-40015250:40828",
+      "version": "2026-02-20",
+      "scope": "tokens"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:eb/color/icon/default",
+      "token:eb/color/icon/primary/default",
+      "token:eb/color/icon/feedback/info",
+      "token:eb/color/icon/accent/default",
+      "token:eb/color/icon/feedback/danger",
+      "token:eb/color/icon/feedback/warning",
+      "token:eb/color/icon/feedback/success",
+      "token:eb/color/icon/inverse/default",
+      "token:eb/color/icon/disabled"
+    ],
+    "spacing": [],
+    "typography": [
+      "token:ath-font-size-icon-xs",
+      "token:ath-font-size-icon-sm",
+      "token:ath-font-size-icon-md",
+      "token:ath-font-size-icon-lg"
+    ],
+    "radius": [],
+    "shadow": [],
+    "motion": []
+  },
+  "tokenUsage": {
+    "design": {
+      "color": [
+        "token:eb/color/icon/default",
+        "token:eb/color/icon/primary/default",
+        "token:eb/color/icon/feedback/info",
+        "token:eb/color/icon/accent/default",
+        "token:eb/color/icon/feedback/danger",
+        "token:eb/color/icon/feedback/warning",
+        "token:eb/color/icon/feedback/success",
+        "token:eb/color/icon/inverse/default",
+        "token:eb/color/icon/disabled"
+      ],
+      "spacing": [],
+      "typography": [
+        "token:eb/font/family/primary"
+      ],
+      "radius": [],
+      "shadow": [],
+      "motion": []
+    },
+    "runtime": {
+      "color": [
+        "token:ath-color-icon-default",
+        "token:ath-color-icon-primary-default",
+        "token:ath-color-icon-feedback-info",
+        "token:ath-color-icon-accent-default",
+        "token:ath-color-icon-feedback-danger",
+        "token:ath-color-icon-feedback-warning",
+        "token:ath-color-icon-feedback-success",
+        "token:ath-color-icon-inverse-default",
+        "token:ath-color-icon-disabled"
+      ],
+      "spacing": [],
+      "typography": [
+        "token:ath-font-size-icon-xs",
+        "token:ath-font-size-icon-sm",
+        "token:ath-font-size-icon-md",
+        "token:ath-font-size-icon-lg"
+      ],
+      "radius": [],
+      "shadow": [],
+      "motion": []
+    }
+  },
+  "mappings": {
+    "tokenToCssVar": [
+      {
+        "token": "token:ath-font-size-icon-xs",
+        "cssVar": "--ath-font-size-icon-xs"
+      },
+      {
+        "token": "token:ath-font-size-icon-sm",
+        "cssVar": "--ath-font-size-icon-sm"
+      },
+      {
+        "token": "token:ath-font-size-icon-md",
+        "cssVar": "--ath-font-size-icon-md"
+      },
+      {
+        "token": "token:ath-font-size-icon-lg",
+        "cssVar": "--ath-font-size-icon-lg"
+      },
+      {
+        "token": "token:ath-color-icon-default",
+        "cssVar": "--ath-color-icon-default"
+      },
+      {
+        "token": "token:ath-color-icon-primary-default",
+        "cssVar": "--ath-color-icon-primary-default"
+      },
+      {
+        "token": "token:ath-color-icon-feedback-info",
+        "cssVar": "--ath-color-icon-feedback-info"
+      },
+      {
+        "token": "token:ath-color-icon-accent-default",
+        "cssVar": "--ath-color-icon-accent-default"
+      },
+      {
+        "token": "token:ath-color-icon-feedback-danger",
+        "cssVar": "--ath-color-icon-feedback-danger"
+      },
+      {
+        "token": "token:ath-color-icon-feedback-warning",
+        "cssVar": "--ath-color-icon-feedback-warning"
+      },
+      {
+        "token": "token:ath-color-icon-feedback-success",
+        "cssVar": "--ath-color-icon-feedback-success"
+      },
+      {
+        "token": "token:ath-color-icon-inverse-default",
+        "cssVar": "--ath-color-icon-inverse-default"
+      },
+      {
+        "token": "token:ath-color-icon-disabled",
+        "cssVar": "--ath-color-icon-disabled"
+      }
+    ],
+    "coverage": {
+      "missingInRuntime": [],
+      "missingInDesign": []
+    }
+  },
+  "semanticVariants": [
+    {
+      "axis": "size",
+      "option": "xs",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-icon-xs"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "sm",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-icon-sm"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "md",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-icon-md"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "lg",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-icon-lg"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "success",
+      "mode": "light",
+      "tokens": [
+        "token:eb/color/icon/feedback/success"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "error",
+      "mode": "light",
+      "tokens": [
+        "token:eb/color/icon/feedback/danger"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "warning",
+      "mode": "light",
+      "tokens": [
+        "token:eb/color/icon/feedback/warning"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "info",
+      "mode": "light",
+      "tokens": [
+        "token:eb/color/icon/feedback/info"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "inverse",
+      "mode": "dark",
+      "tokens": [
+        "token:eb/color/icon/inverse/default"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "inline",
+    "regionAffinity": [
+      "content",
+      "list-item",
+      "toolbar"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": true,
+    "keyboardModel": "follows-parent-interaction-model",
+    "focusOrder": "natural"
+  },
+  "plannerHints": {
+    "priority": "medium",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "content",
+      "list-item"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light",
+      "dark"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "icon.size.xs",
+        "token": "token:ath-font-size-icon-xs"
+      },
+      {
+        "target": "icon.size.sm",
+        "token": "token:ath-font-size-icon-sm"
+      },
+      {
+        "target": "icon.size.md",
+        "token": "token:ath-font-size-icon-md"
+      },
+      {
+        "target": "icon.size.lg",
+        "token": "token:ath-font-size-icon-lg"
+      },
+      {
+        "target": "icon.color.default",
+        "token": "token:eb/color/icon/default",
+        "mode": "light"
+      },
+      {
+        "target": "icon.color.primary",
+        "token": "token:eb/color/icon/primary/default",
+        "mode": "light"
+      },
+      {
+        "target": "icon.color.info",
+        "token": "token:eb/color/icon/feedback/info",
+        "mode": "light"
+      },
+      {
+        "target": "icon.color.accent",
+        "token": "token:eb/color/icon/accent/default",
+        "mode": "light"
+      },
+      {
+        "target": "icon.color.error",
+        "token": "token:eb/color/icon/feedback/danger",
+        "mode": "light"
+      },
+      {
+        "target": "icon.color.warning",
+        "token": "token:eb/color/icon/feedback/warning",
+        "mode": "light"
+      },
+      {
+        "target": "icon.color.success",
+        "token": "token:eb/color/icon/feedback/success",
+        "mode": "light"
+      },
+      {
+        "target": "icon.color.inverse",
+        "token": "token:eb/color/icon/inverse/default",
+        "mode": "dark"
+      },
+      {
+        "target": "icon.color.disabled",
+        "token": "token:eb/color/icon/disabled",
+        "mode": "light"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+@use 'utilities';
+@use 'tools';
+@use './avatar.theme.scss' as theme;
+
+:host {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  .ath-avatar {
+    @include theme.size('xs');
+    @include theme.size('sm');
+    @include theme.size('md');
+    @include theme.size('lg');
+    @include theme.type('default');
+    @include theme.type('initials');
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--ath-border-radius-avatar);
+    font-family: var(--ath-font-family-primary);
+    font-weight: var(--ath-font-weight-heading);
+    overflow: hidden;
+
+    &--image {
+      background: var(--ath-color-bg-secondary-subtlest-default);
+    }
+
+    & .ath-avatar--initials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--ath-color-avatar-initials-fg);
+    }
+  }
+}

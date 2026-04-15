@@ -1,0 +1,11 @@
+@mixin dividerColor($color) {
+  .ath-divider.ath-divider--color-#{$color} {
+    border-color: var(--ath-color-border-alpha-#{$color}-default);
+  }
+}
+
+:host {
+  @include dividerColor('bold');
+  @include dividerColor('bolder');
+  @include dividerColor('boldest');
+}

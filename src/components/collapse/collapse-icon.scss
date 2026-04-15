@@ -1,0 +1,15 @@
+:host(.ath-collapse-icon) {
+  display: flex;
+}
+
+.ath-collapse-icon {
+  &__chevron {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  :host(&--rotate) {
+    .ath-collapse-icon__chevron {
+      transform: rotate(180deg);
+    }
+  }
+}

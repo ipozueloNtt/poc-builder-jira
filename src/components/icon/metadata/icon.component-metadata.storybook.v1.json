@@ -1,0 +1,132 @@
+{
+  "stories": [
+    {
+      "id": "componentes-icon--playground",
+      "name": "Playground",
+      "args": {
+        "size": "sm",
+        "color": "default",
+        "icon": "add"
+      },
+      "controls": {
+        "size": {
+          "type": "radio",
+          "options": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "icon": {
+          "type": "select"
+        },
+        "color": {
+          "type": "radio",
+          "options": [
+            "default",
+            "primary",
+            "info",
+            "accent",
+            "error",
+            "warning",
+            "success",
+            "inverse",
+            "disabled",
+            "inherit"
+          ]
+        },
+        "aria-label": {
+          "type": "text"
+        },
+        "aria-labelledby": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-icon--size",
+      "name": "Size",
+      "args": {
+        "size": "md",
+        "color": "default",
+        "icon": "add"
+      },
+      "controls": {
+        "size": {
+          "type": "radio",
+          "options": [
+            "xs",
+            "sm",
+            "md",
+            "lg"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-icon--color",
+      "name": "Color",
+      "args": {
+        "size": "md",
+        "color": "primary",
+        "icon": "add"
+      },
+      "controls": {
+        "color": {
+          "type": "radio",
+          "options": [
+            "default",
+            "primary",
+            "info",
+            "accent",
+            "error",
+            "warning",
+            "success",
+            "inverse",
+            "disabled",
+            "inherit"
+          ]
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-icon--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "icon": "add",
+        "size": "md",
+        "color": "default"
+      }
+    },
+    {
+      "name": "feedback-success",
+      "args": {
+        "icon": "check",
+        "size": "md",
+        "color": "success"
+      }
+    },
+    {
+      "name": "decorative",
+      "args": {
+        "icon": "add",
+        "size": "md",
+        "color": "inherit"
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "icon",
+      "size",
+      "color",
+      "ariaLabel",
+      "ariaLabelledby"
+    ],
+    "missingProps": [],
+    "invalidArgs": []
+  }
+}

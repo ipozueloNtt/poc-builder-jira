@@ -1,0 +1,33 @@
+@use './button.mixins' as mixins;
+
+:host {
+  --border-radius: var(--ath-border-radius-button);
+  --border-width: var(--ath-border-width-button);
+  --font-weight: var(--ath-font-weight-medium);
+
+  @include mixins.buttonSize('xs');
+  @include mixins.buttonSize('sm');
+  @include mixins.buttonSize('md');
+  @include mixins.buttonSize('lg');
+}
+
+@include mixins.buttonTheme('solid', 'primary');
+@include mixins.buttonTheme('solid', 'secondary');
+@include mixins.buttonTheme('clear', 'primary');
+@include mixins.buttonTheme('clear', 'secondary');
+
+:host {
+  .ath-button--disabled {
+    --color: var(--ath-color-button-fg-disabled);
+
+    &.ath-button--solid {
+      --background-color: var(--ath-color-button-bg-disabled);
+      --border-color: var(--ath-color-button-border-disabled);
+    }
+
+    &.ath-button--clear {
+      --background-color: transparent;
+      --border-color: none;
+    }
+  }
+}

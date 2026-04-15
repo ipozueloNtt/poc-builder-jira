@@ -1,0 +1,841 @@
+{
+  "component": {
+    "tag": "ath-badge",
+    "name": "Badge",
+    "type": "display",
+    "category": "atoms",
+    "status": "stable",
+    "version": "v1",
+    "since": "2.0.0",
+    "filePath": "src/components/badge/badge.tsx",
+    "encapsulation": "shadow",
+    "description": "Indicador visual para notificaciones, estados o cantidades sobre un elemento contenedor.",
+    "links": {
+      "storybook": "https://aletehia.vercel.app/?path=/docs/componentes-badge--docs",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json",
+      "figma": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012000-9245&m=dev"
+    }
+  },
+  "usage": {
+    "primaryIntent": "Mostrar un indicador contextual de estado, notificacion o conteo sobre otro elemento.",
+    "useCases": [
+      "Mostrar mensajes no leidos o notificaciones pendientes.",
+      "Representar estados semanticos sobre un elemento existente."
+    ],
+    "antiPatterns": [
+      {
+        "scenario": "Usar badge como unica senal semantica",
+        "reason": "Puede fallar en accesibilidad por dependencia de color",
+        "alternative": "Complementar con texto o iconografia accesible"
+      }
+    ]
+  },
+  "variants": {
+    "color": {
+      "options": [
+        "accent",
+        "danger",
+        "success",
+        "warning",
+        "info",
+        "disabled"
+      ],
+      "default": "accent",
+      "prop": "color"
+    },
+    "size": {
+      "options": [
+        "not-supported"
+      ],
+      "default": "not-supported",
+      "prop": "size"
+    },
+    "state": {
+      "options": [
+        "default"
+      ],
+      "default": "default",
+      "prop": "state"
+    },
+    "disabled": {
+      "options": [
+        "color=disabled"
+      ],
+      "default": "color=disabled",
+      "prop": "color"
+    },
+    "loading": {
+      "options": [
+        "not-supported"
+      ],
+      "default": "not-supported",
+      "prop": "loading"
+    },
+    "type": {
+      "options": [
+        "dot",
+        "numeric"
+      ],
+      "default": "numeric",
+      "prop": "type"
+    },
+    "position": {
+      "options": [
+        "top-right",
+        "right"
+      ],
+      "default": "top-right",
+      "prop": "position"
+    }
+  },
+  "composition": {
+    "layoutRole": "inline",
+    "allowedChildren": [
+      "*"
+    ],
+    "layoutRules": [
+      {
+        "rule": "Renderizar sobre un unico elemento contenedor en slot por defecto.",
+        "reason": "Garantiza posicionamiento consistente del indicador."
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "\"accent\" | \"danger\" | \"disabled\" | \"info\" | \"success\" | \"warning\"",
+      "complexType": {
+        "original": "BadgeColorTypes",
+        "resolved": "\"accent\" | \"danger\" | \"disabled\" | \"info\" | \"success\" | \"warning\"",
+        "references": {
+          "BadgeColorTypes": {
+            "location": "import",
+            "path": "./badge.model",
+            "id": "src/components/badge/badge.model.ts::BadgeColorTypes",
+            "referenceLocation": "BadgeColorTypes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "color",
+      "attribute": "color",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "Badge color accompanying the purpose of the message",
+      "description": "Badge color accompanying the purpose of the message",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "BADGE_DEFAULT_COLOR"
+        }
+      ],
+      "default": "BADGE_DEFAULT_COLOR",
+      "values": [
+        {
+          "value": "accent",
+          "type": "string"
+        },
+        {
+          "value": "danger",
+          "type": "string"
+        },
+        {
+          "value": "disabled",
+          "type": "string"
+        },
+        {
+          "value": "info",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "distanceX",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "distance-x",
+      "attribute": "distance-x",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Custom horizontal distance of the badge from its default position",
+      "description": "Custom horizontal distance of the badge from its default position",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "distanceY",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "distance-y",
+      "attribute": "distance-y",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Custom vertical distance of the badge from its default position",
+      "description": "Custom vertical distance of the badge from its default position",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "label",
+      "type": "any",
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "label",
+      "attribute": "label",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Accessibility label describing the message",
+      "description": "Accessibility label describing the message",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "max",
+      "attribute": "max",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "Value from which a + will be added once exceeded by the \"value\"",
+      "description": "Value from which a + will be added once exceeded by the \"value\"",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "MAX_VALUE"
+        }
+      ],
+      "default": "MAX_VALUE",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "position",
+      "type": "\"right\" | \"top-right\"",
+      "complexType": {
+        "original": "BadgePositions",
+        "resolved": "\"right\" | \"top-right\"",
+        "references": {
+          "BadgePositions": {
+            "location": "import",
+            "path": "./badge.model",
+            "id": "src/components/badge/badge.model.ts::BadgePositions",
+            "referenceLocation": "BadgePositions"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "position",
+      "attribute": "position",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Positioning of the badge relative to the slot",
+      "description": "Positioning of the badge relative to the slot",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "right",
+          "type": "string"
+        },
+        {
+          "value": "top-right",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "type",
+      "type": "\"dot\" | \"numeric\"",
+      "complexType": {
+        "original": "BadgeTypes",
+        "resolved": "\"dot\" | \"numeric\"",
+        "references": {
+          "BadgeTypes": {
+            "location": "import",
+            "path": "./badge.model",
+            "id": "src/components/badge/badge.model.ts::BadgeTypes",
+            "referenceLocation": "BadgeTypes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "type",
+      "attribute": "type",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "The badge can display a value or be a decorative element",
+      "description": "The badge can display a value or be a decorative element",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "BADGE_DEFAULT_TYPE"
+        }
+      ],
+      "default": "BADGE_DEFAULT_TYPE",
+      "values": [
+        {
+          "value": "dot",
+          "type": "string"
+        },
+        {
+          "value": "numeric",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "value",
+      "attribute": "value",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Value displayed within the badge if it is \"numeric\"",
+      "description": "Value displayed within the badge if it is \"numeric\"",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    }
+  ],
+  "events": [],
+  "methods": [],
+  "listeners": [],
+  "slots": [
+    {
+      "name": "default",
+      "docs": "Elemento contenedor sobre el que se superpone el badge."
+    }
+  ],
+  "childrenPolicy": {
+    "mode": "direct-restricted",
+    "minChildren": 1,
+    "maxChildren": 1,
+    "allowTextNodes": false
+  },
+  "contentModel": {
+    "kind": "mixed",
+    "allowedTextFormats": [
+      "html"
+    ],
+    "allowedInlineComponents": []
+  },
+  "parts": [],
+  "styles": [],
+  "dependencies": [],
+  "dependents": [
+    "ath-menu-horizontal",
+    "ath-menu-lateral"
+  ],
+  "variantPropBindings": {
+    "color": {
+      "prop": "color",
+      "mapping": {
+        "accent": "accent",
+        "danger": "danger",
+        "success": "success",
+        "warning": "warning",
+        "info": "info",
+        "disabled": "disabled"
+      }
+    },
+    "type": {
+      "prop": "type",
+      "mapping": {
+        "dot": "dot",
+        "numeric": "numeric"
+      }
+    },
+    "position": {
+      "prop": "position",
+      "mapping": {
+        "right": "right",
+        "top-right": "top-right"
+      }
+    }
+  },
+  "storybook": {
+    "stories": [
+      {
+        "id": "componentes-badge--playground",
+        "name": "Playground",
+        "args": {
+          "color": "accent",
+          "type": "numeric",
+          "value": 5,
+          "label": "Mensajes pendientes",
+          "defaultSlot": "<ath-button>Button</ath-button>"
+        },
+        "controls": {
+          "color": {
+            "type": "radio",
+            "options": [
+              "accent",
+              "danger",
+              "warning",
+              "success",
+              "info",
+              "disabled"
+            ]
+          },
+          "type": {
+            "type": "radio",
+            "options": [
+              "dot",
+              "numeric"
+            ]
+          },
+          "value": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "position": {
+            "type": "radio",
+            "options": [
+              "right",
+              "top-right"
+            ]
+          },
+          "distance-x": {
+            "type": "number"
+          },
+          "distance-y": {
+            "type": "number"
+          },
+          "label": {
+            "type": "text"
+          }
+        }
+      },
+      {
+        "id": "componentes-badge--type",
+        "name": "Type",
+        "args": {
+          "type": "numeric",
+          "color": "accent",
+          "value": 5,
+          "defaultSlot": "<ath-button>Button</ath-button>"
+        },
+        "controls": {
+          "type": {
+            "type": "radio",
+            "options": [
+              "dot",
+              "numeric"
+            ]
+          }
+        }
+      },
+      {
+        "id": "componentes-badge--color",
+        "name": "Color",
+        "args": {
+          "type": "numeric",
+          "color": "accent",
+          "value": 5,
+          "defaultSlot": "<ath-button>Button</ath-button>"
+        },
+        "controls": {
+          "color": {
+            "type": "radio",
+            "options": [
+              "accent",
+              "danger",
+              "warning",
+              "success",
+              "info",
+              "disabled"
+            ]
+          }
+        }
+      },
+      {
+        "id": "componentes-badge--position",
+        "name": "Position",
+        "args": {
+          "position": "top-right",
+          "type": "numeric",
+          "color": "accent",
+          "value": 5,
+          "defaultSlot": "<ath-button>Button</ath-button>"
+        },
+        "controls": {
+          "position": {
+            "type": "radio",
+            "options": [
+              "right",
+              "top-right"
+            ]
+          }
+        }
+      }
+    ],
+    "canonicalStoryId": "componentes-badge--docs",
+    "documentedStates": [
+      {
+        "name": "numeric",
+        "args": {
+          "type": "numeric",
+          "value": 5
+        }
+      },
+      {
+        "name": "dot",
+        "args": {
+          "type": "dot"
+        }
+      },
+      {
+        "name": "disabled-color",
+        "args": {
+          "color": "disabled"
+        }
+      }
+    ],
+    "argValidation": {
+      "coveredProps": [
+        "color",
+        "distanceX",
+        "distanceY",
+        "label",
+        "max",
+        "position",
+        "type",
+        "value"
+      ],
+      "missingProps": [],
+      "invalidArgs": []
+    }
+  },
+  "foundations": {
+    "references": [
+      {
+        "id": "figma:badge-docs-40012000:9245",
+        "version": "2026-02-19",
+        "scope": "content"
+      },
+      {
+        "id": "figma:badge-component-set-40000448:1841",
+        "version": "2026-02-19",
+        "scope": "layout"
+      },
+      {
+        "id": "figma:badge-design-tokens",
+        "version": "2026-02-19",
+        "scope": "tokens"
+      },
+      {
+        "id": "figma:badge-a11y-guidelines",
+        "version": "2026-02-19",
+        "scope": "a11y"
+      }
+    ],
+    "tokensUsed": {
+      "color": [
+        "token:ath-color-bg-accent-default",
+        "token:ath-color-bg-danger-default",
+        "token:ath-color-bg-success-default",
+        "token:ath-color-bg-warning-default",
+        "token:ath-color-bg-info-default",
+        "token:ath-color-bg-alpha-disabled"
+      ],
+      "spacing": [
+        "token:ath-spacing-badge-padding-y",
+        "token:ath-spacing-badge-padding-x",
+        "token:ath-spacing-badge-item-right-gap"
+      ],
+      "typography": [
+        "token:ath/color/text/--default"
+      ],
+      "radius": [
+        "token:ath-border-radius-circle"
+      ],
+      "shadow": [],
+      "motion": []
+    },
+    "semanticVariants": [
+      {
+        "axis": "color",
+        "option": "accent",
+        "mode": "light",
+        "tokens": [
+          "token:ath-color-bg-accent-default"
+        ]
+      },
+      {
+        "axis": "color",
+        "option": "danger",
+        "mode": "light",
+        "tokens": [
+          "token:ath-color-bg-danger-default"
+        ]
+      },
+      {
+        "axis": "type",
+        "option": "dot",
+        "mode": "light",
+        "tokens": [
+          "token:ath-sizing-badge-dot-width",
+          "token:ath-sizing-badge-dot-height"
+        ]
+      },
+      {
+        "axis": "type",
+        "option": "numeric",
+        "mode": "light",
+        "tokens": [
+          "token:ath-spacing-badge-padding-y",
+          "token:ath-spacing-badge-padding-x"
+        ]
+      }
+    ],
+    "layoutSignals": {
+      "layoutRole": "inline",
+      "regionAffinity": [
+        "toolbar",
+        "list-item",
+        "content"
+      ]
+    },
+    "accessibilitySignals": {
+      "requiresLabel": true,
+      "keyboardModel": "non-focusable-indicator",
+      "focusOrder": "natural"
+    },
+    "plannerHints": {
+      "priority": "medium",
+      "containerEligibility": false,
+      "regionAffinity": [
+        "toolbar",
+        "list-item",
+        "content"
+      ]
+    },
+    "theming": {
+      "modes": [
+        "light"
+      ],
+      "defaultMode": "light",
+      "tokenBindings": [
+        {
+          "target": "root.borderRadius",
+          "token": "token:ath-border-radius-circle"
+        },
+        {
+          "target": "root.paddingY",
+          "token": "token:ath-spacing-badge-padding-y"
+        },
+        {
+          "target": "root.paddingX",
+          "token": "token:ath-spacing-badge-padding-x"
+        },
+        {
+          "target": "variant.color.accent.background",
+          "token": "token:ath-color-bg-accent-default",
+          "variantAxis": "color",
+          "variantOption": "accent"
+        },
+        {
+          "target": "variant.color.disabled.background",
+          "token": "token:ath-color-bg-alpha-disabled",
+          "variantAxis": "color",
+          "variantOption": "disabled"
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "name": "Playground",
+      "code": "<ath-badge color=\"accent\" type=\"numeric\" value=\"5\"><ath-button>Button</ath-button></ath-badge>",
+      "args": {
+        "color": "accent",
+        "type": "numeric",
+        "value": 5
+      },
+      "storyId": "componentes-badge--playground"
+    }
+  ],
+  "runtime": {
+    "planner": {
+      "layoutRole": "inline",
+      "regionAffinity": [
+        "toolbar",
+        "list-item",
+        "content"
+      ],
+      "priority": "medium"
+    },
+    "resolver": {
+      "allowedRegions": [
+        "toolbar",
+        "list-item",
+        "content"
+      ],
+      "defaultRegion": "content"
+    },
+    "assembler": {
+      "nodeType": "component",
+      "maxDepth": 1,
+      "deterministicOrder": true
+    },
+    "validator": {
+      "schemaRefs": [
+        "https://aletheia.dev/schemas/ds/component-metadata.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.code.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.storybook.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.foundations.v1.schema.json"
+      ],
+      "strict": true
+    }
+  },
+  "meta": {
+    "schemaVersion": "v1",
+    "generatedAt": "2026-02-19T14:00:54.873Z",
+    "sources": {
+      "stencilDocgen": "packages/stencil-library/docs.json",
+      "figma": "figma-mcp + figma-design-doc-to-operational-metadata (badge docs node 40012000:9245)",
+      "storybook": "storybook-static/index.json + stories source"
+    },
+    "ownership": {
+      "usage": "design-agent",
+      "variants": "design-agent",
+      "props": "stencil-docgen",
+      "events": "stencil-docgen",
+      "composition": "human",
+      "storybook": "human",
+      "styling": "build-extractor",
+      "foundations": "reconciler",
+      "runtime": "human"
+    }
+  },
+  "docs": "Migrado desde schema legacy badge.metadata.json a schema modular v1.",
+  "docsTags": [
+    {
+      "name": "migration",
+      "text": "legacy-to-v1"
+    },
+    {
+      "name": "figma-node",
+      "text": "40012000:9245"
+    }
+  ]
+}

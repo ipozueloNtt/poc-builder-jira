@@ -1,0 +1,57 @@
+@use 'utilities';
+@use 'tools';
+@use './button-link.mixins.scss' as mixins;
+
+:host {
+  display: inline-flex;
+  user-select: none;
+
+  .ath-button-link--container {
+    display: inline-flex;
+    font-family: var(--ath-font-family-primary);
+    font-size: var(--font-size);
+    font-weight: var(--ath-font-weight-medium);
+    line-height: var(--ath-font-line-height-body);
+    border-radius: var(--ath-border-radius-2xs);
+    outline: none;
+    transition: background 0.5s;
+    cursor: pointer;
+
+    .ath-button-link__inner {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--ath-spacing-between-100);
+    }
+
+    &.ath-button-link--disabled {
+      box-shadow: none;
+      color: var(--ath-color-fg-disabled);
+      pointer-events: none;
+    }
+  }
+  &[disabled]:not([disabled='false']),
+  &[disabled='true'] {
+    cursor: not-allowed;
+  }
+}
+
+:host(:focus:not(:active)),
+:host(:focus-visible:not(:active)) {
+  outline: none;
+  .ath-button-link--container {
+    outline: 2px solid var(--ath-color-border-focus);
+    outline-offset: 2px;
+    color: var(--ath-color-fg-primary-default);
+    .ath-button-link__inner {
+      text-decoration-line: underline;
+    }
+  }
+}
+
+@include mixins.buttonLinkSize('sm');
+@include mixins.buttonLinkSize('md');
+@include mixins.buttonLinkSize('lg');
+
+@include mixins.buttonLinkTheme('primary');
+@include mixins.buttonLinkTheme('secondary');

@@ -1,0 +1,5 @@
+@mixin buttonExpandableSize($size) {
+  .ath-button-expandable--#{$size} {
+    --font-size: var(--ath-font-size-body-#{$size});
+  }
+}

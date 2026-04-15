@@ -1,0 +1,237 @@
+{
+  "references": [
+    {
+      "id": "figma:documentation-link-40012383:214924",
+      "version": "2026-02-19",
+      "scope": "content"
+    },
+    {
+      "id": "figma:documentation-link-size-example-40012481:26086",
+      "version": "2026-02-19",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:documentation-link-state-example-40012481:26888",
+      "version": "2026-02-19",
+      "scope": "a11y"
+    },
+    {
+      "id": "figma:documentation-link-token-snapshot",
+      "version": "2026-02-19",
+      "scope": "tokens"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:ath/color/fg/primary/default",
+      "token:ath/color/fg/primary/hovered",
+      "token:ath/color/icon/primary/default",
+      "token:ath/color/icon/primary/hovered",
+      "token:ath/color/border/focus"
+    ],
+    "spacing": [
+      "token:ath/spacing/between/100"
+    ],
+    "typography": [
+      "token:ath/font/family/primary",
+      "token:ath/font/size/body/sm",
+      "token:ath/font/size/body/md",
+      "token:ath/font/weight/medium"
+    ],
+    "radius": [],
+    "shadow": [
+      "token:ath/box-shadow/drop/clear/focus"
+    ],
+    "motion": []
+  },
+  "tokenUsage": {
+    "design": {
+      "color": [
+        "token:ath/color/fg/primary/default",
+        "token:ath/color/fg/primary/hovered",
+        "token:ath/color/icon/primary/default",
+        "token:ath/color/icon/primary/hovered",
+        "token:ath/color/border/focus"
+      ],
+      "spacing": [
+        "token:ath/spacing/between/100"
+      ],
+      "typography": [
+        "token:ath/font/family/primary",
+        "token:ath/font/size/body/sm",
+        "token:ath/font/size/body/md",
+        "token:ath/font/weight/medium"
+      ],
+      "radius": [],
+      "shadow": [
+        "token:ath/box-shadow/drop/clear/focus"
+      ],
+      "motion": []
+    },
+    "runtime": {
+      "color": [],
+      "spacing": [],
+      "typography": [],
+      "radius": [],
+      "shadow": [],
+      "motion": []
+    }
+  },
+  "mappings": {
+    "tokenToCssVar": [],
+    "coverage": {
+      "missingInRuntime": [
+        "token:ath/color/fg/primary/default",
+        "token:ath/color/fg/primary/hovered",
+        "token:ath/color/icon/primary/default",
+        "token:ath/color/icon/primary/hovered",
+        "token:ath/color/border/focus",
+        "token:ath/box-shadow/drop/clear/focus",
+        "token:ath/spacing/between/100",
+        "token:ath/font/family/primary",
+        "token:ath/font/size/body/sm",
+        "token:ath/font/size/body/md",
+        "token:ath/font/weight/medium"
+      ],
+      "missingInDesign": []
+    }
+  },
+  "semanticVariants": [
+    {
+      "axis": "state",
+      "option": "default",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/fg/primary/default",
+        "token:ath/color/icon/primary/default"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "hover",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/fg/primary/hovered",
+        "token:ath/color/icon/primary/hovered"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "focus",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/border/focus",
+        "token:ath/box-shadow/drop/clear/focus"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "sm",
+      "mode": "light",
+      "tokens": [
+        "token:ath/font/size/body/sm"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "md",
+      "mode": "light",
+      "tokens": [
+        "token:ath/font/size/body/md"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "inline",
+    "regionAffinity": [
+      "content",
+      "list-item"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": true,
+    "keyboardModel": "enter-activation",
+    "focusOrder": "natural"
+  },
+  "plannerHints": {
+    "priority": "medium",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "content",
+      "list-item"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "root.color",
+        "token": "token:ath/color/fg/primary/default",
+        "mode": "light",
+        "state": "default"
+      },
+      {
+        "target": "root.color",
+        "token": "token:ath/color/fg/primary/hovered",
+        "mode": "light",
+        "state": "hover"
+      },
+      {
+        "target": "icon.color",
+        "token": "token:ath/color/icon/primary/default",
+        "mode": "light",
+        "state": "default"
+      },
+      {
+        "target": "icon.color",
+        "token": "token:ath/color/icon/primary/hovered",
+        "mode": "light",
+        "state": "hover"
+      },
+      {
+        "target": "root.focusRing",
+        "token": "token:ath/color/border/focus",
+        "mode": "light",
+        "state": "focus"
+      },
+      {
+        "target": "root.focusShadow",
+        "token": "token:ath/box-shadow/drop/clear/focus",
+        "mode": "light",
+        "state": "focus"
+      },
+      {
+        "target": "root.gap",
+        "token": "token:ath/spacing/between/100",
+        "mode": "light"
+      },
+      {
+        "target": "root.fontFamily",
+        "token": "token:ath/font/family/primary",
+        "mode": "light"
+      },
+      {
+        "target": "root.fontWeight",
+        "token": "token:ath/font/weight/medium",
+        "mode": "light"
+      },
+      {
+        "target": "root.fontSize",
+        "token": "token:ath/font/size/body/sm",
+        "mode": "light",
+        "variantAxis": "size",
+        "variantOption": "sm"
+      },
+      {
+        "target": "root.fontSize",
+        "token": "token:ath/font/size/body/md",
+        "mode": "light",
+        "variantAxis": "size",
+        "variantOption": "md"
+      }
+    ]
+  }
+}

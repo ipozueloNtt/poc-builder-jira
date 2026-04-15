@@ -1,0 +1,14 @@
+@use './button-expandable.mixins' as mixins;
+
+:host {
+  --border-radius: var(--ath-border-radius-2xs);
+  --color: var(--ath-color-fg-default);
+  --font-family: var(--ath-font-family-primary);
+  --font-weight: var(--ath-font-weight-medium);
+  --line-height: var(--ath-font-line-height-body);
+  --col-gap: var(--ath-spacing-between-100);
+
+  @include mixins.buttonExpandableSize('sm');
+  @include mixins.buttonExpandableSize('md');
+  @include mixins.buttonExpandableSize('lg');
+}

@@ -1,0 +1,109 @@
+@use './section-title.theme.scss';
+
+:host {
+  display: inline-flex;
+  position: relative;
+
+  .ath-section-title {
+    display: inline-flex;
+    align-items: center;
+    padding-left: var(--ath-spacing-section-title-padding-left);
+
+    &--hasLabel {
+      .ath-section-title--slot {
+        display: none;
+      }
+    }
+
+    &--content {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &--overline {
+      margin: 0;
+      font-family: var(--ath-font-family-overline);
+      font-size: var(--ath-font-size-overline);
+      font-weight: var(--ath-font-weight-overline);
+      line-height: var(--ath-font-line-height-overline);
+    }
+
+    &--label {
+      margin: 0;
+      color: var(--ath-color-fg-default);
+      font-family: var(--ath-font-family-heading);
+
+      &-wrapper {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+    }
+
+    &--tooltip {
+      display: flex;
+      align-items: flex-end;
+      position: absolute;
+      bottom: 2px;
+      .ath-tooltip-container {
+        right: 0;
+      }
+    }
+
+    &--collapsable {
+      cursor: pointer;
+      &:focus,
+      &:focus-visible {
+        outline: 2px solid var(--ath-color-border-focus);
+        outline-offset: 2px;
+        border-radius: var(--ath-border-radius-2xs);
+      }
+    }
+
+    // Chevron animation
+    &--chevron {
+      display: flex;
+
+      ath-icon {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &-rotate {
+        ath-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+:host[collapsable='true'],
+:host[collapsable] {
+  &[tooltip] {
+    .ath-section-title--tooltip {
+      right: calc(var(--ath-font-size-icon-md) + var(--ath-spacing-section-title-col-gap));
+    }
+
+    .ath-section-title--content {
+      padding-right: calc(var(--ath-font-size-icon-md) + var(--ath-spacing-section-title-col-gap) + 4px);
+    }
+  }
+  &:not([tooltip]) {
+    .ath-section-title {
+      gap: var(--ath-spacing-section-title-col-gap);
+    }
+  }
+}
+
+:host([collapsable='false']),
+:host:not([collapsable]) {
+  &[tooltip] {
+    .ath-section-title--tooltip {
+      right: 0;
+    }
+
+    .ath-section-title--content {
+      padding-right: calc(var(--ath-font-size-icon-md) + var(--ath-spacing-section-title-tooltip-col-gap));
+    }
+  }
+}

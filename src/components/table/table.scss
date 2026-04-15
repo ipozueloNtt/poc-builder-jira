@@ -1,0 +1,31 @@
+@use 'table.mixins.scss' as mixins;
+
+:host(.ath-table) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: min-content;
+  border-radius: var(--ath-border-radius-table-default);
+
+  .ath-table__header {
+    display: flex;
+    flex: 0 0 auto;
+  }
+
+  .ath-table__body {
+    display: flex;
+    flex: 1 1 auto;
+  }
+
+  .ath-table__footer {
+    flex: 0 0 auto;
+  }
+}
+:host(:focus),
+:host(:focus-visible) {
+  box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus);
+  display: block;
+  outline: none;
+}
+@include mixins.color('table', 'primary');
+@include mixins.color('table', 'secondary');

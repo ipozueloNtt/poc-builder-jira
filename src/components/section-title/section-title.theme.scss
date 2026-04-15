@@ -1,0 +1,35 @@
+@mixin sectionTitleColor($color) {
+  .ath-section-title--#{$color} {
+    border-left: 2px solid var(--ath-color-section-title-bg-#{$color});
+  }
+  .ath-section-title--#{$color}-overline {
+    color: var(--ath-color-fg-#{$color}-default);
+  }
+}
+
+@mixin sectionTitleSize($size) {
+  .ath-section-title--label--#{$size} {
+    @if $size == 'sm' {
+      font-size: var(--ath-font-size-heading-4);
+      font-weight: var(--ath-font-weight-section-title-heading);
+      line-height: var(--ath-font-line-height-heading-4);
+    } @else if $size == 'md' {
+      font-size: var(--ath-font-size-heading-3);
+      font-weight: var(--ath-font-weight-section-title-heading);
+      line-height: var(--ath-font-line-height-heading-3);
+    } @else if $size == 'lg' {
+      font-size: var(--ath-font-size-display-sm);
+      font-weight: var(--ath-font-weight-display);
+      line-height: var(--ath-font-line-height-display);
+    }
+  }
+}
+
+:host {
+  @include sectionTitleColor('primary');
+  @include sectionTitleColor('accent');
+
+  @include sectionTitleSize('sm');
+  @include sectionTitleSize('md');
+  @include sectionTitleSize('lg');
+}

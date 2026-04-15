@@ -1,0 +1,27 @@
+@use './divider.theme.scss';
+
+:host {
+  display: block;
+
+  .ath-divider {
+    width: fit-content;
+
+    &--orientation-horizontal {
+      width: 100%;
+      border-bottom-style: solid;
+    }
+
+    &--orientation-vertical {
+      height: 100%;
+      border-left-style: solid;
+    }
+
+    &--size-md {
+      border-width: 2px;
+    }
+
+    &--size-sm {
+      border-width: 1px;
+    }
+  }
+}

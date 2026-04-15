@@ -1,0 +1,346 @@
+{
+  "root": {
+    "id": "ath-input-text",
+    "name": "Input Text",
+    "tag": "ath-input-text",
+    "schemaVersion": "v1",
+    "status": "stable",
+    "category": "Componentes",
+    "description": "Campo de entrada de texto para formularios con soporte de label, ayuda, validacion, contador y variantes de tipo.",
+    "owners": [
+      "design-system"
+    ],
+    "links": {
+      "figmaDocumentation": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012244-146346&m=dev",
+      "figmaComponentSet": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=5194-264&m=dev",
+      "storybookTitle": "Componentes/Input Text",
+      "storybookDocsId": "componentes-input-text--docs"
+    },
+    "source": {
+      "componentPath": "packages/stencil-library/src/components/input-text/input-text.tsx",
+      "storiesPath": "packages/stencil-library/src/components/input-text/stories/input-text.stories.tsx",
+      "readmePath": "packages/stencil-library/src/components/input-text/readme.md"
+    },
+    "versioning": {
+      "since": "2.0.0",
+      "lastUpdated": "2026-03-02"
+    },
+    "sourceOfTruth": {
+      "code": "docs.json",
+      "storybook": "storybook source",
+      "foundations": "figma-mcp",
+      "extractedAt": "2026-03-02T10:16:49.050Z"
+    }
+  },
+  "code": {
+    "props": [
+      {
+        "name": "autocomplete",
+        "attribute": "autocomplete",
+        "type": "string",
+        "reflect": false,
+        "description": "Whether the input will be autocompleted."
+      },
+      {
+        "name": "autofocus",
+        "attribute": "autofocus",
+        "type": "boolean",
+        "reflect": false,
+        "description": "Whether the input is focused on page load."
+      },
+      {
+        "name": "clearButtonAriaLabel",
+        "attribute": "clear-button-aria-label",
+        "type": "string",
+        "default": "'Borrar'",
+        "reflect": false,
+        "description": "The label and aria-label of the clear button"
+      },
+      {
+        "name": "counter",
+        "attribute": "counter",
+        "type": "boolean",
+        "reflect": false,
+        "description": "Shows a counter"
+      },
+      {
+        "name": "counterLabel",
+        "attribute": "counter-label",
+        "type": "string",
+        "default": "'[length] de [max] caracteres. Quedan [rest]'",
+        "reflect": false,
+        "description": "SThe label of the counter"
+      },
+      {
+        "name": "disabled",
+        "attribute": "disabled",
+        "type": "boolean",
+        "default": "false",
+        "reflect": true,
+        "description": "If true, the user cannot interact with the input."
+      },
+      {
+        "name": "feedback",
+        "attribute": "feedback",
+        "type": "\"error\" | \"none\"",
+        "default": "InputFeedbackTypes.None",
+        "reflect": true,
+        "description": "The type of the feedback. If 'error' the error feedback will be shown"
+      },
+      {
+        "name": "feedbackText",
+        "attribute": "feedback-text",
+        "type": "string",
+        "reflect": false,
+        "description": "The feedback message."
+      },
+      {
+        "name": "hasClear",
+        "attribute": "has-clear",
+        "type": "boolean",
+        "default": "false",
+        "reflect": false,
+        "description": "Include a button to clear the value"
+      },
+      {
+        "name": "helperText",
+        "attribute": "helper-text",
+        "type": "string",
+        "reflect": false,
+        "description": "Message to help the user fills the input value"
+      },
+      {
+        "name": "hideRequired",
+        "attribute": "hide-required",
+        "type": "boolean",
+        "default": "false",
+        "reflect": false,
+        "description": "If true, the * asterisk will be hidden when required = true."
+      },
+      {
+        "name": "icon",
+        "attribute": "icon",
+        "type": "string",
+        "reflect": false,
+        "description": "The icon name for the input's icon"
+      },
+      {
+        "name": "iconPosition",
+        "attribute": "icon-position",
+        "type": "\"left\" | \"right\"",
+        "default": "InputIconPositions.Left",
+        "reflect": false,
+        "description": "The icon position"
+      },
+      {
+        "name": "inputAriaLabel",
+        "attribute": "input-aria-label",
+        "type": "string",
+        "reflect": false,
+        "description": "The aria-label attribute of the input"
+      },
+      {
+        "name": "inputTabindex",
+        "attribute": "input-tabindex",
+        "type": "string",
+        "default": "'0'",
+        "reflect": false,
+        "description": "Set tabindex"
+      },
+      {
+        "name": "label",
+        "attribute": "label",
+        "type": "string",
+        "reflect": false,
+        "description": "Represents the caption of the input"
+      },
+      {
+        "name": "maxlength",
+        "attribute": "maxlength",
+        "type": "number",
+        "reflect": false,
+        "description": "Specifies the maximum number of characters allowed in the input element"
+      },
+      {
+        "name": "name",
+        "attribute": "name",
+        "type": "string",
+        "reflect": false,
+        "description": "The name of the input. Submitted with the form as part of a name/value pair"
+      },
+      {
+        "name": "pattern",
+        "attribute": "pattern",
+        "type": "string",
+        "reflect": false,
+        "description": "Specifies a regular expression that the input element's value is checked"
+      },
+      {
+        "name": "placeholder",
+        "attribute": "placeholder",
+        "type": "string",
+        "reflect": false,
+        "description": "Instructional text that shows before the input has a value."
+      },
+      {
+        "name": "readonly",
+        "attribute": "readonly",
+        "type": "boolean",
+        "default": "false",
+        "reflect": false,
+        "description": "If true, the user cannot modify the value."
+      },
+      {
+        "name": "required",
+        "attribute": "required",
+        "type": "boolean",
+        "default": "false",
+        "reflect": false,
+        "description": "If true, the user must fill in a value before submitting a form."
+      },
+      {
+        "name": "size",
+        "attribute": "size",
+        "type": "\"lg\" | \"md\" | \"sm\"",
+        "default": "InputSizes.Medium",
+        "reflect": false,
+        "description": "The size of the input"
+      },
+      {
+        "name": "submitOnEnter",
+        "attribute": "submit-on-enter",
+        "type": "boolean",
+        "default": "false",
+        "reflect": false,
+        "description": "If true, submit the form when pressing Enter in the input field and the input is inside a form"
+      },
+      {
+        "name": "tooltipText",
+        "attribute": "tooltip-text",
+        "type": "string",
+        "reflect": false,
+        "description": "The text to be shown in the tooltip"
+      },
+      {
+        "name": "tooltipWidth",
+        "attribute": "tooltip-width",
+        "type": "any",
+        "reflect": false,
+        "description": "The max width to the text in the tooltip"
+      },
+      {
+        "name": "type",
+        "attribute": "type",
+        "type": "\"email\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+        "default": "InputTextTypes.Text",
+        "reflect": false,
+        "description": "The type of the input"
+      },
+      {
+        "name": "value",
+        "attribute": "value",
+        "type": "string",
+        "reflect": false,
+        "description": "Current value of the form control. Submitted with the form as part of a name/value pair."
+      }
+    ],
+    "events": [
+      {
+        "name": "athBlur",
+        "payload": "void"
+      },
+      {
+        "name": "athChange",
+        "payload": "string"
+      },
+      {
+        "name": "athClear",
+        "payload": "string"
+      },
+      {
+        "name": "athFocus",
+        "payload": "void"
+      },
+      {
+        "name": "athInput",
+        "payload": "string"
+      }
+    ],
+    "methods": [
+      {
+        "name": "setFocus",
+        "signature": "setFocus() => Promise<void>"
+      }
+    ],
+    "slots": [],
+    "dependencies": {
+      "uses": [],
+      "usedBy": []
+    },
+    "accessibility": {
+      "role": "searchbox when type=search, otherwise input",
+      "keyboard": [
+        "Tab",
+        "Shift+Tab",
+        "Enter"
+      ],
+      "ariaInputs": [
+        "input-aria-label",
+        "clear-button-aria-label",
+        "counter-label"
+      ]
+    }
+  },
+  "foundations": {
+    "variants": {
+      "type": [
+        "text",
+        "search",
+        "url",
+        "email",
+        "tel"
+      ],
+      "size": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "feedback": [
+        "none",
+        "error"
+      ],
+      "state": [
+        "default",
+        "focus",
+        "disabled",
+        "readonly",
+        "error"
+      ],
+      "counter": [
+        "off",
+        "on"
+      ],
+      "hasClear": [
+        "off",
+        "on"
+      ]
+    },
+    "tokens": {
+      "sourceOfTruth": "figma-mcp",
+      "references": {
+        "borderDefault": "token:ath/color/input/border/default",
+        "borderFocus": "token:ath/color/border/focus",
+        "background": "token:ath/color/input/bg/default",
+        "radius": "token:ath/border/radius/input/default",
+        "text": "token:ath/font/size/input/text",
+        "label": "token:ath/font/size/input/label"
+      }
+    },
+    "evidence": {
+      "figmaDocumentationNodeId": "40012244:146346",
+      "figmaInstanceNodeId": "40012244:221606",
+      "figmaCanonicalNodeId": "5194:264",
+      "extractedAt": "2026-03-02T10:16:49.050Z"
+    }
+  }
+}

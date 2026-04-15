@@ -1,0 +1,20 @@
+@mixin datepickerOverlayPosition($size) {
+  &.size-#{$size} {
+    @if $size == 'sm' {
+       top: 41px;
+    } @else if $size == 'lg' {
+       top: 57px;
+    } @else {
+       top: 49px;
+    }
+    &__label {
+      @if $size == 'sm' {
+         top: 73px;
+      } @else if $size == 'lg' {
+         top: 89px;
+      } @else {
+         top: 81px;
+      }
+    }
+   }
+}

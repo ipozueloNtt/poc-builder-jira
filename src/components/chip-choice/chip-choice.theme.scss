@@ -1,0 +1,70 @@
+//sizes
+:host {
+  .ath-chip-choice {
+    &__container {
+      --chip-border: 1px solid var(--ath-color-border-alpha-boldest-default);
+      --chip-color: var(--ath-color-fg-default);
+      --chip-icon-color: var(--ath-color-icon-default);
+      --chip-background: trasparent;
+      --chip-box-shadow: none;
+
+      &--sm {
+        --chip-padding: calc(var(--ath-spacing-chip-choice-padding-y-sm) - 1px) calc(var(--ath-spacing-chip-choice-padding-x-sm) - 1px);
+      }
+
+      &--md {
+        --chip-padding: calc(var(--ath-spacing-chip-choice-padding-md) - 1px);
+      }
+
+      &:hover:not(.ath-chip-choice__container--checked) {
+        --chip-background: var(--ath-color-bg-alpha-boldest-hovered);
+        --chip-border: 1px solid transparent;
+        --chip-color: var(--ath-color-chip-choice-fg-hovered);
+        --chip-icon-color: var(--ath-color-chip-choice-icon-hovered);
+      }
+
+      &:active:not(.ath-chip-choice__container--checked) {
+        --chip-background: var(--ath-color-bg-alpha-boldest-pressed);
+        --chip-border: 1px solid transparent;
+        --chip-color: var(--ath-color-chip-choice-fg-pressed);
+        --chip-icon-color: var(--ath-color-chip-choice-icon-pressed);
+      }
+
+      &--disabled {
+        --chip-background: var(--ath-color-bg-alpha-disabled);
+        --chip-color: var(--ath-color-fg-disabled);
+        --chip-icon-color: var(--ath-color-icon-disabled);
+        --chip-border: 1px solid transparent;
+        pointer-events: none;
+      }
+
+      &--checked {
+        --chip-background: var(--ath-color-chip-choice-bg-selected);
+        --chip-border: 1px solid transparent;
+        --chip-color: var(--ath-color-chip-choice-fg-selected-default);
+        --chip-icon-color: var(--ath-color-chip-choice-icon-selected-default);
+      }
+    }
+  }
+}
+
+:host(:focus-visible) {
+  outline: none;
+
+  .ath-chip-choice {
+    &__container {
+      outline: none;
+
+      &:not(.ath-chip-choice__container--checked) {
+        --chip-box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus);
+        --chip-border: 1px solid transparent;
+      }
+
+      &--checked {
+        --chip-box-shadow: 0px 0px 0px 2px var(--ath-color-drop-shadow-focus), 0px 0px 0px 4px var(--ath-color-border-focus);
+        --chip-color: var(--ath-color-chip-choice-fg-selected-focus);
+        --chip-border: 1px solid transparent;
+      }
+    }
+  }
+}

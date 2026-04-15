@@ -1,0 +1,33 @@
+@use '../table.mixins.scss' as mixins;
+
+:host {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  color: var(--ath-color-table-col-header-fg-default);
+  font-family: var(--ath-font-family-primary);
+  font-size: var(--ath-font-size-comp-md);
+  font-weight: var(--ath-font-weight-medium);
+  line-height: var(--ath-font-line-height-comp-md);
+  padding: var(--padding-y) var(--ath-spacing-table-col-header-padding-x);
+}
+
+:host(:first-child) {
+  border-top-left-radius: var(--ath-border-radius-table-default);
+}
+
+:host(:last-child) {
+  border-top-right-radius: var(--ath-border-radius-table-default);
+}
+
+@include mixins.alignment('header-item', 'left');
+@include mixins.alignment('header-item', 'center');
+@include mixins.alignment('header-item', 'right');
+@include mixins.color('header-item', 'primary');
+@include mixins.color('header-item', 'secondary');
+@include mixins.frozen('header-item', 'first');
+@include mixins.frozen('header-item', 'last');
+@include mixins.size('header-item', 'lg');
+@include mixins.size('header-item', 'md');
+@include mixins.size('header-item', 'sm');

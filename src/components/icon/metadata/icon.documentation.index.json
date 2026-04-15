@@ -1,0 +1,12 @@
+{
+  "componentTag": "ath-icon",
+  "schemaVersion": "v1",
+  "generatedAt": "2026-02-20T09:47:01.152Z",
+  "artifacts": {
+    "root": "icon.component-metadata.v1.json",
+    "code": "icon.component-metadata.code.v1.json",
+    "storybook": "icon.component-metadata.storybook.v1.json",
+    "foundations": "icon.component-metadata.foundations.v1.json",
+    "componentSpec": "component-spec.md"
+  }
+}

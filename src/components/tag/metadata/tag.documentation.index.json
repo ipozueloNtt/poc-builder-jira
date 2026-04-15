@@ -1,0 +1,12 @@
+{
+  "componentTag": "ath-tag",
+  "schemaVersion": "v1",
+  "generatedAt": "2026-02-21T18:37:26.732Z",
+  "artifacts": {
+    "root": "tag.component-metadata.v1.json",
+    "code": "tag.component-metadata.code.v1.json",
+    "storybook": "tag.component-metadata.storybook.v1.json",
+    "foundations": "tag.component-metadata.foundations.v1.json",
+    "componentSpec": "component-spec.md"
+  }
+}

@@ -1,0 +1,13 @@
+@use 'utilities';
+@use 'tools';
+@use './icon.theme.scss';
+
+:host {
+  display: inline-flex;
+  height: fit-content;
+  width: fit-content;
+
+  svg {
+    font-size: var(--font-size);
+  }
+}

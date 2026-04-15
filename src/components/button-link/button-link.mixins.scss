@@ -1,0 +1,44 @@
+/// @param $color primary|secondary
+/// @param {boolean} $inverse
+@mixin buttonLinkTheme($color) {
+  :host {
+    .ath-button-link--primary:not(.ath-button-link--disabled) {
+      color: var(--ath-color-fg-primary-default);
+    }
+    .ath-button-link--secondary:not(.ath-button-link--disabled) {
+      color: var(--ath-color-fg-default);
+    }
+    .ath-button-link--#{$color}:not(.ath-button-link--disabled) {
+      :hover {
+        color: var(--ath-color-fg-primary-hovered);
+      }
+    }
+  }
+}
+
+@mixin buttonLinkSize($size) {
+  .ath-button-link--#{$size} {
+    --font-size: var(--ath-font-size-comp-#{$size});
+  }
+}
+
+.ath-button-link__inner {
+  &:hover {
+    text-decoration-line: underline;
+  }
+}
+
+.ath-button-link__inner {
+  &:active {
+    text-decoration-line: underline;
+    color: var(--ath-color-fg-primary-pressed);
+  }
+}
+
+.ath-button-link--disabled {
+  .ath-button-link__inner {
+    &:hover {
+      text-decoration-line: none;
+    }
+  }
+}

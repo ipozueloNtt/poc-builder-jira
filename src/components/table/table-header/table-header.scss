@@ -1,0 +1,11 @@
+@use '../../../assets/scss/elements/accesibility';
+
+:host {
+  display: flex;
+  flex: 1;
+  border-bottom: var(--ath-border-width-sm) solid var(--ath-color-table-col-header-border);
+
+  > ath-table-header-item:first-of-type {
+    border-top-left-radius: var(--ath-border-radius-table-default);
+  }
+}

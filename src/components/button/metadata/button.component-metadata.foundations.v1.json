@@ -1,0 +1,111 @@
+{
+  "references": [
+    {
+      "id": "figma:button-docs-40012058:7091",
+      "version": "2026-02-19",
+      "scope": "content"
+    },
+    {
+      "id": "figma:button-component-set-4378:1624",
+      "version": "2026-02-19",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:button-design-tokens",
+      "version": "2026-02-19",
+      "scope": "tokens"
+    },
+    {
+      "id": "figma:button-a11y-guidelines",
+      "version": "2026-02-19",
+      "scope": "a11y"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:ath-color-border-focus"
+    ],
+    "spacing": [
+      "token:ath-spacing-2",
+      "token:ath-spacing-4"
+    ],
+    "typography": [
+      "token:ath-font-family-primary"
+    ],
+    "radius": [
+      "token:ath-border-radius-pill"
+    ],
+    "shadow": [],
+    "motion": []
+  },
+  "semanticVariants": [
+    {
+      "axis": "color",
+      "option": "primary",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-border-focus"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "secondary",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-border-focus"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "md",
+      "mode": "light",
+      "tokens": [
+        "token:ath-spacing-4"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "form-control",
+    "regionAffinity": [
+      "form",
+      "content"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": true,
+    "keyboardModel": "enter-space-activation",
+    "focusOrder": "natural"
+  },
+  "plannerHints": {
+    "priority": "high",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "form",
+      "content"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "root.borderRadius",
+        "token": "token:ath-border-radius-pill"
+      },
+      {
+        "target": "root.gap",
+        "token": "token:ath-spacing-2"
+      },
+      {
+        "target": "root.padding",
+        "token": "token:ath-spacing-4"
+      },
+      {
+        "target": "root.fontFamily",
+        "token": "token:ath-font-family-primary"
+      }
+    ]
+  }
+}

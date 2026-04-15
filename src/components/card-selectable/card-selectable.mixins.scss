@@ -1,0 +1,5 @@
+@mixin cardSize($size) {
+  &--#{$size} {
+    padding: var(--ath-spacing-card-content-padding-around-#{$size});
+  }
+}

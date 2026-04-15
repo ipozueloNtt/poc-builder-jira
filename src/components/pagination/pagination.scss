@@ -1,0 +1,38 @@
+@use './page-button/fc-page-button.scss' as PageButton;
+
+@include PageButton.fc-page-button;
+.ath-pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ath-spacing-pagination-col-gap);
+
+  &-page-control {
+    display: flex;
+    align-items: center;
+
+    &-list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--ath-spacing-pagination-page-control-col-gap);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &-items-count {
+    color: var(--ath-color-fg-subtle);
+    font-family: var(--ath-font-family-body);
+    font-size: var(--ath-font-size-body-md);
+    font-style: normal;
+    font-weight: var(--ath-font-weight-body-regular);
+    line-height: var(--ath-font-line-height-body);
+  }
+
+  &-items-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

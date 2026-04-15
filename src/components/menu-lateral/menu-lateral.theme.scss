@@ -1,0 +1,26 @@
+:host {
+  .ath-menu-lateral__item {
+    &-container {
+      --border-radius-container: var(--ath-border-radius-menu-vertical-item-level);
+
+      &:hover:not(.ath-menu-lateral__item-container--disabled):not(.ath-menu-lateral__item-container--selected) {
+        --bg-container: var(--ath-color-menu-lateral-item-bg-hovered);
+      }
+
+      &:active:not(.ath-menu-lateral__item-container--disabled):not(.ath-menu-lateral__item-container--selected) {
+        --bg-container: var(--ath-color-menu-lateral-item-bg-pressed);
+      }
+
+      &--disabled {
+        --bg-container: none;
+        --box-shadow: none;
+        cursor: not-allowed;
+      }
+
+      &--selected {
+        --bg-container: var(--ath-color-menu-lateral-item-bg-selected);
+        cursor: default;
+      }
+    }
+  }
+}

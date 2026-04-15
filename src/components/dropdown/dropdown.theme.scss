@@ -1,0 +1,56 @@
+:host {
+  .ath-dropdown__wrapper--field {
+    --border-dropdown: 1px solid var(--ath-color-input-border-default);
+    --border-radius-dropdown: var(--ath-border-radius-input-default);
+    --background-dropdown: var(--ath-color-input-bg-default);
+    --border-bottom-dropdown: 1px solid var(--ath-color-input-border-default);
+
+    &.disabled {
+      --border-radius-dropdown: var(--ath-border-radius-input-default);
+      --border-dropdown: 1px solid var(--ath-color-border-alpha-disabled);
+      --background-dropdown: var(--ath-color-bg-alpha-disabled);
+      --border-bottom-dropdown: none;
+    }
+
+    &.readonly {
+      --border-dropdown: none;
+      --border-radius-dropdown: var(--ath-border-radius-input-readonly);
+      --border-bottom-dropdown: 1px solid var(--ath-color-input-border-default);
+      :focus-visible {
+        --border-radius-dropdown: var(--ath-border-radius-input-default);
+        --border-bottom-dropdown: none;
+      }
+    }
+
+    &.error {
+      --border-radius-dropdown: var(--ath-border-radius-input-default);
+      --border-dropdown: 1px solid var(--ath-color-border-danger-default);
+      --border-bottom-dropdown: 1px solid var(--ath-color-border-danger-default);
+      --background-dropdown: var(--ath-color-input-bg-default);
+    }
+
+    &.open {
+      --border-dropdown: 1px solid var(--ath-color-input-dropdown-border-active);
+      --border-radius-dropdown: var(--ath-border-radius-input-dropdown-open-top) var(--ath-border-radius-input-dropdown-open-top)
+        var(--ath-border-radius-input-dropdown-open-bottom) var(--ath-border-radius-input-dropdown-open-bottom);
+      --background-dropdown: var(--ath-color-input-bg-default);
+      --border-bottom-dropdown: 1px solid var(--ath-color-input-dropdown-border-active);
+
+      &.size-lg {
+        --border-radius-dropdown: var(--ath-border-radius-input-dropdown-open-top-lg) var(--ath-border-radius-input-dropdown-open-top-lg)
+          var(--ath-border-radius-input-dropdown-open-bottom) var(--ath-border-radius-input-dropdown-open-bottom);
+      }
+    }
+
+    &:focus-visible {
+      --border-dropdown: 2px solid var(--ath-color-border-focus);
+      --box-shadow-dropdown: none;
+      --border-bottom-dropdown: 2px solid var(--ath-color-border-focus);
+      outline: none;
+    }
+    &.open:focus-visible {
+      --border-dropdown: 1px solid var(--ath-color-input-dropdown-border-active);
+      --border-bottom-dropdown: 1px solid var(--ath-color-border-focus);
+    }
+  }
+}

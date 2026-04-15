@@ -1,0 +1,217 @@
+{
+  "component": {
+    "tag": "ath-card-selectable",
+    "name": "Card Selectable",
+    "type": "interactive",
+    "category": "molecules",
+    "status": "stable",
+    "version": "v1",
+    "since": "2.0.0",
+    "filePath": "src/components/card-selectable/card-selectable.tsx",
+    "encapsulation": "scoped",
+    "description": "Card interactiva que permite seleccion unica o multiple con feedback visual de estado.",
+    "links": {
+      "storybook": "https://aletehia.vercel.app/?path=/docs/componentes-card-selectable-card-selectable--docs",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json",
+      "figma": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40008130-6501&m=dev",
+      "figmaComponentSet": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40007878-159810&m=dev"
+    }
+  },
+  "usage": {
+    "primaryIntent": "Permitir seleccion de opciones con una representacion rica de contenido y estados accesibles.",
+    "useCases": [
+      "Seleccion de alternativas de producto o configuracion en layout tipo grid.",
+      "Patrones de eleccion unica (radio) o multiple (checkbox) con contenido extendido.",
+      "Listados de tarjetas con jerarquia visual (tag, overline, heading, subtitle)."
+    ],
+    "antiPatterns": [
+      {
+        "scenario": "Usar card-selectable sin texto identificable (heading o aria-label).",
+        "reason": "Compromete la accesibilidad y la comprension del criterio de seleccion.",
+        "alternative": "Definir heading-text o aria-label descriptivo por opcion."
+      },
+      {
+        "scenario": "Mezclar seleccion multiple en un contexto que exige eleccion exclusiva.",
+        "reason": "Genera ambiguedad en la validacion del formulario y en el feedback al usuario.",
+        "alternative": "Usar type='single' o encapsular en ath-card-selectable-group sin multiple."
+      }
+    ]
+  },
+  "variants": {
+    "size": {
+      "options": [
+        "sm",
+        "md"
+      ],
+      "default": "sm",
+      "prop": "size"
+    },
+    "type": {
+      "options": [
+        "single",
+        "multiselect"
+      ],
+      "default": "single",
+      "prop": "type"
+    },
+    "selected": {
+      "options": [
+        "false",
+        "true"
+      ],
+      "default": "false",
+      "prop": "selected"
+    },
+    "disabled": {
+      "options": [
+        "false",
+        "true"
+      ],
+      "default": "false",
+      "prop": "disabled"
+    },
+    "state": {
+      "options": [
+        "default",
+        "hover",
+        "active",
+        "focus"
+      ],
+      "default": "default",
+      "source": "figma"
+    }
+  },
+  "composition": {
+    "layoutRole": "form-control",
+    "allowedChildren": [
+      "ath-tag",
+      "ath-text",
+      "ath-link",
+      "ath-icon",
+      "*"
+    ],
+    "layoutRules": [
+      {
+        "rule": "Mantener la jerarquia header (tag/overline/title/subtitle) antes del body slot.",
+        "reason": "Asegura consistencia visual y escaneabilidad entre variantes." 
+      },
+      {
+        "rule": "Alinear type con expectativa de seleccion (single o multiselect) en el flujo padre.",
+        "reason": "Evita inconsistencias entre semantica ARIA y comportamiento de seleccion."
+      }
+    ]
+  },
+  "artifacts": {
+    "code": {
+      "$ref": "./card-selectable.component-metadata.code.v1.json"
+    },
+    "storybook": {
+      "$ref": "./card-selectable.component-metadata.storybook.v1.json"
+    },
+    "foundations": {
+      "$ref": "./card-selectable.component-metadata.foundations.v1.json"
+    },
+    "legacy": "./card-selectable.metadata.json",
+    "componentSpec": "./component-spec.md"
+  },
+  "childrenPolicy": {
+    "mode": "slot-only",
+    "minChildren": 0,
+    "maxChildren": 1,
+    "allowTextNodes": false
+  },
+  "contentModel": {
+    "kind": "slot-only",
+    "allowedInlineComponents": [
+      "ath-text",
+      "ath-link",
+      "ath-icon",
+      "ath-tag"
+    ]
+  },
+  "runtime": {
+    "planner": {
+      "layoutRole": "form-control",
+      "regionAffinity": [
+        "form",
+        "content",
+        "list-item",
+        "card"
+      ],
+      "priority": "high"
+    },
+    "resolver": {
+      "allowedRegions": [
+        "form",
+        "content",
+        "list-item",
+        "card"
+      ],
+      "defaultRegion": "form"
+    },
+    "assembler": {
+      "nodeType": "component",
+      "maxDepth": 2,
+      "deterministicOrder": true
+    },
+    "validator": {
+      "schemaRefs": [
+        "https://aletheia.dev/schemas/ds/component-metadata.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.code.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.storybook.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.foundations.v1.schema.json"
+      ],
+      "strict": true
+    }
+  },
+  "examples": [
+    {
+      "name": "Playground",
+      "code": "<ath-card-selectable overline=\"Overline\" heading-text=\"Heading text\" subtitle=\"Subtitle\" size=\"sm\" type=\"single\"></ath-card-selectable>",
+      "args": {
+        "overline": "Overline",
+        "headingText": "Heading text",
+        "subtitle": "Subtitle",
+        "size": "sm",
+        "type": "single"
+      },
+      "storyId": "componentes-card-selectable-card-selectable--playground"
+    }
+  ],
+  "meta": {
+    "schemaVersion": "v1",
+    "generatedAt": "2026-02-27T00:00:00.000Z",
+    "sources": {
+      "stencilDocgen": "packages/stencil-library/docs.json (ath-card-selectable)",
+      "figma": "figma-mcp:get_component (documentation node 40008130:6501 + component set 40007878:159810)",
+      "storybook": "packages/stencil-library/src/components/card-selectable/stories/card-selectable.stories.tsx",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json"
+    },
+    "ownership": {
+      "usage": "design-agent",
+      "variants": "design-agent",
+      "props": "stencil-docgen",
+      "events": "stencil-docgen",
+      "composition": "human",
+      "storybook": "human",
+      "styling": "build-extractor",
+      "foundations": "reconciler",
+      "runtime": "human"
+    }
+  },
+  "docs": "Metadata de ath-card-selectable generado con fuentes de desarrollo (docs.json + stories) y Figma MCP (documentacion + componente canonico).",
+  "docsTags": [
+    {
+      "name": "figma-node",
+      "text": "40008130:6501"
+    },
+    {
+      "name": "figma-canonical-node",
+      "text": "40007867:67767"
+    },
+    {
+      "name": "figma-component-node",
+      "text": "40007878:159810"
+    }
+  ]
+}

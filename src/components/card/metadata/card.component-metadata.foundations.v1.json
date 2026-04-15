@@ -1,0 +1,139 @@
+{
+  "references": [
+    {
+      "id": "figma:card-docs-40012082:13633",
+      "version": "2026-02-27",
+      "scope": "content"
+    },
+    {
+      "id": "figma:card-canonical-2004:3748",
+      "version": "2026-02-27",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:card-component-40004478:65252",
+      "version": "2026-02-27",
+      "scope": "tokens"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:--ath-color-card-content-bg",
+      "token:--ath-color-card-border-hovered",
+      "token:--ath-color-card-border-pressed",
+      "token:--ath-color-card-drop-shadow-hovered",
+      "token:--ath-color-card-drop-shadow-pressed"
+    ],
+    "spacing": [
+      "token:--ath-spacing-card-gap",
+      "token:--ath-spacing-card-content-row-gap-sm",
+      "token:--ath-spacing-card-content-row-gap-md",
+      "token:--ath-spacing-card-content-padding-around-sm",
+      "token:--ath-spacing-card-content-padding-around-md",
+      "token:--ath-spacing-card-header-row-gap"
+    ],
+    "typography": [
+      "token:--ath-font-size-card-title",
+      "token:--ath-font-size-card-subtitle",
+      "token:--ath-font-line-height-card-title",
+      "token:--ath-font-line-height-card-subtitle"
+    ],
+    "radius": [
+      "token:--ath-border-radius-card"
+    ],
+    "shadow": [
+      "token:--ath-box-shadow-card-hovered-color",
+      "token:--ath-box-shadow-card-pressed-color"
+    ],
+    "motion": []
+  },
+  "semanticVariants": [
+    {
+      "axis": "orientation",
+      "option": "vertical",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-spacing-card-content-row-gap-sm",
+        "token:--ath-spacing-card-content-row-gap-md"
+      ]
+    },
+    {
+      "axis": "orientation",
+      "option": "horizontal",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-spacing-card-gap"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "hover",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-color-card-border-hovered",
+        "token:--ath-box-shadow-card-hovered-color"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "active",
+      "mode": "light",
+      "tokens": [
+        "token:--ath-color-card-border-pressed",
+        "token:--ath-box-shadow-card-pressed-color"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "container",
+    "regionAffinity": [
+      "content",
+      "list-item",
+      "card"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": false,
+    "keyboardModel": "click-focus-activation",
+    "focusOrder": "managed"
+  },
+  "plannerHints": {
+    "priority": "high",
+    "containerEligibility": true,
+    "regionAffinity": [
+      "content",
+      "list-item",
+      "card"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "root.background",
+        "token": "token:--ath-color-card-content-bg"
+      },
+      {
+        "target": "root.borderRadius",
+        "token": "token:--ath-border-radius-card"
+      },
+      {
+        "target": "root.borderWidth",
+        "token": "token:--ath-border-width-card"
+      },
+      {
+        "target": "state.hover.borderColor",
+        "token": "token:--ath-color-card-border-hovered",
+        "state": "hover"
+      },
+      {
+        "target": "state.active.borderColor",
+        "token": "token:--ath-color-card-border-pressed",
+        "state": "active"
+      }
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+@use '../../sharedfc/datepicker' as Datepicker;
+@use '../../sharedfc/input' as Input;
+@use './datepicker-range.mixins' as mixins;
+
+@use '../../assets/scss/elements/accesibility';
+
+@include Input.fc-input-element-vars;
+
+@include Datepicker.fc-datepicker-item;
+@include Datepicker.fc-calendar;
+@include Datepicker.fc-calendar-month;
+@include Datepicker.fc-calendar-year;
+
+:host {
+  @include Input.global-input;
+  @include Input.fc-input-element;
+  @include Input.fc-input-label;
+  @include Input.fc-input-helper;
+  @include Input.fc-input-feedback;
+
+  --input-border-radius: var(--ath-border-radius-input-default);
+
+  .ath-datepicker-range {
+    //reset fieldset
+    border: none;
+    margin: 0px;
+    padding: 0px;
+
+    position: relative;
+    &__input-group {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--ath-spacing-input-datepicker-field-col-gap, 8px);
+      align-self: stretch;
+    }
+
+    &-overlay {
+      //propiedades de clase overlay en figma
+      display: flex;
+      flex-direction: row;
+      z-index: 2;
+      opacity: 0;
+      transition:
+        transform 300ms ease,
+        opacity 300ms ease,
+        visibility 300ms ease;
+      visibility: hidden;
+
+      // propiedades del padre de overlay en figma
+      min-width: 288px;
+      position: absolute;
+      @include mixins.datepickerRangeOverlayPosition('sm');
+      @include mixins.datepickerRangeOverlayPosition('md');
+      @include mixins.datepickerRangeOverlayPosition('lg');
+
+      border-radius: var(--ath-border-radius-input-datepicker-overlay);
+      border: 1px solid var(--ath-color-input-datepicker-overlay-border);
+      background: var(--ath-color-input-bg-default);
+
+      &.is-active {
+        opacity: 1;
+        // The value of 1.0001 fixes a Chrome glitch with scaling
+        transform: scale(1.0001) translateZ(0) translateY(0);
+        visibility: visible;
+      }
+      .ath-datepicker-range-calendar-date {
+        display: flex;
+        padding: var(--ath-spacing-input-datepicker-calendar-overlay-padding-around);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--ath-spacing-input-datepicker-calendar-overlay-row-gap);
+        align-self: stretch;
+
+        &__header {
+          display: flex;
+          width: 288px;
+          justify-content: center;
+          align-items: center;
+          gap: var(--ath-spacing-input-datepicker-calendar-header-col-gap);
+
+          &__date {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--ath-spacing-input-datepicker-calendar-header-date-col-gap);
+            flex: 1 0 0;
+          }
+        }
+        &__date {
+          display: contents;
+        }
+        &__month,
+        &__year {
+          display: flex;
+          width: 100%;
+          height: 286px;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: var(--ath-spacing-input-datepicker-calendar-cell-group-row-gap);
+        }
+        &__panel {
+          display: flex;
+          background: var(--ath-color-bg-surface-secondary-subtler);
+          border-radius: 0 var(--ath-border-radius-input-datepicker-overlay) var(--ath-border-radius-input-datepicker-overlay) 0;
+          max-width: 200px;
+          padding: var(--ath-spacing-around-400);
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          align-self: stretch;
+
+          &-shortcuts {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--ath-spacing-around-300, 24px);
+            align-self: stretch;
+          }
+        }
+      }
+    }
+    & .ath-focused-input.ath-input .ath-input__field {
+      box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus) inset;
+      border: 1px solid transparent;
+      border-radius: var(--input-border-radius);
+    }
+  }
+}

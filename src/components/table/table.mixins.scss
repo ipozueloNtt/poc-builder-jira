@@ -1,0 +1,71 @@
+@mixin alignment($location, $alignment) {
+  :host(.ath-table-#{$location}--#{$alignment}) {
+    text-align: #{$alignment};
+    justify-content: if($alignment == right, flex-end, if($alignment == left, flex-start, if($alignment == center, center, flex-start)));
+  }
+}
+
+@mixin color($location, $color) {
+  :host(.ath-table#{if($location == 'table', '', '-#{$location}')}--#{$color}) {
+    @if $location == 'table' {
+      background: var(--ath-color-table-bg-#{$color});
+    } @else if $location == 'header-item' {
+      background: var(--ath-color-table-col-header-bg-#{$color});
+    } @else {
+      background: var(--ath-box-shadow-table-#{$location}-#{$color}-color);
+    }
+  }
+}
+
+@mixin size($location, $size) {
+  :host(.ath-table-#{$location}--#{$size}) {
+    @if $location == 'header-item' {
+      --padding-y: var(--ath-spacing-table-col-header-padding-y-#{$size});
+    } @else {
+      --padding-y: var(--ath-spacing-table-#{$location}-padding-y-#{$size});
+    }
+  }
+}
+
+@mixin frozen($location, $frozen) {
+  :host(.ath-table-#{$location}--frozen-#{$frozen}) {
+    position: sticky;
+    @if $frozen == first {
+      left: 0;
+    }
+    @if $frozen == last {
+      right: 0;
+    }
+  }
+}
+
+@mixin frozenShadow($location, $frozen, $striped: false) {
+  @if $frozen == first or $frozen == last {
+    $pseudo-element: if($frozen == first, 'after', 'before');
+    $horizontal-position: if($frozen == first, right, left);
+    $gradient-color-start: if(
+      $frozen == first,
+      var(--ath-color-table-row-item-gradient-#{if($striped, 'striped', 'default')}-2),
+      var(--ath-color-table-row-item-gradient-#{if($striped, 'striped', 'default')}-1)
+    );
+    $gradient-color-end: if(
+      $frozen == first,
+      var(--ath-color-table-row-item-gradient-#{if($striped, 'striped', 'default')}-1),
+      var(--ath-color-table-row-item-gradient-#{if($striped, 'striped', 'default')}-2)
+    );
+
+    :host(.ath-table-#{$location}--#{if($striped, 'striped--', '')}frozen-#{$frozen}--shadow) {
+      &::#{$pseudo-element} {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        width: 8px;
+        height: 100%;
+        top: 0;
+        #{$horizontal-position}: 0;
+        background: linear-gradient(270deg, #{$gradient-color-start} 0%, #{$gradient-color-end} 100%);
+        border-#{if($frozen == first, left, right)}: 1px solid var(--ath-color-table-row-item-border-x);
+      }
+    }
+  }
+}

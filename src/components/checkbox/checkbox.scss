@@ -1,0 +1,85 @@
+@use '../../sharedfc/input' as Input;
+@use 'utilities';
+@use 'tools';
+@use './checkbox.theme.scss';
+
+:host {
+  @include Input.fc-input-helper;
+  @include Input.fc-input-feedback;
+
+  .ath-checkbox {
+    .ath-input__label__wrapper {
+      cursor: pointer;
+    }
+    &:focus-within .ath-checkbox-indicator {
+      outline: none;
+      box-shadow:
+        0px 0px 0px 2px var(--ath-color-drop-shadow-focus),
+        0px 0px 0px 4px var(--ath-color-border-focus);
+    }
+
+    display: flex;
+    align-items: flex-start;
+    gap: var(--ath-spacing-between-100);
+    color: var(--ath-color-fg-default);
+    align-self: stretch;
+    font-family: var(--ath-font-family-primary);
+    font-size: var(--ath-font-size-input-label);
+    font-style: normal;
+    font-weight: var(--font-weight-label);
+    line-height: var(--ath-font-line-height-input-label);
+    cursor: pointer;
+    transition: background 0.5s;
+    &--read-only {
+      cursor: not-allowed;
+      .ath-input__label__wrapper {
+        cursor: not-allowed;
+      }
+    }
+    &--disabled {
+      cursor: not-allowed;
+      .ath-input__label__wrapper {
+        cursor: not-allowed;
+        color: var(--ath-color-fg-disabled);
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 0px;
+      box-sizing: border-box;
+      min-height: var(--ath-sizing-checkbox-box-height);
+      min-width: var(--ath-sizing-checkbox-box-width);
+      max-height: var(--ath-sizing-checkbox-box-height);
+      max-width: var(--ath-sizing-checkbox-box-width);
+      border-radius: var(--ath-border-radius-checkbox);
+      border: var(--border);
+      background: var(--background);
+      color: var(--ico-color);
+
+      svg {
+        flex-shrink: 0;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--ath-spacing-checkbox-addons-row-gap);
+      align-self: stretch;
+
+      .required {
+        color: var(--ath-color-fg-feedback-danger);
+        padding-left: 4px;
+      }
+    }
+  }
+}

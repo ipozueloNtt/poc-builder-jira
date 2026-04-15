@@ -1,0 +1,46 @@
+@use '../segmented-control.mixins.scss' as mixins;
+
+@include mixins.item('sm');
+@include mixins.item('md');
+@include mixins.item('lg');
+@include mixins.item('xl');
+@include mixins.colorItem('primary');
+@include mixins.colorItem('secondary');
+
+.ath-segmented-control-item {
+  display: flex;
+  font-family: var(--ath-font-family-primary);
+  font-weight: var(--ath-font-weight-medium);
+  border-radius: var(--ath-border-radius-segmented-control-item);
+  cursor: pointer;
+  user-select: none;
+  gap: var(--ath-spacing-segmented-control-item-col-gap);
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  white-space: nowrap;
+
+  &.disabled {
+    border: var(--ath-color-segmented-control-border-disabled);
+    background: var(--ath-color-segmented-control-item-bg-disabled-default);
+    color: var(--ath-color-segmented-control-item-fg-disabled);
+    cursor: not-allowed;
+
+    .ath-segmented-control-item__icon {
+      color: var(--ath-color-segmented-control-item-icon-disabled);
+    }
+
+    &.selected {
+      background: var(--ath-color-segmented-control-item-bg-disabled-selected);
+      color: var(--ath-color-segmented-control-item-fg-disabled);
+    }
+
+    &.default {
+      background: var(--ath-color-segmented-control-item-bg-disabled-default);
+    }
+  }
+
+  &--icon-right {
+    flex-direction: row-reverse;
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "component": {
+    "tag": "ath-button-expandable",
+    "name": "Button Expandable",
+    "type": "interactive",
+    "category": "atoms",
+    "status": "stable",
+    "version": "v1",
+    "since": "2.0.0",
+    "filePath": "src/components/button-expandable/button-expandable.tsx",
+    "encapsulation": "scoped",
+    "description": "Boton que permite expandir o contraer contenido relacionado, normalmente en conjunto con ath-collapse.",
+    "links": {
+      "storybook": "https://aletehia.vercel.app/?path=/docs/componentes-button-expandable--docs",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json",
+      "figma": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012118-8029&m=dev"
+    }
+  },
+  "usage": {
+    "primaryIntent": "Controlar de forma accesible la visibilidad de bloques colapsables en contexto.",
+    "useCases": [
+      "Alternar la apertura de un ath-collapse asociado por id.",
+      "Mostrar accion de expandir/contraer con iconografia y texto de apoyo.",
+      "Usar diferentes tamanos segun densidad visual de la interfaz."
+    ],
+    "antiPatterns": [
+      {
+        "scenario": "Usar el componente sin asociarlo a un destino colapsable.",
+        "reason": "Reduce la consistencia del patron y deja el evento sin efecto visible.",
+        "alternative": "Definir collapse-target y gestionar athToggleCollapse junto a ath-collapse."
+      }
+    ]
+  },
+  "variants": {
+    "size": {
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "lg",
+      "prop": "size"
+    },
+    "state": {
+      "options": [
+        "enabled",
+        "disabled"
+      ],
+      "default": "enabled",
+      "prop": "disabled"
+    }
+  },
+  "composition": {
+    "layoutRole": "inline",
+    "allowedChildren": [],
+    "layoutRules": [
+      {
+        "rule": "Mantener el slot con texto corto y accionable.",
+        "reason": "Preserva legibilidad y alineacion con patron de boton expandible."
+      },
+      {
+        "rule": "Sincronizar estado expandido con athCollapseState cuando exista collapseTarget.",
+        "reason": "Garantiza coherencia visual y ARIA entre trigger y contenido colapsable."
+      }
+    ]
+  },
+  "artifacts": {
+    "code": {
+      "$ref": "./button-expandable.component-metadata.code.v1.json"
+    },
+    "storybook": {
+      "$ref": "./button-expandable.component-metadata.storybook.v1.json"
+    },
+    "foundations": {
+      "$ref": "./button-expandable.component-metadata.foundations.v1.json"
+    },
+    "componentSpec": "./component-spec.md"
+  },
+  "childrenPolicy": {
+    "mode": "direct-any",
+    "minChildren": 0,
+    "maxChildren": 1,
+    "allowTextNodes": true
+  },
+  "contentModel": {
+    "kind": "text",
+    "allowedTextFormats": [
+      "plain"
+    ],
+    "allowedInlineComponents": []
+  },
+  "runtime": {
+    "planner": {
+      "layoutRole": "inline",
+      "regionAffinity": [
+        "content",
+        "list-item",
+        "accordion"
+      ],
+      "priority": "medium"
+    },
+    "resolver": {
+      "allowedRegions": [
+        "content",
+        "list-item",
+        "accordion"
+      ],
+      "defaultRegion": "content"
+    },
+    "assembler": {
+      "nodeType": "component",
+      "maxDepth": 1,
+      "deterministicOrder": true
+    },
+    "validator": {
+      "schemaRefs": [
+        "https://aletheia.dev/schemas/ds/component-metadata.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.code.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.storybook.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.foundations.v1.schema.json"
+      ],
+      "strict": true
+    }
+  },
+  "examples": [
+    {
+      "name": "Playground",
+      "code": "<ath-button-expandable collapse-target=\"collapse-playground\">Button expandable</ath-button-expandable>",
+      "args": {
+        "size": "lg",
+        "defaultSlot": "Button expandable"
+      },
+      "storyId": "componentes-button-expandable--playground"
+    }
+  ],
+  "meta": {
+    "schemaVersion": "v1",
+    "generatedAt": "2026-02-27T00:00:00.000Z",
+    "sources": {
+      "stencilDocgen": "packages/stencil-library/docs.json (ath-button-expandable)",
+      "figma": "figma-mcp:get_design_context (section 40012118:8029 y preview 40012118:10969) + catalogo local aletheia-figma-components (nodo canonico 40002005:38156)",
+      "storybook": "packages/stencil-library/src/components/button-expandable/stories/button-expandable.stories.tsx + storybook-static/index.json",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json"
+    },
+    "ownership": {
+      "usage": "design-agent",
+      "variants": "design-agent",
+      "props": "stencil-docgen",
+      "events": "stencil-docgen",
+      "composition": "human",
+      "storybook": "human",
+      "styling": "build-extractor",
+      "foundations": "reconciler",
+      "runtime": "human"
+    }
+  },
+  "docs": "Generado en flujo dev specialist con fuentes de codigo, Storybook y Figma MCP. No se mezcla figma-console en la operacion atomica.",
+  "docsTags": [
+    {
+      "name": "figma-node",
+      "text": "40012118:8029"
+    },
+    {
+      "name": "figma-preview-node",
+      "text": "40012118:10969"
+    },
+    {
+      "name": "figma-canonical-node",
+      "text": "40002005:38156"
+    }
+  ]
+}

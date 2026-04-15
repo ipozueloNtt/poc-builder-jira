@@ -1,0 +1,137 @@
+@use '../../../sharedfc/input/button-comp/fc-button-comp' as buttonComp;
+@use '../../../assets/scss/elements/accesibility';
+@use './step.mixins.scss' as mixins;
+@use './step.theme.scss';
+
+@include buttonComp.fc-button-comp-vars;
+@include buttonComp.fc-button-comp;
+
+:host {
+  width: 100%;
+
+  .ath-step {
+    display: flex;
+    gap: var(--ath-spacing-stepper-step-content-info-padding-col-gap);
+
+    @include mixins.stepStyles(left, md);
+    @include mixins.stepStyles(left, sm);
+    @include mixins.stepStyles(center, md);
+    @include mixins.stepStyles(center, sm);
+
+    &__number {
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--bg-number);
+      border: var(--border-number);
+      border-radius: var(--border-radius-number);
+      color: var(--color-number);
+      .text {
+        text-align: center;
+        font-family: var(--ath-font-family-primary);
+        font-style: normal;
+        font-weight: var(--ath-font-weight-medium);
+      }
+    }
+
+    &__divider {
+      display: flex;
+      padding-top: var(--ath-spacing-stepper-step-divider-padding-top);
+      align-items: center;
+      flex: 1 0 0;
+
+      .line {
+        width: 2px;
+        height: 100%;
+        background-color: var(--ath-color-border-alpha-bolder-default);
+      }
+    }
+
+    &-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
+    }
+
+    &-content {
+      display: flex;
+      align-items: flex-start;
+      flex: 1 0 0;
+    }
+
+    &_content-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1 0 0;
+
+      .header-text,
+      .action-text {
+        align-self: stretch;
+        font-family: var(--ath-font-family-primary);
+        font-size: var(--ath-font-size-body-md);
+        line-height: var(--ath-font-line-height-body);
+      }
+
+      .header-text {
+        color: var(--color-header);
+        font-style: normal;
+        font-weight: var(--ath-font-weight-body-regular);
+      }
+
+      .action-text {
+        color: var(--color-action);
+        font-style: normal;
+        font-weight: var(--ath-font-weight-medium);
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      flex: 1 0 0;
+      align-self: stretch;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+
+      &:focus-visible {
+        .ath-step-indicator {
+          .ath-step__number {
+            box-shadow:
+              0px 0px 0px 2px var(--ath-color-drop-shadow-focus),
+              0px 0px 0px 4px var(--ath-color-border-focus);
+          }
+        }
+      }
+    }
+
+    &--clickable {
+      cursor: pointer;
+
+      &.ath-step--disabled,
+      &.ath-step--readonly,
+      &.ath-step--selected {
+        cursor: default;
+      }
+    }
+  }
+
+  .ath-collapse-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease-in-out;
+    &--open {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}

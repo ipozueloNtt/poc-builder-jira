@@ -1,0 +1,57 @@
+:host {
+  .ath-dropdown-option-header {
+    --background: var(--ath-color-bg-alpha-default);
+    --font-weight: var(--ath-font-weight-regular);
+    --color: var(--ath-color-fg-default);
+    --display-checked-ico: none;
+
+    &.disabled {
+      --color: var(--ath-color-fg-disabled);
+      pointer-events: none;
+    }
+
+    &:hover {
+      --background: var(--ath-color-bg-alpha-hovered);
+      --font-weight: var(--ath-font-weight-medium);
+    }
+
+    &:active {
+      --background: var(--ath-color-bg-alpha-pressed);
+      --font-weight: var(--ath-font-weight-medium);
+    }
+
+    &.selected {
+      --background: var(--ath-color-input-dropdown-option-bg-selected-default);
+      --color: var(--ath-color-fg-inverse-default);
+      --display-checked-ico: inline-block;
+
+      &:hover {
+        --background: var(--ath-color-input-dropdown-option-bg-selected-hovered);
+        --font-weight: var(--ath-font-weight-regular);
+      }
+
+      &:active {
+        --background: var(--ath-color-input-dropdown-option-bg-selected-pressed);
+        --font-weight: var(--ath-font-weight-regular);
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &.optGroup {
+      --font-weight: var(--ath-font-weight-medium);
+      pointer-events: none;
+    }
+  }
+
+  .ath-dropdown-option-header.active {
+    --box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus) inset;
+  }
+
+  .ath-dropdown-option-header.active.selected {
+    --background: var(--ath-color-input-dropdown-option-bg-selected-default);
+    --box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus) inset, 0px 0px 0px 4px var(--ath-color-drop-shadow-focus) inset;
+  }
+}

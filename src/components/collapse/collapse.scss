@@ -1,0 +1,10 @@
+:host {
+  .ath-collapse {
+    transition: height 0.5s;
+    color: var(--ath-color-fg-default);
+
+    &--overflow-hidden {
+      overflow: hidden;
+    }
+  }
+}

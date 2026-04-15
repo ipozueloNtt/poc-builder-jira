@@ -1,0 +1,18 @@
+@use './tag.theme.scss';
+
+:host {
+  display: inline-block;
+
+  .ath-tag {
+    display: flex;
+    align-items: center;
+    font-family: var(--ath-font-family-primary);
+    font-weight: var(--ath-font-weight-medium);
+    gap: var(--ath-spacing-tag-col-gap);
+    border-radius: var(--ath-border-radius-tag);
+    &--container {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

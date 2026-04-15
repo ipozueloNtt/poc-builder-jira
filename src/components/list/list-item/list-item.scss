@@ -1,0 +1,146 @@
+@use '../list.mixins' as mixins;
+
+:host {
+  display: flex;
+  flex-direction: var(--flex-direction--container);
+
+  .clickable {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus-visible:not(:active) {
+      outline: none;
+      .ath-list-item {
+        background: linear-gradient(0deg), var(--ath-color-bg-alpha-default);
+        box-shadow: 0 0 0 2px var(--ath-color-border-focus) inset;
+      }
+    }
+
+    &:hover {
+      background: var(--ath-color-bg-alpha-hovered);
+    }
+
+    &:active {
+      box-shadow: none;
+      background: var(--ath-color-bg-alpha-pressed);
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      background: var(--ath-color-bg-alpha-default);
+
+      .ath-list-item--title,
+      .ath-list-item--subtitle,
+      .ath-list-item--subtitle-wrapper,
+      .ath-list-item--subtitle-tooltip,
+      .ath-list-item--description {
+        color: var(--ath-color-fg-disabled);
+        cursor: not-allowed;
+        background: var(--ath-color-bg-alpha-default);
+      }
+
+      .tooltip-trigger {
+        pointer-events: none;
+        user-select: none;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: var(--ath-color-bg-alpha-default);
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .ath-list-item {
+    display: flex;
+    flex-direction: var(--flex-direction--items);
+    padding: var(--padding);
+    gap: var(--gap--list);
+    text-decoration: none;
+
+    &--center-detail {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: var(--gap--center-detail);
+    }
+
+    &--right-detail {
+      text-align: right;
+      font-style: normal;
+    }
+
+    &--title {
+      color: var(--ath-color-fg-default);
+      font-family: var(--ath-font-family-heading);
+      font-size: var(--ath-font-size-heading-4);
+      font-weight: var(--ath-font-weight-heading);
+      line-height: var(--ath-font-line-height-heading-4);
+      margin: 0;
+    }
+
+    &--subtitle {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--ath-spacing-list-item-col-gap-sm);
+      position: relative;
+      color: var(--ath-color-fg-subtle);
+      font-family: var(--ath-font-family-body);
+      font-size: var(--ath-font-size-body-lg);
+      font-weight: var(--ath-font-weight-body-regular);
+      line-height: var(--ath-font-line-height-body);
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      &-tooltip {
+        padding-top: 4px;
+      }
+    }
+
+    &--description {
+      overflow: hidden;
+      color: var(--ath-color-fg-default);
+      text-overflow: ellipsis;
+      font-family: var(--ath-font-family-body);
+      font-size: var(--ath-font-size-body-md);
+      font-weight: var(--ath-font-weight-body-regular);
+      line-height: var(--ath-font-line-height-body);
+    }
+  }
+
+  .empty {
+    display: none;
+  }
+}
+
+:host(.clickable.disabled) ::slotted([slot='right-detail']),
+:host(.clickable.disabled) ::slotted([slot='left-detail']) {
+  color: var(--ath-color-fg-disabled);
+  cursor: not-allowed;
+  user-select: none;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+::slotted([slot='right-detail']) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
+}
+
+@include mixins.athListItemOrientation();
+@include mixins.athListSize('xs', 'vertical');
+@include mixins.athListSize('sm', 'vertical');
+@include mixins.athListSize('md', 'vertical');
+@include mixins.athListSize('lg', 'vertical');
+@include mixins.athListSize('xs', 'horizontal');
+@include mixins.athListSize('sm', 'horizontal');
+@include mixins.athListSize('md', 'horizontal');
+@include mixins.athListSize('lg', 'horizontal');

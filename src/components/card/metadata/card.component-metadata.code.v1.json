@@ -1,0 +1,180 @@
+{
+  "version": "v1",
+  "filePath": "src/components/card/card.tsx",
+  "encapsulation": "scoped",
+  "tag": "ath-card",
+  "componentType": "container",
+  "docs": "Code surface metadata for ath-card generated from docs.json and source files.",
+  "props": [
+    {
+      "name": "ariaLabelledBy",
+      "type": "string",
+      "attr": "aria-labelled-by",
+      "attribute": "aria-labelled-by",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "ancho máximo de la card",
+      "description": "ID de referencia para aria-labelledby cuando clickable es false.",
+      "required": false
+    },
+    {
+      "name": "clickable",
+      "type": "boolean",
+      "attr": "clickable",
+      "attribute": "clickable",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Card is clickable",
+      "description": "Activa comportamiento interactivo y eventos de foco/click.",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "fluid",
+      "type": "boolean",
+      "attr": "fluid",
+      "attribute": "fluid",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "if Card thumbnail is fluid",
+      "description": "Define si el thumbnail se comporta en modo fluido.",
+      "default": "false",
+      "required": false
+    },
+    {
+      "name": "maxWidth",
+      "type": "string",
+      "attr": "max-width",
+      "attribute": "max-width",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "ancho máximo de la card",
+      "description": "Ancho máximo del contenedor.",
+      "required": false
+    },
+    {
+      "name": "orientation",
+      "type": "\"horizontal\" | \"vertical\"",
+      "attr": "orientation",
+      "attribute": "orientation",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Orientation Card",
+      "description": "Orientación principal de layout de la card.",
+      "default": "CardOrientation.Vertical",
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "\"md\" | \"sm\"",
+      "attr": "size",
+      "attribute": "size",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Size of the card",
+      "description": "Escala visual de espaciados y contenido de la card.",
+      "default": "CardSize.Small",
+      "required": false
+    },
+    {
+      "name": "width",
+      "type": "string",
+      "attr": "width",
+      "attribute": "width",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "ancho de la card",
+      "description": "Ancho explícito del contenedor.",
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "event": "athBlur",
+      "name": "athBlur",
+      "detail": "void",
+      "detailType": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when card loses focus",
+      "description": "Emitido cuando la card pierde foco.",
+      "internal": false
+    },
+    {
+      "event": "athClick",
+      "name": "athClick",
+      "detail": "void",
+      "detailType": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when card is clicked",
+      "description": "Emitido cuando se hace click en la card.",
+      "internal": false
+    },
+    {
+      "event": "athFocus",
+      "name": "athFocus",
+      "detail": "void",
+      "detailType": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when card gains focus",
+      "description": "Emitido cuando la card recibe foco.",
+      "internal": false
+    }
+  ],
+  "methods": [],
+  "listeners": [],
+  "styles": [],
+  "slots": [
+    {
+      "name": "thumbnail",
+      "docs": "Slot para ath-card-thumbnail."
+    },
+    {
+      "name": "img",
+      "docs": "Slot para elemento visual auxiliar del header."
+    },
+    {
+      "name": "tag",
+      "docs": "Slot para ath-tag contextual."
+    },
+    {
+      "name": "body",
+      "docs": "Slot de contenido principal."
+    },
+    {
+      "name": "footer",
+      "docs": "Slot de acciones o enlace final."
+    }
+  ],
+  "childrenPolicy": {
+    "mode": "slot-only",
+    "minChildren": 0,
+    "maxChildren": 5,
+    "allowTextNodes": false
+  },
+  "contentModel": {
+    "kind": "slot-only",
+    "allowedInlineComponents": [
+      "ath-card-thumbnail",
+      "ath-card-header",
+      "ath-icon",
+      "ath-tag",
+      "ath-button",
+      "ath-link"
+    ]
+  },
+  "dependencies": [
+    "ath-icon"
+  ],
+  "dependents": [],
+  "dependencyGraph": {
+    "ath-card": [
+      "ath-icon"
+    ]
+  }
+}

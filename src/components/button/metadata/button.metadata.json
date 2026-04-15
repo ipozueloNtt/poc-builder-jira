@@ -1,0 +1,232 @@
+{
+  "root": {
+    "id": "ath-button",
+    "name": "Button",
+    "tag": "ath-button",
+    "schemaVersion": "v1",
+    "status": "stable",
+    "category": "Componentes",
+    "description": "Componente de accion principal o secundaria con soporte de variantes visuales y de comportamiento.",
+    "owners": [
+      "design-system"
+    ],
+    "links": {
+      "figmaDocumentation": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012058-7091&m=dev",
+      "figmaComponentSet": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=4378-1624&m=dev",
+      "storybookTitle": "Componentes/Button",
+      "storybookDocsId": "componentes-button--docs"
+    },
+    "source": {
+      "componentPath": "packages/stencil-library/src/components/button/button.tsx",
+      "storiesPath": "packages/stencil-library/src/components/button/stories/button.stories.tsx",
+      "readmePath": "packages/stencil-library/src/components/button/readme.md"
+    },
+    "versioning": {
+      "since": "2.0.0",
+      "lastUpdated": "2026-02-13"
+    },
+    "sourceOfTruth": {
+      "code": "docs.json",
+      "storybook": "storybook-mcp",
+      "foundations": "figma-mcp",
+      "extractedAt": "2026-02-13T00:00:00Z"
+    }
+  },
+  "code": {
+    "props": [
+      {
+        "name": "color",
+        "attribute": "color",
+        "type": "primary | secondary",
+        "default": "primary",
+        "reflect": true
+      },
+      {
+        "name": "size",
+        "attribute": "size",
+        "type": "xs | sm | md | lg",
+        "default": "md",
+        "reflect": true
+      },
+      {
+        "name": "type",
+        "attribute": "type",
+        "type": "button | submit | reset",
+        "default": "button"
+      },
+      {
+        "name": "iconPosition",
+        "attribute": "icon-position",
+        "type": "none | left | right | icon-only",
+        "default": "none",
+        "reflect": true
+      },
+      {
+        "name": "icon",
+        "attribute": "icon",
+        "type": "string"
+      },
+      {
+        "name": "clear",
+        "attribute": "clear",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "fullWidth",
+        "attribute": "full-width",
+        "type": "boolean",
+        "default": false,
+        "reflect": true
+      },
+      {
+        "name": "disabled",
+        "attribute": "disabled",
+        "type": "boolean",
+        "default": false
+      }
+    ],
+    "events": [
+      {
+        "name": "athClick",
+        "payload": "void"
+      },
+      {
+        "name": "athFocus",
+        "payload": "void"
+      },
+      {
+        "name": "athBlur",
+        "payload": "void"
+      }
+    ],
+    "methods": [
+      {
+        "name": "setFocus",
+        "returns": "Promise<void>"
+      }
+    ],
+    "shadowParts": [
+      "button-styles"
+    ],
+    "dependencies": {
+      "uses": [
+        "ath-icon"
+      ],
+      "usedBy": [
+        "ath-calendar",
+        "ath-datepicker",
+        "ath-datepicker-range",
+        "ath-input-counter",
+        "ath-menu-button",
+        "ath-pagination"
+      ]
+    },
+    "accessibility": {
+      "role": "button",
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "ariaInputs": [
+        "aria-label",
+        "aria-labelledby",
+        "aria-controls",
+        "aria-describedby",
+        "aria-expanded",
+        "aria-haspopup",
+        "aria-pressed"
+      ]
+    }
+  },
+  "foundations": {
+    "variants": {
+      "color": [
+        "primary",
+        "secondary"
+      ],
+      "clear": [
+        "no",
+        "yes"
+      ],
+      "size": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ],
+      "icon-position": [
+        "none",
+        "left",
+        "right",
+        "icon-only"
+      ],
+      "state": [
+        "default",
+        "hover",
+        "active",
+        "focus"
+      ],
+      "disabled": [
+        "no",
+        "yes"
+      ],
+      "loading": [
+        "not-supported"
+      ]
+    },
+    "layout": {
+      "borderRadius": "token:ath-border-radius-pill",
+      "baseSpacing": {
+        "padding": "4px 8px",
+        "gap": "4px"
+      }
+    },
+    "tokens": {
+      "sourceOfTruth": "figma-mcp",
+      "references": {
+        "fontFamily": "token:ath-font-family-primary",
+        "focusBorder": "token:ath-color-border-focus",
+        "radius": "token:ath-border-radius-pill"
+      },
+      "notes": "Completar mapeo de tokens de color por variante (primary y secondary) cuando se extraigan del source de theming."
+    },
+    "usageGuidelines": {
+      "whenToUse": [
+        "Usar para acciones primarias o secundarias de una vista cuando se requiere una accion explicita del usuario.",
+        "Usar para disparar eventos de formulario y flujos de confirmacion."
+      ],
+      "whenNotToUse": [
+        "No usar para navegacion entre paginas; para eso usar componentes de enlace.",
+        "No usar como contenedor generico de iconos sin semantica de accion."
+      ],
+      "bestPractices": [
+        "Mantener texto de accion claro y en verbo de accion.",
+        "Usar variante primary solo para la accion principal de cada bloque.",
+        "En icon-only, proporcionar siempre aria-label descriptivo."
+      ],
+      "hierarchy": [
+        "Primary domina visualmente y se reserva para CTA principal.",
+        "Secondary acompana acciones alternativas del mismo nivel.",
+        "Clear debe usarse para acciones de baja prioridad contextual."
+      ],
+      "accessibility": [
+        "Garantizar nombre accesible mediante contenido textual o aria-label.",
+        "Respetar estado disabled con aria-disabled y exclusion de tab order.",
+        "Mantener contraste suficiente en cada variante y estado interactivo."
+      ]
+    },
+    "evidence": {
+      "figmaDocumentationNodeId": "40012058:7091",
+      "figmaComponentSetNodeId": "4378:1624",
+      "extractedAt": "2026-02-13T00:00:00Z",
+      "documentationSections": [
+        "when-to-use",
+        "when-not-to-use",
+        "best-practices",
+        "hierarchy",
+        "accessibility"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1012 @@
+{
+  "component": {
+    "tag": "ath-button",
+    "name": "Button",
+    "type": "interactive",
+    "category": "atoms",
+    "status": "stable",
+    "version": "v1",
+    "since": "2.0.0",
+    "filePath": "src/components/button/button.tsx",
+    "encapsulation": "shadow",
+    "description": "Componente de accion principal o secundaria con soporte de variantes visuales y de comportamiento.",
+    "links": {
+      "storybook": "https://aletehia.vercel.app/?path=/docs/componentes-button--docs",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json",
+      "figma": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012058-7091&m=dev"
+    }
+  },
+  "usage": {
+    "primaryIntent": "Disparar una accion explicita del usuario en formularios y flujos de decision.",
+    "useCases": [
+      "Accion primaria de una vista o bloque.",
+      "Accion secundaria contextual de un mismo flujo."
+    ],
+    "antiPatterns": [
+      {
+        "scenario": "Usar el boton para navegacion entre paginas",
+        "reason": "Rompe semantica esperada de enlace",
+        "alternative": "Usar ath-link o componente de navegacion"
+      }
+    ]
+  },
+  "variants": {
+    "color": {
+      "options": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary",
+      "prop": "color"
+    },
+    "size": {
+      "options": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md",
+      "prop": "size"
+    },
+    "iconPosition": {
+      "options": [
+        "none",
+        "left",
+        "right",
+        "icon-only"
+      ],
+      "default": "none",
+      "prop": "iconPosition"
+    },
+    "clear": {
+      "options": [
+        "no",
+        "yes"
+      ],
+      "default": "no",
+      "prop": "clear"
+    },
+    "disabled": {
+      "options": [
+        "no",
+        "yes"
+      ],
+      "default": "no",
+      "prop": "disabled"
+    },
+    "loading": {
+      "options": [
+        "not-supported"
+      ],
+      "default": "not-supported",
+      "prop": "loading"
+    }
+  },
+  "composition": {
+    "layoutRole": "control",
+    "allowedChildren": [],
+    "layoutRules": [
+      {
+        "rule": "Mantener una unica accion primaria por contexto visual.",
+        "reason": "Evita competir por la atencion del usuario."
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "clear",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "clear",
+      "attribute": "clear",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "The clear of the button (background and border color)",
+      "description": "The clear of the button (background and border color)",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "color",
+      "type": "\"primary\" | \"secondary\"",
+      "complexType": {
+        "original": "ButtonColors",
+        "resolved": "\"primary\" | \"secondary\"",
+        "references": {
+          "ButtonColors": {
+            "location": "import",
+            "path": "./button.model",
+            "id": "src/components/button/button.model.ts::ButtonColors",
+            "referenceLocation": "ButtonColors"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "color",
+      "attribute": "color",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "The color variant of the button",
+      "description": "The color variant of the button",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "ButtonColor.Primary"
+        }
+      ],
+      "default": "ButtonColor.Primary",
+      "values": [
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "disabled",
+      "attribute": "disabled",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "The button is disabled",
+      "description": "The button is disabled",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "full-width",
+      "attribute": "full-width",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "The button can be adapted to its container width",
+      "description": "The button can be adapted to its container width",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "icon",
+      "attribute": "icon",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "The code of the button's icon (used with iconPosition)",
+      "description": "The code of the button's icon (used with iconPosition)",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "iconPosition",
+      "type": "\"icon-only\" | \"left\" | \"none\" | \"right\"",
+      "complexType": {
+        "original": "ButtonIconPositions",
+        "resolved": "\"icon-only\" | \"left\" | \"none\" | \"right\"",
+        "references": {
+          "ButtonIconPositions": {
+            "location": "import",
+            "path": "./button.model",
+            "id": "src/components/button/button.model.ts::ButtonIconPositions",
+            "referenceLocation": "ButtonIconPositions"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "icon-position",
+      "attribute": "icon-position",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "Whether the button has an icon and his position",
+      "description": "Whether the button has an icon and his position",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "ButtonIconPosition.None"
+        }
+      ],
+      "default": "ButtonIconPosition.None",
+      "values": [
+        {
+          "value": "icon-only",
+          "type": "string"
+        },
+        {
+          "value": "left",
+          "type": "string"
+        },
+        {
+          "value": "none",
+          "type": "string"
+        },
+        {
+          "value": "right",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "size",
+      "type": "\"lg\" | \"md\" | \"sm\" | \"xs\"",
+      "complexType": {
+        "original": "ButtonSizes",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\"",
+        "references": {
+          "ButtonSizes": {
+            "location": "import",
+            "path": "./button.model",
+            "id": "src/components/button/button.model.ts::ButtonSizes",
+            "referenceLocation": "ButtonSizes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "size",
+      "attribute": "size",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "The size of the buton",
+      "description": "The size of the buton",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "ButtonSize.Medium"
+        }
+      ],
+      "default": "ButtonSize.Medium",
+      "values": [
+        {
+          "value": "lg",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        },
+        {
+          "value": "sm",
+          "type": "string"
+        },
+        {
+          "value": "xs",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "type",
+      "type": "\"button\" | \"reset\" | \"submit\"",
+      "complexType": {
+        "original": "ButtonTypes",
+        "resolved": "\"button\" | \"reset\" | \"submit\"",
+        "references": {
+          "ButtonTypes": {
+            "location": "import",
+            "path": "./button.model",
+            "id": "src/components/button/button.model.ts::ButtonTypes",
+            "referenceLocation": "ButtonTypes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "type",
+      "attribute": "type",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "The type of the button",
+      "description": "The type of the button",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "ButtonType.Button"
+        }
+      ],
+      "default": "ButtonType.Button",
+      "values": [
+        {
+          "value": "button",
+          "type": "string"
+        },
+        {
+          "value": "reset",
+          "type": "string"
+        },
+        {
+          "value": "submit",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    }
+  ],
+  "events": [
+    {
+      "event": "athBlur",
+      "name": "athBlur",
+      "detail": "void",
+      "detailType": "void",
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button loses focus",
+      "description": "Emitted when the button loses focus",
+      "docsTags": [],
+      "internal": false
+    },
+    {
+      "event": "athClick",
+      "name": "athClick",
+      "detail": "void",
+      "detailType": "void",
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button is clicked",
+      "description": "Emitted when the button is clicked",
+      "docsTags": [],
+      "internal": false
+    },
+    {
+      "event": "athFocus",
+      "name": "athFocus",
+      "detail": "void",
+      "detailType": "void",
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button gains focus",
+      "description": "Emitted when the button gains focus",
+      "docsTags": [],
+      "internal": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "setFocus",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "signature": "setFocus() => Promise<void>",
+      "parameters": [],
+      "docs": "",
+      "description": "",
+      "docsTags": [],
+      "internal": false
+    }
+  ],
+  "listeners": [
+    {
+      "event": "keydown",
+      "capture": false,
+      "passive": false
+    }
+  ],
+  "slots": [
+    {
+      "name": "default",
+      "docs": "Contenido textual del boton o etiqueta accesible para icon-only."
+    }
+  ],
+  "childrenPolicy": {
+    "mode": "direct-any",
+    "minChildren": 0,
+    "maxChildren": 1,
+    "allowTextNodes": true
+  },
+  "contentModel": {
+    "kind": "text",
+    "allowedTextFormats": [
+      "plain"
+    ],
+    "allowedInlineComponents": []
+  },
+  "parts": [
+    {
+      "name": "button-styles",
+      "docs": ""
+    }
+  ],
+  "styles": [],
+  "dependencies": [
+    "ath-icon"
+  ],
+  "dependents": [
+    "ath-calendar",
+    "ath-datepicker",
+    "ath-datepicker-range",
+    "ath-input-counter",
+    "ath-menu-button",
+    "ath-pagination"
+  ],
+  "variantPropBindings": {
+    "color": {
+      "prop": "color",
+      "mapping": {
+        "primary": "primary",
+        "secondary": "secondary"
+      }
+    },
+    "size": {
+      "prop": "size",
+      "mapping": {
+        "xs": "xs",
+        "sm": "sm",
+        "md": "md",
+        "lg": "lg"
+      }
+    },
+    "iconPosition": {
+      "prop": "iconPosition",
+      "mapping": {
+        "none": "none",
+        "left": "left",
+        "right": "right",
+        "icon-only": "icon-only"
+      }
+    },
+    "clear": {
+      "prop": "clear",
+      "mapping": {
+        "no": false,
+        "yes": true
+      }
+    },
+    "disabled": {
+      "prop": "disabled",
+      "mapping": {
+        "no": false,
+        "yes": true
+      }
+    },
+    "fullWidth": {
+      "prop": "fullWidth",
+      "mapping": {
+        "no": false,
+        "yes": true
+      }
+    }
+  },
+  "storybook": {
+    "stories": [
+      {
+        "id": "componentes-button--playground",
+        "name": "Playground",
+        "args": {
+          "color": "primary",
+          "size": "md",
+          "defaultSlot": "Continuar"
+        },
+        "controls": {
+          "color": {
+            "type": "select",
+            "options": [
+              "primary",
+              "secondary"
+            ]
+          },
+          "size": {
+            "type": "radio",
+            "options": [
+              "xs",
+              "sm",
+              "md",
+              "lg"
+            ]
+          },
+          "clear": {
+            "type": "boolean"
+          },
+          "icon-position": {
+            "type": "radio",
+            "options": [
+              "none",
+              "left",
+              "right",
+              "icon-only"
+            ]
+          },
+          "icon": {
+            "type": "select"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "full-width": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "select",
+            "options": [
+              "button",
+              "submit",
+              "reset"
+            ]
+          }
+        }
+      },
+      {
+        "id": "componentes-button--color",
+        "name": "Color",
+        "args": {
+          "color": "primary",
+          "size": "md",
+          "defaultSlot": "Continuar"
+        },
+        "controls": {
+          "color": {
+            "type": "select",
+            "options": [
+              "primary",
+              "secondary"
+            ]
+          }
+        }
+      },
+      {
+        "id": "componentes-button--size",
+        "name": "Size",
+        "args": {
+          "color": "primary",
+          "size": "md",
+          "defaultSlot": "Continuar"
+        },
+        "controls": {
+          "size": {
+            "type": "radio",
+            "options": [
+              "xs",
+              "sm",
+              "md",
+              "lg"
+            ]
+          }
+        }
+      },
+      {
+        "id": "componentes-button--clear",
+        "name": "Clear",
+        "args": {
+          "color": "primary",
+          "size": "md",
+          "clear": true,
+          "defaultSlot": "Continuar"
+        },
+        "controls": {
+          "clear": {
+            "type": "boolean"
+          }
+        }
+      },
+      {
+        "id": "componentes-button--with-icon",
+        "name": "Icon Position",
+        "args": {
+          "color": "primary",
+          "size": "md",
+          "icon": "download",
+          "icon-position": "left",
+          "defaultSlot": "Continuar"
+        },
+        "controls": {
+          "icon-position": {
+            "type": "radio",
+            "options": [
+              "none",
+              "left",
+              "right",
+              "icon-only"
+            ]
+          },
+          "icon": {
+            "type": "select"
+          }
+        }
+      },
+      {
+        "id": "componentes-button--disabled",
+        "name": "Disabled",
+        "args": {
+          "color": "primary",
+          "size": "md",
+          "disabled": true,
+          "defaultSlot": "Continuar"
+        },
+        "controls": {
+          "disabled": {
+            "type": "boolean"
+          }
+        }
+      },
+      {
+        "id": "componentes-button--autofocus",
+        "name": "Autofocus",
+        "args": {
+          "color": "primary",
+          "size": "md",
+          "autofocus": true,
+          "defaultSlot": "Continuar"
+        },
+        "controls": {
+          "autofocus": {
+            "type": "boolean"
+          }
+        }
+      },
+      {
+        "id": "componentes-button--full-width",
+        "name": "Full Width",
+        "args": {
+          "color": "primary",
+          "size": "md",
+          "full-width": true,
+          "defaultSlot": "Continuar"
+        },
+        "controls": {
+          "full-width": {
+            "type": "boolean"
+          }
+        }
+      }
+    ],
+    "canonicalStoryId": "componentes-button--docs",
+    "documentedStates": [
+      {
+        "name": "default",
+        "args": {
+          "color": "primary",
+          "size": "md"
+        }
+      },
+      {
+        "name": "disabled",
+        "args": {
+          "disabled": true
+        }
+      },
+      {
+        "name": "icon-only",
+        "args": {
+          "icon-position": "icon-only",
+          "icon": "download",
+          "aria-label": "Descargar"
+        }
+      }
+    ],
+    "argValidation": {
+      "coveredProps": [
+        "color",
+        "clear",
+        "size",
+        "iconPosition",
+        "icon",
+        "disabled",
+        "fullWidth",
+        "type"
+      ],
+      "missingProps": [],
+      "invalidArgs": []
+    }
+  },
+  "foundations": {
+    "references": [
+      {
+        "id": "figma:button-docs-40012058:7091",
+        "version": "2026-02-19",
+        "scope": "content"
+      },
+      {
+        "id": "figma:button-component-set-4378:1624",
+        "version": "2026-02-19",
+        "scope": "layout"
+      },
+      {
+        "id": "figma:button-design-tokens",
+        "version": "2026-02-19",
+        "scope": "tokens"
+      },
+      {
+        "id": "figma:button-a11y-guidelines",
+        "version": "2026-02-19",
+        "scope": "a11y"
+      }
+    ],
+    "tokensUsed": {
+      "color": [
+        "token:ath-color-border-focus"
+      ],
+      "spacing": [
+        "token:ath-spacing-2",
+        "token:ath-spacing-4"
+      ],
+      "typography": [
+        "token:ath-font-family-primary"
+      ],
+      "radius": [
+        "token:ath-border-radius-pill"
+      ],
+      "shadow": [],
+      "motion": []
+    },
+    "semanticVariants": [
+      {
+        "axis": "color",
+        "option": "primary",
+        "mode": "light",
+        "tokens": [
+          "token:ath-color-border-focus"
+        ]
+      },
+      {
+        "axis": "color",
+        "option": "secondary",
+        "mode": "light",
+        "tokens": [
+          "token:ath-color-border-focus"
+        ]
+      },
+      {
+        "axis": "size",
+        "option": "md",
+        "mode": "light",
+        "tokens": [
+          "token:ath-spacing-4"
+        ]
+      }
+    ],
+    "layoutSignals": {
+      "layoutRole": "form-control",
+      "regionAffinity": [
+        "form",
+        "content"
+      ]
+    },
+    "accessibilitySignals": {
+      "requiresLabel": true,
+      "keyboardModel": "enter-space-activation",
+      "focusOrder": "natural"
+    },
+    "plannerHints": {
+      "priority": "high",
+      "containerEligibility": false,
+      "regionAffinity": [
+        "form",
+        "content"
+      ]
+    },
+    "theming": {
+      "modes": [
+        "light"
+      ],
+      "defaultMode": "light",
+      "tokenBindings": [
+        {
+          "target": "root.borderRadius",
+          "token": "token:ath-border-radius-pill"
+        },
+        {
+          "target": "root.gap",
+          "token": "token:ath-spacing-2"
+        },
+        {
+          "target": "root.padding",
+          "token": "token:ath-spacing-4"
+        },
+        {
+          "target": "root.fontFamily",
+          "token": "token:ath-font-family-primary"
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "name": "Playground",
+      "code": "<ath-button color=\"primary\" size=\"md\">Continuar</ath-button>",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "defaultSlot": "Continuar"
+      },
+      "storyId": "componentes-button--playground"
+    }
+  ],
+  "runtime": {
+    "planner": {
+      "layoutRole": "control",
+      "regionAffinity": [
+        "form",
+        "content"
+      ],
+      "priority": "high"
+    },
+    "resolver": {
+      "allowedRegions": [
+        "form",
+        "content"
+      ],
+      "defaultRegion": "content"
+    },
+    "assembler": {
+      "nodeType": "component",
+      "maxDepth": 1,
+      "deterministicOrder": true
+    },
+    "validator": {
+      "schemaRefs": [
+        "https://aletheia.dev/schemas/ds/component-metadata.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.code.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.storybook.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.foundations.v1.schema.json"
+      ],
+      "strict": true
+    }
+  },
+  "meta": {
+    "schemaVersion": "v1",
+    "generatedAt": "2026-02-19T14:00:54.873Z",
+    "sources": {
+      "stencilDocgen": "packages/stencil-library/docs.json",
+      "figma": "figma-mcp + figma-design-doc-to-operational-metadata (button docs node 40012058:7091)",
+      "storybook": "storybook-static/index.json + stories source"
+    },
+    "ownership": {
+      "usage": "design-agent",
+      "variants": "design-agent",
+      "props": "stencil-docgen",
+      "events": "stencil-docgen",
+      "composition": "human",
+      "storybook": "human",
+      "styling": "build-extractor",
+      "foundations": "reconciler",
+      "runtime": "human"
+    }
+  },
+  "docs": "Migrado desde schema legacy button.metadata.json a schema modular v1.",
+  "docsTags": [
+    {
+      "name": "migration",
+      "text": "legacy-to-v1"
+    },
+    {
+      "name": "figma-node",
+      "text": "40012058:7091"
+    }
+  ]
+}

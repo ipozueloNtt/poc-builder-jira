@@ -1,0 +1,173 @@
+{
+  "component": {
+    "tag": "ath-tag",
+    "name": "Tag",
+    "type": "display",
+    "category": "atoms",
+    "status": "stable",
+    "version": "v1",
+    "since": "2.0.0",
+    "filePath": "src/components/tag/tag.tsx",
+    "encapsulation": "shadow",
+    "description": "Componente visual para mostrar estados o clasificaciones breves con color, tamano e icono opcional.",
+    "links": {
+      "storybook": "https://aletehia.vercel.app/?path=/docs/componentes-tag--docs",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json",
+      "figma": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012185-9743&m=dev"
+    }
+  },
+  "usage": {
+    "primaryIntent": "Comunicar de forma compacta un estado o categoria semantica dentro de un flujo visual.",
+    "useCases": [
+      "Mostrar etiquetas de estado en tarjetas, listados o resumentes.",
+      "Acompanar un texto corto con icono de apoyo semantico.",
+      "Resaltar condiciones de negocio con escala de severidad por color."
+    ],
+    "antiPatterns": [
+      {
+        "scenario": "Usar tags para bloques de texto largo o mensajes complejos.",
+        "reason": "Perjudica la legibilidad y rompe el patron de uso compacto.",
+        "alternative": "Usar ath-alert u otro componente de feedback con mayor capacidad de contenido."
+      }
+    ]
+  },
+  "variants": {
+    "color": {
+      "options": [
+        "primary",
+        "secondary",
+        "accent",
+        "danger",
+        "warning",
+        "success",
+        "disabled"
+      ],
+      "default": "primary",
+      "prop": "color"
+    },
+    "size": {
+      "options": [
+        "sm",
+        "md",
+        "lg"
+      ],
+      "default": "md",
+      "prop": "size"
+    }
+  },
+  "composition": {
+    "layoutRole": "inline",
+    "allowedChildren": [],
+    "layoutRules": [
+      {
+        "rule": "Mantener contenido corto y descriptivo dentro del tag.",
+        "reason": "El componente esta optimizado para lectura rapida en contexto."
+      },
+      {
+        "rule": "Usar icono solo cuando agregue significado claro al texto.",
+        "reason": "Evita ruido visual y mantiene consistencia semantica."
+      }
+    ]
+  },
+  "artifacts": {
+    "code": {
+      "$ref": "./tag.component-metadata.code.v1.json"
+    },
+    "storybook": {
+      "$ref": "./tag.component-metadata.storybook.v1.json"
+    },
+    "foundations": {
+      "$ref": "./tag.component-metadata.foundations.v1.json"
+    },
+    "componentSpec": "./component-spec.md"
+  },
+  "childrenPolicy": {
+    "mode": "direct-any",
+    "minChildren": 0,
+    "maxChildren": 1,
+    "allowTextNodes": true
+  },
+  "contentModel": {
+    "kind": "text",
+    "allowedTextFormats": [
+      "plain"
+    ],
+    "allowedInlineComponents": []
+  },
+  "runtime": {
+    "planner": {
+      "layoutRole": "inline",
+      "regionAffinity": [
+        "content",
+        "list-item"
+      ],
+      "priority": "medium"
+    },
+    "resolver": {
+      "allowedRegions": [
+        "content",
+        "list-item",
+        "card"
+      ],
+      "defaultRegion": "content"
+    },
+    "assembler": {
+      "nodeType": "component",
+      "maxDepth": 1,
+      "deterministicOrder": true
+    },
+    "validator": {
+      "schemaRefs": [
+        "https://aletheia.dev/schemas/ds/component-metadata.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.code.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.storybook.v1.schema.json",
+        "https://aletheia.dev/schemas/ds/component-metadata.foundations.v1.schema.json"
+      ],
+      "strict": true
+    }
+  },
+  "examples": [
+    {
+      "name": "Playground",
+      "code": "<ath-tag color=\"primary\" size=\"md\" heading-text=\"Caducada\"></ath-tag>",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "heading-text": "Caducada"
+      },
+      "storyId": "componentes-tag--playground"
+    }
+  ],
+  "meta": {
+    "schemaVersion": "v1",
+    "generatedAt": "2026-02-21T18:37:26.732Z",
+    "sources": {
+      "stencilDocgen": "packages/stencil-library/docs.json (ath-tag)",
+      "figma": "figma-mcp:get_design_context/get_screenshot/get_variable_defs (nodo documental 40012185:9743) + catalogo interno aletheia-figma-components (nodo canonico 40000956:12773)",
+      "storybook": "fallback local: packages/stencil-library/storybook-static/index.json + src/components/tag/stories/tag.stories.tsx",
+      "storybookDocsJson": "https://aletehia.vercel.app/docs.json"
+    },
+    "ownership": {
+      "usage": "design-agent",
+      "variants": "design-agent",
+      "props": "stencil-docgen",
+      "events": "stencil-docgen",
+      "composition": "human",
+      "storybook": "human",
+      "styling": "build-extractor",
+      "foundations": "reconciler",
+      "runtime": "human"
+    }
+  },
+  "docs": "Generado en flujo dev specialist con fuentes docs.json, Storybook local y Figma MCP. No se mezcla figma-console en la operacion atomica.",
+  "docsTags": [
+    {
+      "name": "figma-node",
+      "text": "40012185:9743"
+    },
+    {
+      "name": "figma-canonical-node",
+      "text": "40000956:12773"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "references": [
+    {
+      "id": "figma:button-expandable-docs-40012118:8029",
+      "version": "2026-02-27",
+      "scope": "content"
+    },
+    {
+      "id": "figma:button-expandable-component-page-40002005:38156",
+      "version": "2026-02-27",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:button-expandable-preview-40012118:10969",
+      "version": "2026-02-27",
+      "scope": "tokens"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:ath-color-fg-default",
+      "token:ath-color-fg-disabled",
+      "token:ath-color-border-focus"
+    ],
+    "spacing": [
+      "token:ath-spacing-between-100"
+    ],
+    "typography": [
+      "token:ath-font-family-primary",
+      "token:ath-font-weight-medium",
+      "token:ath-font-line-height-body",
+      "token:ath-font-size-body-sm",
+      "token:ath-font-size-body-md",
+      "token:ath-font-size-body-lg"
+    ],
+    "radius": [
+      "token:ath-border-radius-2xs"
+    ],
+    "shadow": [],
+    "motion": []
+  },
+  "semanticVariants": [
+    {
+      "axis": "size",
+      "option": "sm",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-body-sm"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "md",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-body-md"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "lg",
+      "mode": "light",
+      "tokens": [
+        "token:ath-font-size-body-lg"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "disabled",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-fg-disabled"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "inline",
+    "regionAffinity": [
+      "content",
+      "list-item",
+      "accordion"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": true,
+    "keyboardModel": "button-like",
+    "focusOrder": "natural"
+  },
+  "plannerHints": {
+    "priority": "medium",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "content",
+      "list-item",
+      "accordion"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "root.borderRadius",
+        "token": "token:ath-border-radius-2xs"
+      },
+      {
+        "target": "root.color",
+        "token": "token:ath-color-fg-default"
+      },
+      {
+        "target": "root.gap",
+        "token": "token:ath-spacing-between-100"
+      },
+      {
+        "target": "root.fontFamily",
+        "token": "token:ath-font-family-primary"
+      },
+      {
+        "target": "root.fontWeight",
+        "token": "token:ath-font-weight-medium"
+      },
+      {
+        "target": "root.lineHeight",
+        "token": "token:ath-font-line-height-body"
+      },
+      {
+        "target": "root.fontSize",
+        "token": "token:ath-font-size-body-sm",
+        "variantAxis": "size",
+        "variantOption": "sm"
+      },
+      {
+        "target": "root.fontSize",
+        "token": "token:ath-font-size-body-md",
+        "variantAxis": "size",
+        "variantOption": "md"
+      },
+      {
+        "target": "root.fontSize",
+        "token": "token:ath-font-size-body-lg",
+        "variantAxis": "size",
+        "variantOption": "lg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+@use '../../sharedfc/tooltip' as Menus;
+@use 'utilities';
+
+@use './menu-lateral.theme.scss';
+@use '../../assets/scss/elements/accesibility';
+
+:host {
+  display: flex;
+  height: 100%;
+
+  .ath-menu-lateral {
+    display: flex;
+    height: 100%;
+
+    padding: var(--ath-spacing-menu-lateral-padding-y) var(--ath-spacing-menu-lateral-padding-x);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ath-spacing-menu-lateral-row-gap);
+
+    background: var(--ath-color-menu-lateral-bg-default);
+
+    outline: none;
+    border-right: var(--ath-border-width-xs) solid var(--ath-color-border-alpha-bold-default);
+
+    .ath-menu-lateral__item-wrapper {
+      cursor: pointer;
+      position: relative;
+
+      .ath-menu-lateral__item {
+        display: flex;
+        align-items: center;
+        border-radius: var(--ath-border-radius-menu-vertical-item-level);
+
+        &-container {
+          display: flex;
+          padding: var(--ath-spacing-menu-lateral-item-padding-around);
+          align-items: center;
+          border-radius: var(--border-radius-container);
+          background: var(--bg-container);
+          box-shadow: var(--box-shadow);
+        }
+
+        &--focused:not(.ath-menu-lateral__item-container--disabled):not(.ath-menu-lateral__item-container--selected) {
+          outline: none;
+          --border-radius-container: var(--ath-border-radius-menu-vertical-item-level);
+          --box-shadow: 0 0 0 2px var(--ath-color-drop-shadow-focus), 0 0 0 4px var(--ath-color-border-focus);
+          --bg-container: var(--ath-color-menu-lateral-bg-default);
+        }
+
+        &--focused:not(.ath-menu-lateral__item-container--disabled) {
+          outline: none;
+          --border-radius-container: var(--ath-border-radius-menu-vertical-item-level);
+          --box-shadow: 0 0 0 2px var(--ath-color-drop-shadow-focus), 0 0 0 4px var(--ath-color-border-focus);
+        }
+      }
+
+      @include Menus.fc-help-description;
+    }
+  }
+}

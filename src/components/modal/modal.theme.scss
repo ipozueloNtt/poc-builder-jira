@@ -1,0 +1,11 @@
+:host {
+  .ath-modal {
+    &--sm {
+      --padding: var(--ath-spacing-modal-padding-around-sm);
+    }
+
+    &--md {
+      --padding: var(--ath-spacing-modal-padding-around-md);
+    }
+  }
+}

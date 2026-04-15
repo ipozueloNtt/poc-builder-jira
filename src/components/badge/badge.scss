@@ -1,0 +1,50 @@
+@use './badge.theme.scss';
+@use '../../../assets/scss/elements/accesibility';
+
+:host {
+  display: inline-block;
+
+  .ath-badge {
+    outline: 1px solid var(--ath-color-badge-border);
+    &--container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: var(--ath-spacing-badge-item-right-gap);
+    }
+
+    // Badge type
+    &--dot {
+      width: var(--ath-sizing-badge-dot-width);
+      height: var(--ath-sizing-badge-dot-height);
+      border-radius: var(--ath-border-radius-circle);
+      display: block;
+    }
+
+    &--numeric {
+      padding: var(--ath-spacing-badge-padding-y) var(--ath-spacing-badge-padding-x);
+      border-radius: var(--ath-border-radius-circle);
+      text-align: center;
+      font-family: var(--ath-font-family-body);
+      font-size: var(--ath-font-size-comp-sm);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-body-regular);
+      line-height: var(--ath-font-line-height-comp-sm);
+    }
+
+    // Badge position
+    &--top-right {
+      position: absolute;
+      top: -4px;
+      left: calc(100% - 10px);
+
+      &.ath-badge--dot {
+        left: calc(100% - 5px);
+      }
+    }
+
+    &--right {
+      position: static;
+    }
+  }
+}

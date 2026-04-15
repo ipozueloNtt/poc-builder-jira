@@ -1,0 +1,14 @@
+@use './pictogram.mixins.scss' as mixins;
+
+:host {
+  display: inline-flex;
+  height: fit-content;
+  width: fit-content;
+
+  @include mixins.pictogram-size('xs');
+  @include mixins.pictogram-size('sm');
+  @include mixins.pictogram-size('md');
+  @include mixins.pictogram-size('lg');
+  @include mixins.pictogram-size('xl');
+  @include mixins.pictogram-size('2xl');
+}

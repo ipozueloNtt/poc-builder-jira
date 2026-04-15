@@ -1,0 +1,96 @@
+:host {
+  display: flex;
+  align-items: center;
+  border-bottom: var(--ath-border-width-xs) solid var(--ath-color-table-row-item-border);
+  transition: border-bottom-color 0.5s ease;
+  position: relative;
+
+  .ath-table-row__wrapper {
+    display: contents;
+  }
+
+  .ath-table-row__focus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    pointer-events: none;
+
+    &:focus-visible {
+      outline: none;
+      box-shadow:
+        0 0 0 2px var(--ath-color-drop-shadow-focus),
+        0 0 0 4px var(--ath-color-border-focus);
+      border-radius: 2px;
+    }
+
+    &:focus {
+      pointer-events: auto;
+    }
+  }
+}
+
+:host(.ath-table-row--last) {
+  border-bottom-color: transparent;
+
+  > ::slotted(:first-child),
+  .ath-table-row__wrapper > ::slotted(:first-child) {
+    border-bottom-left-radius: var(--ath-border-radius-table-default);
+  }
+
+  > ath-table-row-item[data-ath-selection] {
+    border-bottom-left-radius: var(--ath-border-radius-table-default);
+
+    ~ ::slotted(*),
+    ~ .ath-table-row__wrapper > ::slotted(*) {
+      border-bottom-left-radius: initial;
+    }
+  }
+
+  > ::slotted(:last-child),
+  > ath-table-row-item[data-ath-action] {
+    border-bottom-right-radius: var(--ath-border-radius-table-default);
+  }
+}
+
+:host(.ath-table-row--clickable) {
+  cursor: pointer;
+}
+
+:host(.ath-table-row--clickable:hover) {
+  border-color: var(--ath-color-table-row-clickable-border-hovered);
+  border-width: var(--ath-border-width-table-row-clickable-hover);
+  box-shadow: var(--ath-box-shadow-table-row-clickable-hovered-offset-x) var(--ath-box-shadow-table-row-clickable-hovered-offset-y)
+    var(--ath-box-shadow-table-row-clickable-hovered-blur) var(--ath-box-shadow-table-row-clickable-hovered-color);
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    border-width 0.2s ease;
+  z-index: 1;
+}
+
+:host(.ath-table-row--clickable:active) {
+  border-color: var(--ath-color-table-row-clickable-border-pressed);
+  border-width: var(--ath-border-width-table-row-clickable-active);
+  box-shadow: var(--ath-box-shadow-table-row-clickable-pressed-offset-x) var(--ath-box-shadow-table-row-clickable-pressed-offset-y)
+    var(--ath-box-shadow-table-row-clickable-pressed-blur) var(--ath-box-shadow-table-row-clickable-pressed-color);
+  transition:
+    box-shadow 0.1s ease,
+    border-color 0.1s ease,
+    border-width 0.1s ease;
+  z-index: 1;
+}
+
+:host(.ath-table-row--last.ath-table-row--clickable:hover),
+:host(.ath-table-row--last.ath-table-row--clickable:active) {
+  border-color: transparent;
+  border-width: var(--ath-border-width-xs);
+  border-bottom-left-radius: var(--ath-border-radius-table-default);
+  border-bottom-right-radius: var(--ath-border-radius-table-default);
+}

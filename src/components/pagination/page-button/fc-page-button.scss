@@ -1,0 +1,72 @@
+@mixin fc-page-button {
+  :host {
+    .ath-pagination-page-button {
+      display: flex;
+      padding: var(--ath-spacing-pagination-page-button-padding-y) var(--ath-spacing-pagination-page-button-padding-x);
+      justify-content: center;
+      align-items: center;
+      border: none;
+      border-radius: var(--ath-border-radius-pagination-page-button);
+      background: var(--ath-color-pagination-page-button-bg-default);
+
+      &-number {
+        color: var(--ath-color-pagination-page-button-fg-default);
+        text-align: center;
+        font-family: var(--ath-font-family-primary);
+        font-size: var(--ath-font-size-comp-md);
+        font-style: normal;
+        font-weight: var(--ath-font-weight-medium);
+        line-height: var(--ath-font-line-height-comp-sm);
+        min-width: 20px;
+      }
+
+      &--disabled {
+        cursor: not-allowed;
+        .ath-pagination-page-button-number {
+          background: var(--ath-color-pagination-page-button-bg-default);
+          color: var(--ath-color-fg-disabled);
+        }
+      }
+
+      &:hover {
+        background: var(--ath-color-pagination-page-button-bg-hovered);
+
+        .ath-pagination-page-button-number {
+          color: var(--ath-color-pagination-page-button-fg-hovered);
+        }
+      }
+
+      &.ath-pagination-page-button--disabled:hover {
+        background: var(--ath-color-pagination-page-button-bg-default);
+        .ath-pagination-page-button-number {
+          color: var(--ath-color-fg-disabled);
+        }
+      }
+
+      &:active {
+        background: var(--ath-color-pagination-page-button-bg-pressed);
+        .ath-pagination-page-button-number {
+          color: var(--ath-color-pagination-page-button-fg-pressed);
+        }
+      }
+
+      &:focus-visible:not(.ath-pagination-page-button--selected) {
+        outline: none;
+        box-shadow: 0 0 0 2px var(--ath-color-border-focus);
+      }
+
+      &--selected {
+        background: var(--ath-color-pagination-page-button-bg-selected);
+        &:focus-visible {
+          box-shadow:
+            0 0 0 2px var(--ath-color-drop-shadow-focus),
+            0 0 0 4px var(--ath-color-border-focus);
+          outline: none;
+        }
+        .ath-pagination-page-button-number {
+          color: var(--ath-color-pagination-page-button-fg-selected);
+        }
+      }
+    }
+  }
+}

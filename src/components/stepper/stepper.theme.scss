@@ -1,0 +1,14 @@
+:host {
+  // ORIENTATION
+  .ath-stepper {
+    &--horizontal {
+      --stepper-direction: row;
+      --group-gap: var(--ath-spacing-stepper-horizontal-col-gap);
+    }
+
+    &--vertical {
+      --stepper-direction: column;
+      --group-gap: var(--ath-spacing-stepper-vertical-row-gap);
+    }
+  }
+}

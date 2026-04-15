@@ -1,0 +1,137 @@
+{
+  "references": [
+    {
+      "id": "figma:badge-docs-40012000:9245",
+      "version": "2026-02-19",
+      "scope": "content"
+    },
+    {
+      "id": "figma:badge-component-set-40000448:1841",
+      "version": "2026-02-19",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:badge-design-tokens",
+      "version": "2026-02-19",
+      "scope": "tokens"
+    },
+    {
+      "id": "figma:badge-a11y-guidelines",
+      "version": "2026-02-19",
+      "scope": "a11y"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:ath-color-bg-accent-default",
+      "token:ath-color-bg-danger-default",
+      "token:ath-color-bg-success-default",
+      "token:ath-color-bg-warning-default",
+      "token:ath-color-bg-info-default",
+      "token:ath-color-bg-alpha-disabled"
+    ],
+    "spacing": [
+      "token:ath-spacing-badge-padding-y",
+      "token:ath-spacing-badge-padding-x",
+      "token:ath-spacing-badge-item-right-gap"
+    ],
+    "typography": [
+      "token:ath/color/text/--default"
+    ],
+    "radius": [
+      "token:ath-border-radius-circle"
+    ],
+    "shadow": [],
+    "motion": []
+  },
+  "semanticVariants": [
+    {
+      "axis": "color",
+      "option": "accent",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-bg-accent-default"
+      ]
+    },
+    {
+      "axis": "color",
+      "option": "danger",
+      "mode": "light",
+      "tokens": [
+        "token:ath-color-bg-danger-default"
+      ]
+    },
+    {
+      "axis": "type",
+      "option": "dot",
+      "mode": "light",
+      "tokens": [
+        "token:ath-sizing-badge-dot-width",
+        "token:ath-sizing-badge-dot-height"
+      ]
+    },
+    {
+      "axis": "type",
+      "option": "numeric",
+      "mode": "light",
+      "tokens": [
+        "token:ath-spacing-badge-padding-y",
+        "token:ath-spacing-badge-padding-x"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "inline",
+    "regionAffinity": [
+      "toolbar",
+      "list-item",
+      "content"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": true,
+    "keyboardModel": "non-focusable-indicator",
+    "focusOrder": "natural"
+  },
+  "plannerHints": {
+    "priority": "medium",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "toolbar",
+      "list-item",
+      "content"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "root.borderRadius",
+        "token": "token:ath-border-radius-circle"
+      },
+      {
+        "target": "root.paddingY",
+        "token": "token:ath-spacing-badge-padding-y"
+      },
+      {
+        "target": "root.paddingX",
+        "token": "token:ath-spacing-badge-padding-x"
+      },
+      {
+        "target": "variant.color.accent.background",
+        "token": "token:ath-color-bg-accent-default",
+        "variantAxis": "color",
+        "variantOption": "accent"
+      },
+      {
+        "target": "variant.color.disabled.background",
+        "token": "token:ath-color-bg-alpha-disabled",
+        "variantAxis": "color",
+        "variantOption": "disabled"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+@use './button-expandable.theme.scss';
+
+:host {
+  display: inline-flex;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  user-select: none;
+
+  &:focus-visible:not(:active),
+  &:focus:not(:active) {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--ath-color-border-focus);
+  }
+  &:hover:not([disabled]),
+  &:hover:not([disabled='true']),
+  &:active {
+    outline: none;
+    .ath-button-expandable--text {
+      text-decoration: underline;
+    }
+  }
+  &[disabled]:not([disabled='false']),
+  &[disabled='true'] {
+    cursor: not-allowed;
+    &:hover {
+      .ath-button-expandable--text {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .ath-button-expandable {
+    &--container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--color);
+      font-family: var(--font-family);
+      font-style: normal;
+      gap: var(--col-gap);
+      font-size: var(--font-size);
+      line-height: var(--line-height);
+    }
+
+    &--text {
+      font-weight: var(--font-weight);
+      white-space: nowrap;
+    }
+
+    &--disabled {
+      color: var(--ath-color-fg-disabled);
+    }
+
+    &--chevron {
+      display: flex;
+
+      ath-icon {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &-rotate {
+        ath-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

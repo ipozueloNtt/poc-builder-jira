@@ -1,0 +1,114 @@
+@mixin buttonStatus($fill, $color) {
+  @if $fill == 'solid' {
+    :host(:hover) {
+      .ath-button--solid:not(.ath-button--disabled) {
+        &.ath-button--#{$color} {
+          --color: var(--ath-color-button-fg-#{$color}-hovered);
+          --background-color: var(--ath-color-button-bg-#{$color}-hovered);
+          --border-color: var(--ath-color-button-border-#{$color}-hovered);
+        }
+      }
+    }
+
+    :host(:focus),
+    :host(:focus-visible) {
+      outline: none;
+      .ath-button--solid:not(.ath-button--disabled) {
+        &.ath-button--#{$color} {
+          --color: var(--ath-color-button-fg-#{$color}-default); // var(--color-action-#{$color}-fg-hover);
+          --background-color: var(--ath-color-button-bg-#{$color}-default); // var(--color-action-#{$color}-bg-hover);
+          --border-color: var(--ath-color-button-border-#{$color}-default); // var(--color-border-focus-default);
+
+          @if $color == 'primary' {
+            --box-shadow: 0px 0px 0px 2px var(--ath-color-drop-shadow-default), 0px 0px 0px 4px var(--ath-color-border-focus); // new
+          } @else if $color == 'secondary' {
+            --box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus);
+          }
+        }
+      }
+    }
+
+    :host(:active) {
+      .ath-button--solid:not(.ath-button--disabled) {
+        &.ath-button--#{$color} {
+          --color: var(--ath-color-button-fg-#{$color}-pressed); // var(--color-action-#{$color}-fg-active);
+          --background-color: var(--ath-color-button-bg-#{$color}-pressed); // var(--color-action-#{$color}-bg-active);
+          --border-color: var(--ath-color-button-border-#{$color}-pressed); // var(--color-action-#{$color}-border-active);
+        }
+      }
+    }
+  } @else if $fill == 'clear' {
+    :host(:hover) {
+      .ath-button--clear:not(.ath-button--disabled) {
+        &.ath-button--#{$color} {
+          --color: var(--ath-color-button-fg-#{$color}-clear-hovered); // var(--color-action-#{$color}-fg-hover);
+          --background-color: var(--ath-color-button-bg-#{$color}-clear-hovered); // var(--color-action-#{$color}-bg-hover);
+          --border-color: var(--ath-color-button-border-#{$color}-clear-hovered); // var(--color-action-#{$color}-border-hover);
+        }
+      }
+    }
+
+    :host(:focus),
+    :host(:focus-visible) {
+      .ath-button--clear:not(.ath-button--disabled) {
+        &.ath-button--#{$color} {
+          --color: var(--ath-color-button-fg-#{$color}-clear-default); // var(--color-action-#{$color}-fg-hover);
+          --background-color: var(--ath-color-button-bg-#{$color}-clear-default); // var(--color-action-#{$color}-bg-hover);
+          --border-color: var(--ath-color-button-border-#{$color}-clear-default); // var(--color-border-focus-default);
+          --box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus); // new
+        }
+      }
+    }
+
+    :host(:active) {
+      .ath-button--clear:not(.ath-button--disabled) {
+        &.ath-button--#{$color} {
+          --color: var(--ath-color-button-fg-#{$color}-clear-pressed); // var(--color-action-#{$color}-fg-active);
+          --background-color: var(--ath-color-button-bg-#{$color}-clear-pressed); // var(--color-action-#{$color}-bg-active);
+          --border-color: var(--ath-color-button-border-#{$color}-clear-pressed); // var(--color-action-#{$color}-border-active);
+        }
+      }
+    }
+  }
+}
+
+/// @param $fill solid|outline|clear
+/// @param $color primary|secondary
+/// @param {boolean} $inverse
+@mixin buttonTheme($fill, $color) {
+  @include buttonStatus($fill, $color);
+
+  :host {
+    @if $fill == 'solid' {
+      .ath-button--solid:not(.ath-button--disabled) {
+        &.ath-button--#{$color} {
+          --color: var(--ath-color-button-fg-#{$color}-default);
+          --background-color: var(--ath-color-button-bg-#{$color}-default);
+          --border-color: var(--ath-color-button-border-#{$color}-default);
+        }
+      }
+    } @else if $fill == 'clear' {
+      .ath-button--clear:not(.ath-button--disabled) {
+        &.ath-button--#{$color} {
+          --color: var(--ath-color-button-fg-#{$color}-clear-default);
+          --border-color: var(--ath-color-button-border-#{$color}-clear-default); // none
+          --background-color: var(--ath-color-button-bg-#{$color}-clear-default);
+        }
+      }
+    }
+  }
+}
+
+@mixin buttonSize($size) {
+  .ath-button--#{$size} {
+    --col-gap: var(--ath-spacing-button-col-gap-#{$size});
+    --spacing-x: var(--ath-spacing-button-padding-x-#{$size});
+    --spacing-y: var(--ath-spacing-button-padding-y-#{$size});
+    --font-size: var(--ath-font-size-button-#{$size});
+    --line-height: var(--ath-font-line-height-button-#{$size});
+
+    &.ath-button--icon-only {
+      --spacing: var(--ath-spacing-button-padding-around-#{$size});
+    }
+  }
+}

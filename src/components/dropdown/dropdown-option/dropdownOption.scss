@@ -1,0 +1,91 @@
+@use './dropdownOption.theme.scss';
+
+:host(.ath-dropdown-option) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--ath-color-fg-default);
+  font-family: var(--ath-font-family-primary);
+  font-size: var(--ath-font-size-input-dropdown-option);
+  justify-content: center;
+  align-self: stretch;
+  border-radius: var(--ath-border-radius-input-dropdown-option);
+  background: var(--ath-color-bg-alpha-default);
+  align-items: center;
+  font-style: normal;
+  line-height: var(--ath-font-line-height-input-dropdown-option);
+  cursor: pointer;
+}
+
+:host(.ath-dropdown-option--hidden) {
+  display: none;
+}
+
+:host {
+  .ath-dropdown-option-header {
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
+    padding: var(--ath-spacing-input-dropdown-option-padding-y) var(--ath-spacing-input-dropdown-option-padding-x);
+    gap: var(--ath-spacing-input-dropdown-option-col-gap);
+    align-items: center;
+    font-weight: var(--font-weight);
+    border-radius: var(--ath-border-radius-input-dropdown-option);
+    background: var(--background);
+    color: var(--color);
+    box-shadow: var(--box-shadow);
+  }
+
+  .ath-dropdown-option__list {
+    padding: 0;
+    margin: 0;
+    gap: var(--ath-spacing-input-dropdown-option-group-row-gap);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    width: 100%;
+  }
+
+  span {
+    width: 100%;
+  }
+
+  .option-checkbox {
+    appearance: none; /*standard*/
+    -webkit-appearance: none; /*chrome*/
+    -moz-appearance: none; /*firefox*/
+    display: flex;
+    min-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--ath-border-radius-checkbox);
+    border: 1px solid var(--ath-color-checkbox-border-default);
+    background: var(--ath-color-checkbox-bg-default);
+
+    svg {
+      display: none;
+    }
+
+    &.checked {
+      outline: none;
+      border: none;
+      color: var(--ath-color-input-dropdown-checkbox-icon-selected);
+      border-radius: var(--ath-border-radius-checkbox);
+      border: 1px solid var(--ath-color-input-dropdown-checkbox-border-checked-selected);
+      background: var(--ath-color-input-dropdown-checkbox-bg-checked-selected);
+    }
+  }
+
+  .level {
+    width: 16px;
+  }
+
+  ::slotted([slot='left-asset']),
+  ::slotted([slot='right-asset']) {
+    display: flex;
+  }
+}

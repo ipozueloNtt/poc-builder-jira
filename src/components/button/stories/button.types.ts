@@ -1,0 +1,21 @@
+export type ButtonArgs = {
+  'color': string;
+  'clear': boolean;
+  'size': string;
+  'icon-position': string;
+  'icon': string;
+  'disabled': boolean;
+  'full-width': boolean;
+  'type': string;
+  'defaultSlot': string;
+  'aria-label': string;
+  'aria-labelledby': string;
+  'aria-controls': string;
+  'aria-describedby': string;
+  'aria-expanded': string;
+  'aria-haspopup': string;
+  'autofocus': boolean;
+  'athClick': (event: CustomEvent<void>) => void;
+  'athFocus': (event: CustomEvent<void>) => void;
+  'athBlur': (event: CustomEvent<void>) => void;
+};

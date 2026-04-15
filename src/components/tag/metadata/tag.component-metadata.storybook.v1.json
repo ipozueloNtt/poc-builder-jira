@@ -1,0 +1,146 @@
+{
+  "stories": [
+    {
+      "id": "componentes-tag--playground",
+      "name": "Playground",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "heading-text": "Caducada"
+      },
+      "controls": {
+        "color": {
+          "type": "radio",
+          "options": [
+            "primary",
+            "secondary",
+            "accent",
+            "danger",
+            "success",
+            "warning",
+            "disabled"
+          ]
+        },
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "heading-text": {
+          "type": "text"
+        },
+        "icon": {
+          "type": "select"
+        },
+        "defaultSlot": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-tag--color",
+      "name": "Color",
+      "args": {
+        "heading-text": "Caducada"
+      },
+      "controls": {
+        "color": {
+          "type": "radio",
+          "options": [
+            "primary",
+            "secondary",
+            "accent",
+            "danger",
+            "success",
+            "warning",
+            "disabled"
+          ]
+        },
+        "heading-text": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-tag--size",
+      "name": "Size",
+      "args": {
+        "heading-text": "Caducada"
+      },
+      "controls": {
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "heading-text": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-tag--icon",
+      "name": "Icon",
+      "args": {
+        "heading-text": "Caducada",
+        "icon": "exclamation"
+      },
+      "controls": {
+        "icon": {
+          "type": "select"
+        },
+        "heading-text": {
+          "type": "text"
+        },
+        "color": {
+          "type": "radio",
+          "options": [
+            "primary",
+            "secondary",
+            "accent",
+            "danger",
+            "success",
+            "warning",
+            "disabled"
+          ]
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-tag--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "heading-text": "Caducada"
+      }
+    },
+    {
+      "name": "with-icon",
+      "args": {
+        "color": "primary",
+        "size": "md",
+        "icon": "exclamation",
+        "heading-text": "Caducada"
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "color",
+      "size",
+      "headingText",
+      "icon"
+    ],
+    "missingProps": [],
+    "invalidArgs": []
+  }
+}

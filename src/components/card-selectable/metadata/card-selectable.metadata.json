@@ -1,0 +1,168 @@
+{
+  "root": {
+    "id": "ath-card-selectable",
+    "name": "Card Selectable",
+    "tag": "ath-card-selectable",
+    "schemaVersion": "v1",
+    "status": "stable",
+    "category": "Componentes",
+    "description": "Card interactiva que permite seleccion unica o multiple con feedback visual de estado.",
+    "owners": [
+      "design-system"
+    ],
+    "links": {
+      "figmaDocumentation": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40008130-6501&m=dev",
+      "figmaComponentSet": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40007878-159810&m=dev",
+      "storybookTitle": "Componentes/Card Selectable/Card Selectable",
+      "storybookDocsId": "componentes-card-selectable-card-selectable--docs"
+    },
+    "source": {
+      "componentPath": "packages/stencil-library/src/components/card-selectable/card-selectable.tsx",
+      "storiesPath": "packages/stencil-library/src/components/card-selectable/stories/card-selectable.stories.tsx",
+      "readmePath": "packages/stencil-library/src/components/card-selectable/readme.md"
+    },
+    "versioning": {
+      "since": "2.0.0",
+      "lastUpdated": "2026-02-27"
+    },
+    "sourceOfTruth": {
+      "code": "docs.json",
+      "storybook": "storybook source",
+      "foundations": "figma-mcp",
+      "extractedAt": "2026-02-27T00:00:00Z"
+    }
+  },
+  "code": {
+    "props": [
+      {
+        "name": "disabled",
+        "attribute": "disabled",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "headingText",
+        "attribute": "heading-text",
+        "type": "string"
+      },
+      {
+        "name": "overline",
+        "attribute": "overline",
+        "type": "string"
+      },
+      {
+        "name": "selected",
+        "attribute": "selected",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "size",
+        "attribute": "size",
+        "type": "sm | md",
+        "default": "sm"
+      },
+      {
+        "name": "subtitle",
+        "attribute": "subtitle",
+        "type": "string"
+      },
+      {
+        "name": "tag",
+        "attribute": "tag",
+        "type": "string"
+      },
+      {
+        "name": "type",
+        "attribute": "type",
+        "type": "single | multiselect",
+        "default": "single"
+      }
+    ],
+    "events": [
+      {
+        "name": "athChange",
+        "payload": "any"
+      },
+      {
+        "name": "athFocus",
+        "payload": "void"
+      },
+      {
+        "name": "athBlur",
+        "payload": "void"
+      }
+    ],
+    "methods": [
+      "select(firstLoad: boolean)",
+      "unselect()"
+    ],
+    "slots": [
+      "body"
+    ],
+    "dependencies": {
+      "uses": [
+        "ath-icon",
+        "ath-tag"
+      ],
+      "usedBy": [
+        "ath-card-selectable-group"
+      ]
+    },
+    "accessibility": {
+      "role": "radio|checkbox (segun type)",
+      "keyboard": [
+        "Enter",
+        "Space"
+      ],
+      "ariaInputs": [
+        "aria-label",
+        "aria-labelledby",
+        "aria-describedby",
+        "aria-checked",
+        "aria-disabled"
+      ]
+    }
+  },
+  "foundations": {
+    "variants": {
+      "size": [
+        "sm",
+        "md"
+      ],
+      "state": [
+        "default",
+        "hover",
+        "active",
+        "focus"
+      ],
+      "type": [
+        "single",
+        "multiselect"
+      ],
+      "selected": [
+        "false",
+        "true"
+      ],
+      "disabled": [
+        "false",
+        "true"
+      ]
+    },
+    "tokens": {
+      "sourceOfTruth": "figma-mcp",
+      "references": {
+        "background": "token:--ath-color-card-content-bg",
+        "borderSelected": "token:--ath-color-card-selectable-border-selected",
+        "borderHover": "token:--ath-color-card-border-hovered",
+        "borderActive": "token:--ath-color-card-border-pressed"
+      }
+    },
+    "evidence": {
+      "figmaDocumentationNodeId": "40008130:6501",
+      "figmaCanonicalNodeId": "40007867:67767",
+      "figmaComponentNodeId": "40007878:159810",
+      "extractedAt": "2026-02-27T00:00:00Z"
+    }
+  }
+}

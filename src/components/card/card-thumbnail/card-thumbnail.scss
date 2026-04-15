@@ -1,0 +1,93 @@
+@use './card-thumbnail.theme.scss';
+
+:host {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .ath-card-thumbnail {
+    aspect-ratio: var(--aspect-ratio);
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    &_highlight {
+      display: flex;
+      padding: var(--ath-spacing-card-thumbnail-highlight-padding-around);
+      justify-content: center;
+      align-items: flex-start;
+      top: 0px;
+      width: 100%;
+      position: absolute;
+      background: var(--ath-color-card-thumbnail-highlight-bg);
+
+      color: var(--ath-color-card-thumbnail-highlight-fg);
+      font-family: var(--ath-font-family-heading);
+      font-size: var(--ath-font-size-heading-4);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-heading);
+      line-height: var(--ath-font-line-height-heading-4);
+
+      box-sizing: border-box;
+    }
+
+    &_image {
+      min-width: var(--thumbanail-min-width);
+      min-height: var(--thumbanail-min-height);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    &_avatar {
+      display: flex;
+      width: var(--ath-sizing-card-thumbnail-avatar-width);
+      height: var(--ath-sizing-card-thumbnail-avatar-height);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: auto;
+
+      position: absolute;
+      left: 24px;
+      bottom: -13.488px;
+      border-radius: 1600px;
+    }
+
+    &_bottom-tag {
+      display: flex;
+      padding: var(--ath-spacing-tag-padding-y-sm) var(--ath-spacing-tag-padding-x);
+      align-items: center;
+      gap: var(--ath-spacing-tag-col-gap);
+      position: absolute;
+      left: 24px;
+      bottom: 24.132px;
+    }
+
+    &_top-tag {
+      display: flex;
+      padding: var(--ath-spacing-tag-padding-y-sm) var(--ath-spacing-tag-padding-x);
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: var(--ath-spacing-tag-col-gap);
+      position: absolute;
+      right: 24px;
+      top: 24px;
+    }
+  }
+
+  ::slotted([slot='img-thumbnail']) {
+    position: var(--img-position);
+    object-fit: var(--object-fit);
+    top: var(--img-top);
+    left: var(--img-left);
+    transform: var(--img-transform);
+    width: var(--img-width);
+    height: 100%;
+  }
+}

@@ -1,0 +1,35 @@
+@use 'sass:map';
+
+$sizeFocusIcon: (
+  'xs': 16px,
+  'sm': 20px,
+  'md': 24px,
+  'lg': 32px,
+);
+
+@mixin athTooltipTriggerSize($size) {
+  :host([size='#{$size}']) {
+    display: block;
+    height: #{map.get($sizeFocusIcon, $size)};
+  }
+}
+
+@include athTooltipTriggerSize('xs');
+@include athTooltipTriggerSize('sm');
+@include athTooltipTriggerSize('md');
+@include athTooltipTriggerSize('lg');
+
+:host {
+  // COLORS
+  .ath-tooltip {
+    &--primary {
+      --background-color: var(--ath-color-tooltip-bg-primary);
+      --color: var(--ath-color-tooltip-fg);
+    }
+
+    &--secondary {
+      --background-color: var(--ath-color-tooltip-bg-secondary);
+      --color: var(--ath-color-tooltip-fg);
+    }
+  }
+}

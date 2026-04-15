@@ -1,0 +1,118 @@
+:host {
+  .ath-switch {
+    display: flex;
+    width: var(--ath-sizing-switch-width);
+    min-width: var(--ath-sizing-switch-width);
+    max-width: var(--ath-sizing-switch-width);
+    height: var(--ath-sizing-switch-height);
+    padding: var(--ath-spacing-switch-padding-around);
+    align-items: center;
+    border-radius: var(--ath-border-radius-300);
+    box-sizing: border-box;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &__selected {
+      border-color: var(--ath-color-switch-bg-selected-default);
+      background: var(--ath-color-switch-bg-selected-default);
+      justify-content: flex-end;
+
+      &:hover {
+        background: var(--ath-color-switch-bg-selected-hovered);
+      }
+
+      &:active {
+        background: var(--ath-color-switch-bg-selected-pressed);
+      }
+    }
+
+    &__unselected {
+      border-radius: var(--ath-border-radius-300);
+      background: var(--ath-color-switch-bg-default);
+
+      &:hover {
+        background: var(--ath-color-switch-bg-hovered);
+      }
+
+      &:active {
+        background: var(--ath-color-switch-bg-pressed);
+      }
+    }
+
+    &__readonly {
+      border: var(--ath-border-width-xs) solid var(--ath-color-switch-border-readonly);
+      background: var(--ath-color-switch-bg-readonly);
+
+      &:hover {
+        background: var(--ath-color-switch-bg-readonly);
+        cursor: not-allowed;
+      }
+    }
+
+    &__disabled {
+      align-items: center;
+      border-radius: var(--ath-border-radius-300);
+      background: var(--ath-color-switch-bg-disabled);
+      cursor: not-allowed;
+
+      &:hover {
+        background: var(--ath-color-switch-bg-disabled);
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .ath-switch-controller {
+    display: flex;
+    width: var(--ath-sizing-switch-controller-width);
+    height: var(--ath-sizing-switch-controller-height);
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+
+    &__selected {
+      border-radius: var(--ath-border-radius-controller);
+      background: var(--ath-color-switch-controller-bg-selected);
+      color: var(--ath-color-switch-icon-selected);
+    }
+
+    &__unselected {
+      border-radius: var(--ath-border-radius-controller);
+      background: var(--ath-color-switch-controller-bg-default);
+      color: var(--ath-color-icon-inverse-default);
+    }
+
+    &__readonly {
+      border-radius: var(--ath-border-radius-controller);
+      background: var(--ath-color-switch-controller-bg-readonly);
+      color: var(--ath-color-switch-icon-readonly);
+
+      &:focus-visible {
+        box-shadow:
+          0 0 0 2px var(--ath-color-drop-shadow-focus),
+          0 0 0 4px var(--ath-color-border-focus);
+      }
+    }
+
+    &__disabled {
+      border-radius: var(--ath-border-radius-controller);
+      background: var(--ath-color-switch-controller-bg-disabled);
+      cursor: not-allowed;
+      color: var(--ath-color-icon-disabled);
+    }
+  }
+}
+
+:host(:focus-visible) {
+  outline: none;
+
+  .ath-switch {
+    box-shadow:
+      0px 0px 0px 2px var(--ath-color-drop-shadow-focus),
+      0px 0px 0px 4px var(--ath-color-border-focus);
+    border-radius: var(--ath-border-radius-300);
+  }
+}

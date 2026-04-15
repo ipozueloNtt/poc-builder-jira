@@ -1,0 +1,188 @@
+{
+  "stories": [
+    {
+      "id": "componentes-input-text--playground",
+      "name": "Playground",
+      "args": {
+        "label": "Label",
+        "name": "input-text",
+        "type": "text",
+        "feedback": "error",
+        "feedback-text": "Error feedback text",
+        "helper-text": "Helper text to complete the field"
+      },
+      "controls": {
+        "autofocus": {
+          "type": "boolean"
+        },
+        "autocomplete": {
+          "type": "text"
+        },
+        "counter": {
+          "type": "boolean"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "feedback": {
+          "type": "inline-radio",
+          "options": [
+            "none",
+            "error"
+          ]
+        },
+        "feedback-text": {
+          "type": "text"
+        },
+        "has-clear": {
+          "type": "boolean"
+        },
+        "helper-text": {
+          "type": "text"
+        },
+        "icon": {
+          "type": "select"
+        },
+        "icon-position": {
+          "type": "inline-radio",
+          "options": [
+            "left",
+            "right"
+          ]
+        },
+        "label": {
+          "type": "text"
+        },
+        "maxlength": {
+          "type": "number"
+        },
+        "name": {
+          "type": "text"
+        },
+        "placeholder": {
+          "type": "text"
+        },
+        "readonly": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "hide-required": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "inline-radio",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "tooltip-text": {
+          "type": "text"
+        },
+        "tooltip-width": {
+          "type": "number"
+        },
+        "type": {
+          "type": "select",
+          "options": [
+            "text",
+            "search",
+            "url",
+            "email",
+            "tel"
+          ]
+        },
+        "value": {
+          "type": "text"
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-input-text--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "type": "text",
+        "size": "md"
+      }
+    },
+    {
+      "name": "focus",
+      "args": {
+        "type": "text",
+        "size": "md"
+      }
+    },
+    {
+      "name": "error",
+      "args": {
+        "feedback": "error",
+        "feedback-text": "Error feedback text"
+      }
+    },
+    {
+      "name": "disabled",
+      "args": {
+        "disabled": true,
+        "value": "abc"
+      }
+    },
+    {
+      "name": "readonly",
+      "args": {
+        "readonly": true
+      }
+    },
+    {
+      "name": "search",
+      "args": {
+        "type": "search"
+      }
+    },
+    {
+      "name": "counter",
+      "args": {
+        "counter": true,
+        "maxlength": 150
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "autocomplete",
+      "autofocus",
+      "clearButtonAriaLabel",
+      "counter",
+      "counterLabel",
+      "disabled",
+      "feedback",
+      "feedbackText",
+      "hasClear",
+      "helperText",
+      "hideRequired",
+      "icon",
+      "iconPosition",
+      "inputAriaLabel",
+      "inputTabindex",
+      "label",
+      "maxlength",
+      "name",
+      "pattern",
+      "placeholder",
+      "readonly",
+      "required",
+      "size",
+      "submitOnEnter",
+      "tooltipText",
+      "tooltipWidth",
+      "type",
+      "value"
+    ],
+    "missingProps": [],
+    "invalidArgs": []
+  }
+}

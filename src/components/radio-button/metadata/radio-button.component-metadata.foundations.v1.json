@@ -1,0 +1,165 @@
+{
+  "references": [
+    {
+      "id": "figma:radiobutton-docs-40012244:146346",
+      "version": "2026-03-02",
+      "scope": "content"
+    },
+    {
+      "id": "figma:radiobutton-canonical-40006151:113538",
+      "version": "2026-03-02",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:radiobutton-instance-40015250:48432",
+      "version": "2026-03-02",
+      "scope": "tokens"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:ath/color/fg/default",
+      "token:ath/color/fg/disabled",
+      "token:ath/color/text/--disabled",
+      "token:ath/color/radiobutton/bg/default",
+      "token:ath/color/radiobutton/bg/checked",
+      "token:ath/color/radiobutton/bg/readonly",
+      "token:ath/color/radiobutton/bg/disabled/default",
+      "token:ath/color/radiobutton/border/default",
+      "token:ath/color/radiobutton/border/readonly",
+      "token:ath/color/radiobutton/border/disabled",
+      "token:ath/color/radiobutton/indicator/default",
+      "token:ath/color/radiobutton/indicator/disabled",
+      "token:ath/color/border/focus",
+      "token:ath/color/drop-shadow/focus"
+    ],
+    "spacing": [
+      "token:ath/spacing/radiobutton/col-gap",
+      "token:ath/spacing/radiobutton/group/row-gap",
+      "token:ath/spacing/label/col-gap",
+      "token:ath/spacing/label/required/col-gap",
+      "token:ath/spacing/feedback-text/padding/top",
+      "token:ath/spacing/feedback-text/col-gap"
+    ],
+    "typography": [
+      "token:ath/font/family/primary",
+      "token:ath/font/size/input/label",
+      "token:ath/font/line-height/input/label",
+      "token:ath/font/size/input/text",
+      "token:ath/font/line-height/input/text",
+      "token:ath/font/weight/regular",
+      "token:ath/font/weight/medium"
+    ],
+    "radius": [
+      "token:ath/border/radius/radiobutton"
+    ],
+    "shadow": [
+      "token:ath/box-shadow/drop/solid/focus"
+    ],
+    "motion": []
+  },
+  "semanticVariants": [
+    {
+      "axis": "state",
+      "option": "default",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/radiobutton/bg/default",
+        "token:ath/color/radiobutton/border/default"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "checked",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/radiobutton/bg/checked",
+        "token:ath/color/radiobutton/indicator/default"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "readonly",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/radiobutton/bg/readonly",
+        "token:ath/color/radiobutton/border/readonly"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "disabled",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/radiobutton/bg/disabled/default",
+        "token:ath/color/radiobutton/border/disabled",
+        "token:ath/color/fg/disabled"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "focus",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/border/focus",
+        "token:ath/color/drop-shadow/focus"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "form-control",
+    "regionAffinity": [
+      "form",
+      "list-item"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": true,
+    "keyboardModel": "radio-single",
+    "focusOrder": "managed"
+  },
+  "plannerHints": {
+    "priority": "high",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "form",
+      "list-item"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light",
+      "dark"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "control.borderColor",
+        "token": "token:ath/color/radiobutton/border/default"
+      },
+      {
+        "target": "control.background",
+        "token": "token:ath/color/radiobutton/bg/default"
+      },
+      {
+        "target": "control.borderRadius",
+        "token": "token:ath/border/radius/radiobutton"
+      },
+      {
+        "target": "state.checked.background",
+        "token": "token:ath/color/radiobutton/bg/checked",
+        "state": "checked"
+      },
+      {
+        "target": "state.disabled.background",
+        "token": "token:ath/color/radiobutton/bg/disabled/default",
+        "state": "disabled"
+      },
+      {
+        "target": "state.focus.outline",
+        "token": "token:ath/color/border/focus",
+        "state": "focus"
+      }
+    ]
+  }
+}

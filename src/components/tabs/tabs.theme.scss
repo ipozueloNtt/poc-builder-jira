@@ -1,0 +1,16 @@
+:host {
+  // TYPES
+  .ath-tabs {
+    &--underline {
+      --color--selected: var(--ath-color-fg-default);
+      --background--selected: none;
+      --border-radius: var(--ath-border-radius-tab-item-underline) var(--ath-border-radius-tab-item-underline) 0 0;
+    }
+
+    &--box {
+      --color--selected: var(--ath-color-tab-item-box-fg-selected);
+      --background--selected: var(--ath-color-tab-item-box-border);
+      --border-radius: var(--ath-border-radius-tab-item-box);
+    }
+  }
+}

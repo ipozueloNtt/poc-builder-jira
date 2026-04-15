@@ -1,0 +1,329 @@
+{
+  "version": "v1",
+  "filePath": "src/components/radio-button/radio-button.tsx",
+  "encapsulation": "shadow",
+  "tag": "ath-radio-button",
+  "componentType": "input",
+  "docs": "Code surface metadata for ath-radio-button generated from docs.json and source files.",
+  "props": [
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "complexType": {
+        "original": "string | null",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "aria-label",
+      "attribute": "aria-label",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Accessible text (aria-label)",
+      "description": "Accessible text (aria-label)",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "checked",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": true,
+      "attr": "checked",
+      "attribute": "checked",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Indicates if it is checked by default",
+      "description": "Indicates if it is checked by default",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean",
+          "value": "false"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "disabled",
+      "attribute": "disabled",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Indicates if it is disabled",
+      "description": "Indicates if it is disabled",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean",
+          "value": "false"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "label",
+      "attribute": "label",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Label text",
+      "description": "Label text",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "name",
+      "attribute": "name",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Indicates the name of the radioButton",
+      "description": "Indicates the name of the radioButton",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "readonly",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "readonly",
+      "attribute": "readonly",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Indicates if it is read-only",
+      "description": "Indicates if it is read-only",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean",
+          "value": "false"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "value",
+      "attribute": "value",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Indicates the value of the radioButton",
+      "description": "Indicates the value of the radioButton",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string",
+          "value": ""
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    }
+  ],
+  "events": [
+    {
+      "event": "athBlur",
+      "name": "athBlur",
+      "detail": "void",
+      "detailType": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the radio-button loses focus",
+      "description": "Emitted when the radio-button loses focus",
+      "internal": false
+    },
+    {
+      "event": "athChange",
+      "name": "athChange",
+      "detail": "{ checked: boolean; value: string; }",
+      "detailType": "{ checked: boolean; value: string; }",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when there is a change in the input state",
+      "description": "Emitted when there is a change in the input state",
+      "internal": false
+    },
+    {
+      "event": "athFocus",
+      "name": "athFocus",
+      "detail": "void",
+      "detailType": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the radio-button receives focus",
+      "description": "Emitted when the radio-button receives focus",
+      "internal": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "setFocus",
+      "signature": "setFocus() => Promise<void>",
+      "docs": "",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "parameters": []
+    },
+    {
+      "name": "setTabindex",
+      "signature": "setTabindex(tabIndex: any) => Promise<void>",
+      "docs": "",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "parameters": [
+        {
+          "name": "tabIndex",
+          "type": "any",
+          "docs": ""
+        }
+      ]
+    },
+    {
+      "name": "unCheck",
+      "signature": "unCheck() => Promise<void>",
+      "docs": "",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "parameters": []
+    }
+  ],
+  "listeners": [],
+  "styles": [],
+  "slots": [],
+  "childrenPolicy": {
+    "mode": "none",
+    "minChildren": 0,
+    "maxChildren": 0,
+    "allowTextNodes": false
+  },
+  "contentModel": {
+    "kind": "none",
+    "allowedInlineComponents": []
+  },
+  "dependencies": [],
+  "dependents": [
+    "ath-table-row"
+  ],
+  "dependencyGraph": {
+    "ath-table-row": [
+      "ath-radio-button"
+    ]
+  }
+}

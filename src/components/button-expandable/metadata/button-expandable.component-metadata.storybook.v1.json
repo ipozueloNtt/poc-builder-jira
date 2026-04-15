@@ -1,0 +1,134 @@
+{
+  "stories": [
+    {
+      "id": "componentes-button-expandable--playground",
+      "name": "Playground",
+      "args": {
+        "size": "lg",
+        "defaultSlot": "Button expandable"
+      },
+      "controls": {
+        "collapse-target": {
+          "type": "text"
+        },
+        "icon": {
+          "type": "select"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "inline-radio",
+          "options": [
+            "lg",
+            "md",
+            "sm"
+          ]
+        },
+        "defaultSlot": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-button-expandable--icon",
+      "name": "Icon",
+      "args": {
+        "size": "lg",
+        "icon": "placeholder",
+        "defaultSlot": "Button expandable"
+      },
+      "controls": {
+        "icon": {
+          "type": "select"
+        },
+        "collapse-target": {
+          "type": "text"
+        },
+        "size": {
+          "type": "inline-radio",
+          "options": [
+            "lg",
+            "md",
+            "sm"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-button-expandable--disabled",
+      "name": "Disabled",
+      "args": {
+        "size": "lg",
+        "icon": "placeholder",
+        "disabled": true,
+        "defaultSlot": "Button expandable"
+      },
+      "controls": {
+        "disabled": {
+          "type": "boolean"
+        },
+        "collapse-target": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-button-expandable--size",
+      "name": "Size",
+      "args": {
+        "size": "lg",
+        "defaultSlot": "Button expandable"
+      },
+      "controls": {
+        "size": {
+          "type": "inline-radio",
+          "options": [
+            "lg",
+            "md",
+            "sm"
+          ]
+        },
+        "collapse-target": {
+          "type": "text"
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-button-expandable--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "size": "lg",
+        "defaultSlot": "Button expandable"
+      }
+    },
+    {
+      "name": "with-icon",
+      "args": {
+        "size": "lg",
+        "icon": "placeholder",
+        "defaultSlot": "Button expandable"
+      }
+    },
+    {
+      "name": "disabled",
+      "args": {
+        "size": "lg",
+        "disabled": true,
+        "defaultSlot": "Button expandable"
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "collapseTarget",
+      "icon",
+      "disabled",
+      "size"
+    ],
+    "missingProps": [],
+    "invalidArgs": []
+  }
+}

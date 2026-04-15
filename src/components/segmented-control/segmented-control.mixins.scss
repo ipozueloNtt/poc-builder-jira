@@ -1,0 +1,82 @@
+@mixin color($color) {
+  .ath-segmented-control--#{$color} {
+    border-color: var(--ath-color-segmented-control-border-#{$color});
+  }
+}
+
+@mixin size($size) {
+  .ath-segmented-control--#{$size} {
+    padding: var(--ath-spacing-segmented-control-group-padding-#{$size});
+  }
+}
+
+@mixin item($size) {
+  .ath-segmented-control-item--#{$size} {
+    font-size: var(--ath-font-size-segmented-control-#{$size});
+    line-height: var(--ath-font-line-height-segmented-control-#{$size});
+    padding: var(--ath-spacing-segmented-control-item-padding-y-#{$size}) var(--ath-spacing-segmented-control-item-padding-x-#{$size});
+
+    &.ath-segmented-control-item--icon-only {
+      padding: var(--ath-spacing-segmented-control-item-padding-around-#{$size});
+    }
+  }
+}
+
+@mixin colorItem($color) {
+  .ath-segmented-control-item--#{$color} {
+    color: var(--ath-color-segmented-control-item-fg-#{$color}-default);
+
+    &:hover {
+      background: var(--ath-color-segmented-control-item-bg-#{$color}-hover);
+      color: var(--ath-color-segmented-control-item-fg-#{$color}-hover);
+
+      .ath-segmented-control-item__icon {
+        color: var(--ath-color-segmented-control-item-icon-#{$color}-hover);
+      }
+    }
+
+    &:active {
+      background: var(--ath-color-segmented-control-item-bg-#{$color}-active);
+      color: var(--ath-color-segmented-control-item-fg-#{$color}-active);
+
+      .ath-segmented-control-item__icon {
+        color: var(--ath-color-segmented-control-item-icon-#{$color}-active);
+      }
+    }
+
+    &:default {
+      color: var(--ath-color-segmented-control-item-fg-#{$color}-default);
+
+      .ath-segmented-control-item__icon {
+        color: var(--ath-color-segmented-control-item-icon-#{$color}-default);
+      }
+    }
+
+    &.selected {
+      background: var(--ath-color-segmented-control-item-bg-#{$color}-selected);
+      color: var(--ath-color-segmented-control-item-fg-#{$color}-selected);
+
+      .ath-segmented-control-item__icon {
+        color: var(--ath-color-segmented-control-item-icon-#{$color}-selected);
+      }
+    }
+  }
+
+  :host(:focus-visible) {
+    outline: none;
+    .ath-segmented-control-item--#{$color}:not(:hover, .selected, .disabled) {
+      box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus);
+      color: var(--ath-color-segmented-control-item-fg-#{$color}-focus);
+
+      .ath-segmented-control-item__icon {
+        color: var(--ath-color-segmented-control-item-icon-#{$color}-focus);
+      }
+    }
+
+    .ath-segmented-control-item--#{$color}.selected {
+      box-shadow:
+        0 0 0 2px var(--ath-color-drop-shadow-focus),
+        0 0 0 4px var(--ath-color-border-focus);
+    }
+  }
+}

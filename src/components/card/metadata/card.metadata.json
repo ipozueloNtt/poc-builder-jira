@@ -1,0 +1,158 @@
+{
+  "root": {
+    "id": "ath-card",
+    "name": "Card",
+    "tag": "ath-card",
+    "schemaVersion": "v1",
+    "status": "stable",
+    "category": "Componentes",
+    "description": "Contenedor de contenido agrupado con estructura de thumbnail, header, body y footer.",
+    "owners": [
+      "design-system"
+    ],
+    "links": {
+      "figmaDocumentation": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=40012082-13633&m=dev",
+      "figmaComponentSet": "https://www.figma.com/design/ts8uR3OicudYSr8L7E0lrd/-v.2.0.0--Aletheia-Web-components?node-id=2004-3748&m=dev",
+      "storybookTitle": "Componentes/Card/Card",
+      "storybookDocsId": "componentes-card-card--docs"
+    },
+    "source": {
+      "componentPath": "packages/stencil-library/src/components/card/card.tsx",
+      "storiesPath": "packages/stencil-library/src/components/card/stories/card.stories.tsx",
+      "readmePath": "packages/stencil-library/src/components/card/readme.md"
+    },
+    "versioning": {
+      "since": "2.0.0",
+      "lastUpdated": "2026-02-27"
+    },
+    "sourceOfTruth": {
+      "code": "docs.json",
+      "storybook": "storybook source",
+      "foundations": "figma-mcp",
+      "extractedAt": "2026-02-27T00:00:00Z"
+    }
+  },
+  "code": {
+    "props": [
+      {
+        "name": "ariaLabelledBy",
+        "attribute": "aria-labelled-by",
+        "type": "string"
+      },
+      {
+        "name": "clickable",
+        "attribute": "clickable",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "fluid",
+        "attribute": "fluid",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "maxWidth",
+        "attribute": "max-width",
+        "type": "string"
+      },
+      {
+        "name": "orientation",
+        "attribute": "orientation",
+        "type": "horizontal | vertical",
+        "default": "vertical"
+      },
+      {
+        "name": "size",
+        "attribute": "size",
+        "type": "sm | md",
+        "default": "sm"
+      },
+      {
+        "name": "width",
+        "attribute": "width",
+        "type": "string"
+      }
+    ],
+    "events": [
+      {
+        "name": "athClick",
+        "payload": "void"
+      },
+      {
+        "name": "athFocus",
+        "payload": "void"
+      },
+      {
+        "name": "athBlur",
+        "payload": "void"
+      }
+    ],
+    "methods": [],
+    "slots": [
+      "thumbnail",
+      "img",
+      "tag",
+      "body",
+      "footer"
+    ],
+    "dependencies": {
+      "uses": [
+        "ath-icon"
+      ],
+      "usedBy": []
+    },
+    "accessibility": {
+      "role": "button (when clickable=true)",
+      "keyboard": [
+        "Tab",
+        "Enter",
+        "Space"
+      ],
+      "ariaInputs": [
+        "aria-labelledby"
+      ]
+    }
+  },
+  "foundations": {
+    "variants": {
+      "orientation": [
+        "vertical",
+        "horizontal"
+      ],
+      "size": [
+        "sm",
+        "md"
+      ],
+      "clickable": [
+        "no",
+        "yes"
+      ],
+      "fluid": [
+        "no",
+        "yes"
+      ],
+      "state": [
+        "default",
+        "hover",
+        "active",
+        "focus"
+      ]
+    },
+    "tokens": {
+      "sourceOfTruth": "figma-mcp",
+      "references": {
+        "background": "token:--ath-color-card-content-bg",
+        "radius": "token:--ath-border-radius-card",
+        "borderHover": "token:--ath-color-card-border-hovered",
+        "borderActive": "token:--ath-color-card-border-pressed"
+      }
+    },
+    "evidence": {
+      "figmaDocumentationNodeId": "40012082:13633",
+      "figmaCanonicalNodeId": "2004:3748",
+      "figmaComponentNodeId": "40004478:65252",
+      "extractedAt": "2026-02-27T00:00:00Z"
+    }
+  }
+}

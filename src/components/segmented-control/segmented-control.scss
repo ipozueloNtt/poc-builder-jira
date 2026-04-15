@@ -1,0 +1,40 @@
+@use '../../../sharedfc/input' as Input;
+@use 'segmented-control.mixins.scss' as mixins;
+
+.ath-segmented-control {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  border-radius: var(--ath-border-radius-segmented-control-group);
+  width: 100%;
+  align-items: center;
+  box-sizing: border-box;
+
+  &.disabled {
+    border-color: var(--ath-color-segmented-control-border-disabled);
+  }
+}
+
+:host {
+  @include Input.global-input;
+  @include Input.fc-input-label;
+  @include Input.fc-input-feedback;
+  @include Input.fc-input-helper;
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@include mixins.color('primary');
+@include mixins.color('secondary');
+@include mixins.size('sm');
+@include mixins.size('md');
+@include mixins.size('lg');
+@include mixins.size('xl');

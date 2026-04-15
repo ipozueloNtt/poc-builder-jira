@@ -1,0 +1,38 @@
+@use '../../../sharedfc/input' as Input;
+
+@include Input.fc-input-element-vars;
+
+:host {
+  display: inline-block;
+  font-family: var(--font-family);
+  width: 100%;
+
+  @include Input.global-input;
+  @include Input.fc-input-element;
+  @include Input.fc-input-label;
+  @include Input.fc-input-helper;
+  @include Input.fc-input-feedback;
+  --input-border-radius: var(--ath-border-radius-input-default);
+
+  .ath-input-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ath-spacing-input-row-gap);
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--ath-spacing-input-addons-row-gap);
+      align-self: stretch;
+    }
+
+    &__counter {
+      display: flex;
+      align-items: center;
+      gap: var(--ath-spacing-input-counter-col-gap);
+      align-self: stretch;
+    }
+  }
+}

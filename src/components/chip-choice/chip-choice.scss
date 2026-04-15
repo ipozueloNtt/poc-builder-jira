@@ -1,0 +1,42 @@
+@use 'utilities';
+@use 'tools';
+@use './chip-choice.theme.scss';
+
+:host {
+  display: inline-flex;
+  width: fit-content;
+
+  .ath-chip-choice {
+    &__container {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--ath-spacing-chip-col-gap);
+      border-radius: var(--ath-border-radius-chip);
+      padding: var(--chip-padding);
+      color: var(--chip-color);
+      border: var(--chip-border);
+      background: var(--chip-background);
+      box-shadow: var(--chip-box-shadow);
+      cursor: pointer;
+      user-select: none;
+
+      ath-icon {
+        color: var(--chip-icon-color);
+      }
+    }
+
+    &__text {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: var(--ath-font-family-primary);
+      font-size: var(--ath-font-size-chip);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-regular);
+      line-height: var(--ath-font-line-height-chip);
+    }
+  }
+}

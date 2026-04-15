@@ -1,0 +1,245 @@
+{
+  "stories": [
+    {
+      "id": "componentes-link--playground",
+      "name": "Playground",
+      "args": {
+        "defaultSlot": "Link"
+      },
+      "controls": {
+        "disabled": {
+          "type": "boolean"
+        },
+        "icon": {
+          "type": "select"
+        },
+        "icon-aria-label": {
+          "type": "text"
+        },
+        "link-href": {
+          "type": "text"
+        },
+        "link-target": {
+          "type": "select",
+          "options": [
+            "self",
+            "parent",
+            "blank",
+            "top"
+          ]
+        },
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "underline": {
+          "type": "boolean"
+        },
+        "aria-describedby": {
+          "type": "text"
+        },
+        "aria-label": {
+          "type": "text"
+        },
+        "aria-labelledby": {
+          "type": "text"
+        },
+        "defaultSlot": {
+          "type": "text"
+        }
+      },
+      "parameters": {
+        "storyClass": "flex-col w400"
+      }
+    },
+    {
+      "id": "componentes-link--con-icono",
+      "name": "Con Icono",
+      "args": {
+        "icon": "external_link_comp",
+        "defaultSlot": "Link"
+      },
+      "controls": {
+        "icon": {
+          "type": "select"
+        },
+        "icon-aria-label": {
+          "type": "text"
+        },
+        "defaultSlot": {
+          "type": "text"
+        },
+        "underline": {
+          "type": "boolean"
+        }
+      },
+      "parameters": {
+        "storyClass": "flex-col w400"
+      }
+    },
+    {
+      "id": "componentes-link--disabled",
+      "name": "Disabled",
+      "args": {
+        "disabled": true,
+        "defaultSlot": "Link"
+      },
+      "controls": {
+        "disabled": {
+          "type": "boolean"
+        },
+        "defaultSlot": {
+          "type": "text"
+        },
+        "icon": {
+          "type": "select"
+        },
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "underline": {
+          "type": "boolean"
+        }
+      },
+      "parameters": {
+        "storyClass": "flex-col w400"
+      }
+    },
+    {
+      "id": "componentes-link--sin-subrayado",
+      "name": "Sin Subrayado",
+      "args": {
+        "underline": false,
+        "defaultSlot": "Link",
+        "icon": "external_link_comp"
+      },
+      "controls": {
+        "underline": {
+          "type": "boolean"
+        },
+        "defaultSlot": {
+          "type": "text"
+        },
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "disabled": {
+          "type": "boolean"
+        }
+      },
+      "parameters": {
+        "storyClass": "flex-col w400"
+      }
+    },
+    {
+      "id": "componentes-link--size",
+      "name": "Size",
+      "args": {
+        "defaultSlot": "Link",
+        "icon": "external_link_comp"
+      },
+      "controls": {
+        "icon": {
+          "type": "select"
+        },
+        "icon-aria-label": {
+          "type": "text"
+        },
+        "defaultSlot": {
+          "type": "text"
+        },
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md",
+            "lg"
+          ]
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "underline": {
+          "type": "boolean"
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-link--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "size": "md",
+        "link-target": "blank",
+        "underline": true
+      }
+    },
+    {
+      "name": "disabled",
+      "args": {
+        "disabled": true
+      }
+    },
+    {
+      "name": "con-icono",
+      "args": {
+        "icon": "external_link_comp",
+        "underline": true
+      }
+    },
+    {
+      "name": "sin-subrayado",
+      "args": {
+        "underline": false,
+        "icon": "external_link_comp"
+      }
+    },
+    {
+      "name": "hover",
+      "args": {
+        "size": "sm"
+      },
+      "notes": "Estado documentado en Figma (Use_link > comportamiento)."
+    },
+    {
+      "name": "focus",
+      "args": {
+        "size": "sm"
+      },
+      "notes": "Estado documentado en Figma con token de borde de foco."
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "ariaDescribedby",
+      "ariaLabel",
+      "ariaLabelledby",
+      "disabled",
+      "icon",
+      "iconAriaLabel",
+      "linkHref",
+      "linkTarget",
+      "size",
+      "underline"
+    ],
+    "missingProps": [
+      "externalLabel"
+    ],
+    "invalidArgs": []
+  }
+}

@@ -1,0 +1,43 @@
+:host {
+  width: 100%;
+
+  .ath-tab-panel {
+    display: flex;
+    padding: var(--ath-spacing-tab-panel-padding-around);
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: var(--ath-spacing-tab-panel-row-gap);
+    box-sizing: border-box;
+    font-family: var(--ath-font-family-primary);
+    font-size: var(--ath-font-size-body-md);
+    font-weight: var(--ath-font-weight-body-regular);
+    line-height: var(--ath-font-line-height-body);
+
+    .ath-tab-panel__header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+      gap: var(--ath-spacing-tab-panel-header-row-gap);
+      align-self: stretch;
+
+      .title {
+        color: var(--ath-color-fg-default);
+        font-family: var(--ath-font-family-primary);
+        font-size: var(--ath-font-size-heading-5);
+        font-style: normal;
+        font-weight: var(--ath-font-weight-heading);
+        line-height: var(--ath-font-line-height-heading-5);
+        flex: 1 0 0;
+      }
+
+      .ath_tab__actions-group {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: var(--ath-spacing-tab-panel-header-actions-row-gap);
+      }
+    }
+  }
+}

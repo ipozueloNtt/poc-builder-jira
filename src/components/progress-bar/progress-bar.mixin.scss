@@ -1,0 +1,12 @@
+@mixin alignment($textAlignment) {
+  .ath-progress-bar--#{$textAlignment} {
+    @if $textAlignment == 'stack' {
+      flex-direction: column;
+      gap: var(--ath-spacing-progress-bar-stack-row-gap);
+    } @else if $textAlignment == 'inline' {
+      gap: var(--ath-spacing-progress-bar-inline-col-gap);
+      align-items: center;
+      white-space: nowrap;
+    }
+  }
+}

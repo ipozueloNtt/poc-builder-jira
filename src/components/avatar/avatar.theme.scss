@@ -1,0 +1,65 @@
+@mixin size($size) {
+  &--#{$size} {
+    height: var(--ath-sizing-avatar-height-#{$size});
+    width: var(--ath-sizing-avatar-width-#{$size});
+
+    ::slotted([slot='img']) {
+      height: var(--ath-sizing-avatar-height-#{$size});
+      width: var(--ath-sizing-avatar-width-#{$size});
+    }
+
+    & svg {
+      flex-shrink: 0;
+      height: var(--ath-sizing-avatar-height-#{$size});
+      width: var(--ath-sizing-avatar-width-#{$size});
+    }
+  }
+
+  @if $size == 'xs' {
+    &--#{$size} {
+      & .ath-avatar--initials {
+        font-size: var(--ath-font-size-heading-6);
+        line-height: var(--ath-font-line-height-heading-6);
+      }
+    }
+  }
+
+  @if $size == 'sm' {
+    &--#{$size} {
+      & .ath-avatar--initials {
+        font-size: var(--ath-font-size-heading-5);
+        line-height: var(--ath-font-line-height-heading-5);
+      }
+    }
+  }
+
+  @if $size == 'md' {
+    &--#{$size} {
+      & .ath-avatar--initials {
+        font-size: var(--ath-font-size-heading-2);
+        line-height: var(--ath-font-line-height-heading-2);
+      }
+    }
+  }
+
+  @if $size == 'lg' {
+    &--#{$size} {
+      & .ath-avatar--initials {
+        font-size: var(--ath-font-size-heading-1);
+        line-height: var(--ath-font-line-height-heading-1);
+      }
+    }
+  }
+}
+
+@mixin type($type) {
+  &--#{$type} {
+    background: var(--ath-color-avatar-#{$type}-bg);
+  }
+
+  @if $type == 'default' {
+    & svg {
+      fill: var(--ath-color-avatar-#{$type}-bg);
+    }
+  }
+}

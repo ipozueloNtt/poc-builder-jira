@@ -1,0 +1,183 @@
+{
+  "references": [
+    {
+      "id": "figma:input-text-docs-40012244:146346",
+      "version": "2026-03-02",
+      "scope": "content"
+    },
+    {
+      "id": "figma:input-text-canonical-5194:264",
+      "version": "2026-03-02",
+      "scope": "layout"
+    },
+    {
+      "id": "figma:input-text-instance-40012244:221606",
+      "version": "2026-03-02",
+      "scope": "tokens"
+    }
+  ],
+  "tokensUsed": {
+    "color": [
+      "token:ath/color/fg/default",
+      "token:ath/color/fg/subtle",
+      "token:ath/color/input/bg/default",
+      "token:ath/color/input/border/default",
+      "token:ath/color/border/focus",
+      "token:ath/color/fg/feedback/danger"
+    ],
+    "spacing": [
+      "token:ath/spacing/label/required/col-gap",
+      "token:ath/spacing/label/col-gap",
+      "token:ath/spacing/input/row-gap",
+      "token:ath/spacing/input/addons/row-gap",
+      "token:ath/spacing/input/field/col-gap",
+      "token:ath/spacing/input/field/padding/x/sm",
+      "token:ath/spacing/input/field/padding/y/sm",
+      "token:ath/spacing/input/field/padding/x/md",
+      "token:ath/spacing/input/field/padding/y/md",
+      "token:ath/spacing/input/field/padding/x/lg",
+      "token:ath/spacing/input/field/padding/y/lg",
+      "token:ath/spacing/input/text/padding/x",
+      "token:ath/spacing/feedback-text/padding/top",
+      "token:ath/spacing/feedback-text/col-gap"
+    ],
+    "typography": [
+      "token:ath/font/family/primary",
+      "token:ath/font/size/input/label",
+      "token:ath/font/line-height/input/label",
+      "token:ath/font/size/input/text",
+      "token:ath/font/line-height/input/text"
+    ],
+    "radius": [
+      "token:ath/border/radius/input/default",
+      "token:ath/border/radius/input/readonly"
+    ],
+    "shadow": [
+      "token:ath/box-shadow/inner/focus"
+    ],
+    "motion": []
+  },
+  "semanticVariants": [
+    {
+      "axis": "type",
+      "option": "text",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/input/bg/default",
+        "token:ath/color/input/border/default"
+      ]
+    },
+    {
+      "axis": "type",
+      "option": "search",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/icon/default",
+        "token:ath/spacing/input/field/col-gap"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "sm",
+      "mode": "light",
+      "tokens": [
+        "token:ath/spacing/input/field/padding/x/sm",
+        "token:ath/spacing/input/field/padding/y/sm"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "md",
+      "mode": "light",
+      "tokens": [
+        "token:ath/spacing/input/field/padding/x/md",
+        "token:ath/spacing/input/field/padding/y/md"
+      ]
+    },
+    {
+      "axis": "size",
+      "option": "lg",
+      "mode": "light",
+      "tokens": [
+        "token:ath/spacing/input/field/padding/x/lg",
+        "token:ath/spacing/input/field/padding/y/lg"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "focus",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/border/focus",
+        "token:ath/box-shadow/inner/focus"
+      ]
+    },
+    {
+      "axis": "state",
+      "option": "error",
+      "mode": "light",
+      "tokens": [
+        "token:ath/color/border/danger/default",
+        "token:ath/color/fg/feedback/danger"
+      ]
+    }
+  ],
+  "layoutSignals": {
+    "layoutRole": "control",
+    "regionAffinity": [
+      "form",
+      "content"
+    ]
+  },
+  "accessibilitySignals": {
+    "requiresLabel": false,
+    "keyboardModel": "input-field",
+    "focusOrder": "natural"
+  },
+  "plannerHints": {
+    "priority": "high",
+    "containerEligibility": false,
+    "regionAffinity": [
+      "form",
+      "content"
+    ]
+  },
+  "theming": {
+    "modes": [
+      "light"
+    ],
+    "defaultMode": "light",
+    "tokenBindings": [
+      {
+        "target": "label.typography",
+        "token": "token:ath/font/size/input/label"
+      },
+      {
+        "target": "field.background",
+        "token": "token:ath/color/input/bg/default"
+      },
+      {
+        "target": "field.borderColor",
+        "token": "token:ath/color/input/border/default"
+      },
+      {
+        "target": "field.borderRadius",
+        "token": "token:ath/border/radius/input/default"
+      },
+      {
+        "target": "field.text",
+        "token": "token:ath/font/size/input/text"
+      },
+      {
+        "target": "state.focus.borderColor",
+        "token": "token:ath/color/border/focus",
+        "state": "focus"
+      },
+      {
+        "target": "state.error.feedbackColor",
+        "token": "token:ath/color/fg/feedback/danger",
+        "state": "error"
+      }
+    ]
+  }
+}

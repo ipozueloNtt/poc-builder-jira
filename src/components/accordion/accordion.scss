@@ -1,0 +1,9 @@
+:host {
+  .ath-accordion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--ath-spacing-accordion-line-row-gap);
+  }
+}

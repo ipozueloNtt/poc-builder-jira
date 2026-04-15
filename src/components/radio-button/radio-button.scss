@@ -1,0 +1,62 @@
+@use './radio-button.theme.scss';
+
+:host {
+  .ath-radiobutton {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--ath-spacing-radiobutton-col-gap);
+    align-self: stretch;
+
+    &:focus-visible {
+      border: none;
+      outline: none;
+    }
+
+    &-item {
+      height: var(--ath-sizing-radiobutton-height);
+      width: var(--ath-sizing-radiobutton-width);
+      max-height: var(--ath-sizing-radiobutton-height);
+      max-width: var(--ath-sizing-radiobutton-width);
+      min-height: var(--ath-sizing-radiobutton-height);
+      min-width: var(--ath-sizing-radiobutton-width);
+      border-radius: var(--ath-border-radius-radiobutton);
+      box-sizing: border-box;
+      cursor: pointer;
+      background: var(--background);
+      border: var(--border);
+
+      &:focus-visible {
+        outline: none;
+        box-shadow:
+          0px 0px 0px 2px var(--ath-color-drop-shadow-focus),
+          0px 0px 0px 4px var(--ath-color-border-focus);
+      }
+    }
+
+    position: relative;
+
+    &-item::after {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      transform: translate(-50%, -50%);
+      content: '';
+      width: 10px;
+      max-width: 10px;
+      height: 10px;
+      max-height: 10px;
+      border-radius: 100%;
+      background-color: var(--after-background-color);
+      box-shadow: var(--after-box-shadow);
+    }
+
+    .ath-input__label {
+      color: var(--color);
+      font-family: var(--ath-font-family-primary);
+      font-size: var(--ath-font-size-input-label);
+      font-style: normal;
+      font-weight: var(--font-weight);
+      line-height: var(--ath-font-line-height-input-label);
+    }
+  }
+}

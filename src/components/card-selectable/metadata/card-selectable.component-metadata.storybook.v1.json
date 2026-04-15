@@ -1,0 +1,184 @@
+{
+  "stories": [
+    {
+      "id": "componentes-card-selectable-card-selectable--playground",
+      "name": "Playground",
+      "args": {
+        "overline": "Overline",
+        "heading-text": "Heading text",
+        "subtitle": "Subtitle",
+        "size": "sm",
+        "type": "single",
+        "selected": false,
+        "disabled": false
+      },
+      "controls": {
+        "heading-text": {
+          "type": "text"
+        },
+        "subtitle": {
+          "type": "text"
+        },
+        "tag": {
+          "type": "text"
+        },
+        "overline": {
+          "type": "text"
+        },
+        "selected": {
+          "type": "boolean"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md"
+          ]
+        },
+        "type": {
+          "type": "radio",
+          "options": [
+            "single",
+            "multiselect"
+          ]
+        },
+        "bodySlot": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-card-selectable-card-selectable--con-tag",
+      "name": "ConTag",
+      "args": {
+        "overline": "Overline",
+        "heading-text": "Heading text",
+        "subtitle": "Subtitle",
+        "tag": "tag",
+        "size": "sm",
+        "type": "single"
+      },
+      "controls": {
+        "tag": {
+          "type": "text"
+        },
+        "bodySlot": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-card-selectable-card-selectable--disabled",
+      "name": "Disabled",
+      "args": {
+        "overline": "Overline",
+        "heading-text": "Heading text",
+        "subtitle": "Subtitle",
+        "disabled": true,
+        "size": "sm",
+        "type": "single"
+      },
+      "controls": {
+        "disabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "id": "componentes-card-selectable-card-selectable--size",
+      "name": "Size",
+      "args": {
+        "overline": "Overline",
+        "heading-text": "Heading text",
+        "subtitle": "Subtitle",
+        "size": "sm",
+        "type": "single"
+      },
+      "controls": {
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-card-selectable-card-selectable--type",
+      "name": "Type",
+      "args": {
+        "overline": "Overline",
+        "heading-text": "Heading text",
+        "subtitle": "Subtitle",
+        "size": "sm",
+        "type": "single"
+      },
+      "controls": {
+        "type": {
+          "type": "radio",
+          "options": [
+            "single",
+            "multiselect"
+          ]
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-card-selectable-card-selectable--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "size": "sm",
+        "type": "single",
+        "selected": false,
+        "disabled": false
+      }
+    },
+    {
+      "name": "selected",
+      "args": {
+        "size": "sm",
+        "type": "single",
+        "selected": true,
+        "disabled": false
+      }
+    },
+    {
+      "name": "disabled",
+      "args": {
+        "size": "sm",
+        "type": "single",
+        "selected": false,
+        "disabled": true
+      }
+    },
+    {
+      "name": "multiselect",
+      "args": {
+        "size": "md",
+        "type": "multiselect",
+        "selected": false,
+        "disabled": false
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "disabled",
+      "headingText",
+      "overline",
+      "selected",
+      "size",
+      "subtitle",
+      "tag",
+      "type"
+    ],
+    "missingProps": [],
+    "invalidArgs": []
+  }
+}

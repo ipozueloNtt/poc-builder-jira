@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: var(--ath-spacing-chip-group-row-gap) var(--ath-spacing-chip-group-col-gap);
+  flex-wrap: wrap;
+
+  width: 100%;
+}

@@ -1,0 +1,59 @@
+@use './link.mixins' as mixins;
+
+:host {
+  display: flex;
+  width: fit-content;
+
+  .ath-link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--ath-spacing-between-100);
+    font-family: var(--ath-font-family-primary);
+    font-style: normal;
+    line-height: var(--ath-font-line-height-body);
+    font-weight: var(--ath-font-weight-medium);
+    border-radius: var(--ath-border-radius-2xs);
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    cursor: pointer;
+
+    &:focus-visible:not(&--disabled) {
+      outline: none;
+      box-shadow: 0px 0px 0px 2px var(--ath-color-border-focus);
+    }
+
+    &--disabled {
+      pointer-events: none;
+      color: var(--ath-color-fg-disabled);
+    }
+
+    &--underline {
+      text-decoration-line: underline;
+    }
+
+    &:not(.ath-link--disabled):not(:visited):not(:hover):not(:active) {
+      color: var(--ath-color-fg-primary-default);
+    }
+
+    &:visited:not(.ath-link--disabled) {
+      color: var(--ath-color-fg-primary-pressed);
+    }
+
+    &:hover:not(.ath-link--disabled) {
+      color: var(--ath-color-fg-primary-hovered);
+    }
+
+    &:active:not(.ath-link--disabled) {
+      color: var(--ath-color-fg-primary-pressed);
+    }
+
+    @include mixins.fontSize('sm');
+    @include mixins.fontSize('md');
+    @include mixins.fontSize('lg');
+  }
+}

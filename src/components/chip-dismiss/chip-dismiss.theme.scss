@@ -1,0 +1,16 @@
+:host {
+  .ath-chip-dismiss__container {
+    --color: initial;
+
+    // SIZES
+    &--sm {
+      gap: var(--ath-spacing-chip-dismiss-col-gap-sm);
+      --padding: calc(var(--ath-spacing-chip-dismiss-padding-y-sm) - 1px) var(--ath-spacing-chip-dismiss-padding-x-sm);
+    }
+
+    &--md {
+      gap: var(--ath-spacing-chip-col-gap);
+      --padding: calc(var(--ath-spacing-chip-dismiss-padding-y-md) - 1px) var(--ath-spacing-chip-dismiss-padding-x-md);
+    }
+  }
+}

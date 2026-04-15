@@ -1,0 +1,46 @@
+export type DropdownArgs = {
+  'announce-result-text': string;
+  'dropdown-aria-label': string;
+  'defaultSlot'?: string;
+  'disabled': boolean;
+  'athChange'?: (event: CustomEvent<void>) => void;
+  'athFocus'?: (event: CustomEvent<void>) => void;
+  'athBlur'?: (event: CustomEvent<void>) => void;
+  'feedback': string;
+  'feedback-text': string;
+  'helper-text': string;
+  'label': string;
+  'multiselect': boolean;
+  'name': string;
+  'nochips-text': string;
+  'noresult-text': string;
+  'open': boolean;
+  'placeholder': string;
+  'readonly': boolean;
+  'required': boolean;
+  'hide-required': boolean;
+  'search': boolean;
+  'search-placeholder': string;
+  'search-aria-label': string;
+  'show-chips': boolean;
+  'size': string;
+  'tooltip-text': string;
+  'tooltip-width': string;
+  'value': string;
+  'width': string;
+  'overlay-max-height': string;
+};
+
+export type DropdownOptionsArgs = {
+  'defaultSlot'?: string;
+  'disabled': boolean;
+  'icon': string;
+  'left-asset'?: string;
+  'name': string;
+  'option-group': boolean;
+  'right-asset'?: string;
+  'selected': boolean;
+  'selected-aria-label': string;
+  'text': string;
+  'value': string;
+};

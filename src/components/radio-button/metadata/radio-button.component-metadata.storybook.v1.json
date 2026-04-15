@@ -1,0 +1,77 @@
+{
+  "stories": [
+    {
+      "id": "componentes-radio-button-radio-button--playground",
+      "name": "Playground",
+      "args": {
+        "label": "Label",
+        "name": "radio-button"
+      },
+      "controls": {
+        "checked": {
+          "type": "boolean"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": "text"
+        },
+        "name": {
+          "type": "text"
+        },
+        "readonly": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "text"
+        },
+        "aria-label": {
+          "type": "text"
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-radio-button-radio-button--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "checked": false,
+        "disabled": false,
+        "readonly": false
+      }
+    },
+    {
+      "name": "checked",
+      "args": {
+        "checked": true
+      }
+    },
+    {
+      "name": "disabled",
+      "args": {
+        "disabled": true
+      }
+    },
+    {
+      "name": "readonly",
+      "args": {
+        "readonly": true
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "ariaLabel",
+      "checked",
+      "disabled",
+      "label",
+      "name",
+      "readonly",
+      "value"
+    ],
+    "missingProps": [],
+    "invalidArgs": []
+  }
+}

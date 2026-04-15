@@ -1,0 +1,124 @@
+:host {
+  .ath-step {
+    --bg-number: var(--ath-color-stepper-step-indicator-bg-default);
+    --border-number: 1px solid var(--ath-color-stepper-step-indicator-border-default);
+    --color-number: var(--ath-color-stepper-step-indicator-fg-default);
+    --border-radius-number: var(--ath-border-radius-stepper-step-indicator);
+
+    --color-header: var(--ath-color-fg-default);
+    --color-action: var(--ath-color-fg-primary-default);
+
+    &--clickable {
+      &:hover {
+        &:not(.ath-step--disabled):not(.ath-step--readonly):not(.ath-step--selected):not(.ath-step--error) {
+          --bg-number: var(--ath-color-stepper-step-indicator-bg-hovered);
+          --border-number: 1px solid var(--ath-color-stepper-step-indicator-border-hovered);
+          --color-number: var(--ath-color-stepper-step-indicator-fg-hovered);
+        }
+
+        &:not(.ath-step--disabled):not(.ath-step--readonly):not(.ath-step--selected) {
+          .header-text,
+          .action-text {
+            text-decoration-line: var(--ath-font-text-decoration-underline);
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
+          }
+        }
+
+        &.ath-step--error {
+          &:not(.ath-step--disabled) {
+            --border-radius-number: var(--ath-border-radius-stepper-step-indicator);
+            --border-number: 1px solid var(--ath-color-border-danger-hovered);
+            --bg-number: var(--ath-color-bg-danger-hovered);
+            --color-number: var(--ath-color-stepper-step-indicator-fg-hovered);
+          }
+        }
+      }
+
+      &:active {
+        &:not(.ath-step--disabled):not(.ath-step--readonly):not(.ath-step--selected):not(.ath-step--error) {
+          --bg-number: var(--ath-color-stepper-step-indicator-bg-pressed);
+          --border-number: 1px solid var(--ath-color-stepper-step-indicator-border-pressed);
+          --color-number: var(--ath-color-stepper-step-indicator-fg-pressed);
+        }
+        &:not(.ath-step--disabled):not(.ath-step--readonly):not(.ath-step--selected) {
+          .header-text,
+          .action-text {
+            text-decoration-line: var(--ath-font-text-decoration-underline);
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
+          }
+        }
+      }
+    }
+
+    &--complete {
+      --border-number: 1px solid var(--ath-color-stepper-step-indicator-border-complete-default);
+      --bg-number: var(--ath-color-stepper-step-indicator-bg-complete-default);
+      --color-number: var(--ath-color-stepper-step-indicator-icon-complete-default);
+
+      &.ath-step-wrapper-disabled {
+        --border-number: 1px solid var(--ath-color-border-alpha-boldest-disabled);
+        --bg-number: none;
+        --color-number: var(--ath-color-fg-disabled);
+      }
+    }
+
+    &--disabled {
+      pointer-events: none;
+      --border-number: 1px solid var(--ath-color-border-alpha-boldest-disabled);
+      --bg-number: none;
+      --color-number: var(--ath-color-fg-disabled);
+
+      --color-header: var(--ath-color-fg-disabled);
+      --color-action: var(--ath-color-fg-disabled);
+    }
+
+    &--error {
+      --border-number: 1px solid var(--ath-color-border-danger-default);
+      --bg-number: none;
+      --color-number: var(--ath-color-stepper-step-indicator-fg-hovered);
+
+      --color-header: var(--ath-color-fg-feedback-danger);
+
+      &:not(.ath-step--disabled):active .ath-step-wrapper {
+        --border-radius-number: var(--ath-border-radius-stepper-step-indicator);
+        --border-number: 1px solid var(--ath-color-border-danger-pressed);
+        --bg-number: var(--ath-color-bg-danger-pressed);
+      }
+    }
+
+    &--readonly {
+      --color-action: var(--ath-color-fg-disabled);
+
+      &:not(.ath-step--selected):not(.ath-step--complete):not(.ath-step--error) {
+        --border-number: 1px solid var(--ath-color-stepper-step-indicator-border-readonly);
+        --bg-number: var(--ath-color-stepper-step-indicator-bg-readonly);
+        --color-number: var(--ath-color-stepper-step-indicator-fg-readonly);
+      }
+
+      &.ath-step--complete {
+        --border-number: 1px solid var(--ath-color-stepper-step-indicator-border-complete-readonly);
+        --bg-number: var(--ath-color-stepper-step-indicator-bg-complete-readonly);
+        --color-number: var(--ath-color-stepper-step-indicator-icon-complete-readonly);
+      }
+    }
+
+    &--selected {
+      --border-number: 1px solid var(--ath-color-stepper-step-indicator-border-selected);
+      --bg-number: var(--ath-color-stepper-step-indicator-bg-selected);
+      --color-number: var(--ath-color-stepper-step-indicator-fg-selected);
+
+      &.ath-step--error {
+        --border-number: 1px solid var(--ath-color-border-danger-default);
+        --bg-number: var(--ath-color-border-danger-default);
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@use '../../sharedfc/input/button-comp/fc-button-comp' as buttonComp;
+@use '../../assets/scss/elements/scroll';
+@use './modal.theme.scss';
+
+@include buttonComp.fc-button-comp-vars;
+@include buttonComp.fc-button-comp;
+
+:host {
+  z-index: 1000;
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--ath-color-bg-surface-scrim);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .ath-modal {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: var(--padding);
+    gap: var(--ath-spacing-modal-row-gap-sm);
+    border-radius: var(--ath-border-radius-modal-default);
+    border: 1px solid var(--ath-color-modal-border);
+    background: var(--ath-color-bg-surface-secondary-subtlest);
+    box-shadow: var(--ath-box-shadow-position-x-0) var(--ath-box-shadow-position-y-4) var(--ath-box-shadow-blur-4) var(--ath-box-shadow-spread-0)
+      var(--ath-color-drop-shadow-default);
+    align-items: flex-start;
+    min-width: 288px;
+    margin: 16px;
+
+    &:focus-visible {
+      border: none;
+    }
+
+    &-header {
+      display: flex;
+      align-self: stretch;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--ath-spacing-modal-row-gap-sm);
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      img {
+        width: 104px;
+        height: 104px;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--ath-spacing-modal-header-text-row-gap);
+        word-break: break-word;
+
+        &:focus :focus-visible :focus-within {
+          outline: none;
+        }
+
+        &-title {
+          align-items: flex-start;
+          color: var(--ath-color-fg-default);
+          font-family: var(--ath-font-family-heading);
+          font-size: var(--ath-font-size-heading-2);
+          font-style: normal;
+          font-weight: var(--ath-font-weight-heading);
+          line-height: var(--ath-font-line-height-heading-2);
+          margin: 0px;
+        }
+
+        &-subtitle {
+          align-items: flex-start;
+          color: var(--ath-color-fg-default);
+          font-family: var(--ath-font-family-heading);
+          font-size: var(--ath-font-size-heading-4);
+          font-style: normal;
+          font-weight: var(--ath-font-weight-heading);
+          line-height: var(--ath-font-line-height-heading-4);
+        }
+      }
+
+      &--alert {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--ath-spacing-modal-header-row-gap-alert);
+
+        .ath-modal-header-close {
+          position: absolute;
+          top: var(--ath-spacing-around-250);
+          right: var(--ath-spacing-around-250);
+        }
+
+        .ath-modal-header-text {
+          &-title {
+            align-self: center;
+          }
+
+          &-subtitle {
+            align-self: center;
+          }
+        }
+      }
+    }
+
+    &--fullscreen {
+      margin: unset;
+      border-radius: var(--ath-border-radius-modal-full-screen);
+      margin: unset;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      right: 0;
+      bottom: 0;
+    }
+
+    ath-divider {
+      width: 100%;
+    }
+
+    .scrollable-slot {
+      max-height: 60vh;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+@mixin dropdownSize($size) {
+  &.size-#{$size} {
+    padding: calc(var(--ath-spacing-input-dropdown-field-padding-y-#{$size}) - 1px) var(--ath-spacing-input-dropdown-field-padding-x-#{$size});
+  }
+}

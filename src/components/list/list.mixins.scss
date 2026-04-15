@@ -1,0 +1,44 @@
+@mixin athListOrientation() {
+  :host(.ath-list--horizontal) {
+    --flex-direction--container: row;
+    --flex-direction--items: column;
+  }
+  :host(.ath-list--vertical) {
+    --flex-direction--container: column;
+    --flex-direction--items: row;
+  }
+}
+
+@mixin athListItemOrientation() {
+  :host(.ath-list-item--horizontal) {
+    .ath-list-item--divider {
+      border-right: var(--ath-border-width-divider-md) solid var(--ath-color-border-alpha-bold-default);
+    }
+    ::slotted([slot='right-detail']) {
+      align-items: flex-start;
+    }
+  }
+  :host(.ath-list-item--vertical) {
+    --gap--list: var(--ath-spacing-list-item-col-gap-md);
+    ::slotted([slot='right-detail']) {
+      align-items: flex-end;
+    }
+    .ath-list-item--divider {
+      border-bottom: var(--ath-border-width-divider-md) solid var(--ath-color-border-alpha-bold-default);
+    }
+  }
+}
+
+@mixin athListSize($size, $orientation) {
+  :host(.ath-list-item--#{$size}-#{$orientation}) {
+    --gap--right-detail: var(--ath-spacing-list-item-right-slot-#{$size});
+    --padding: var(--ath-spacing-list-item-padding-#{$orientation}-#{$size});
+    --gap--center-detail: var(--ath-spacing-list-item-row-gap-#{$orientation}-#{$size});
+    ::slotted([slot='right-detail']) {
+      gap: var(--ath-spacing-list-item-right-slot-#{$size});
+    }
+  }
+  :host(.ath-list-item--#{$size}-horizontal) {
+    --gap--list: var(--ath-spacing-list-item-row-gap-horizontal-#{$size});
+  }
+}

@@ -1,0 +1,9 @@
+@use 'list.mixins' as mixins;
+
+:host {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: var(--flex-direction--container);
+}
+
+@include mixins.athListOrientation();

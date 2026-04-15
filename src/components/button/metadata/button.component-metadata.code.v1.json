@@ -1,0 +1,547 @@
+{
+  "version": "v1",
+  "tag": "ath-button",
+  "filePath": "src/components/button/button.tsx",
+  "encapsulation": "shadow",
+  "componentType": "interactive",
+  "docs": "Button de accion primaria o secundaria con soporte de icono, tamano, estado disabled y width adaptable.",
+  "props": [
+    {
+      "name": "clear",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "clear",
+      "attribute": "clear",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "The clear of the button (background and border color)",
+      "description": "The clear of the button (background and border color)",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "color",
+      "type": "\"primary\" | \"secondary\"",
+      "complexType": {
+        "original": "ButtonColors",
+        "resolved": "\"primary\" | \"secondary\"",
+        "references": {
+          "ButtonColors": {
+            "location": "import",
+            "path": "./button.model",
+            "id": "src/components/button/button.model.ts::ButtonColors",
+            "referenceLocation": "ButtonColors"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "color",
+      "attribute": "color",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "The color variant of the button",
+      "description": "The color variant of the button",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "ButtonColor.Primary"
+        }
+      ],
+      "default": "ButtonColor.Primary",
+      "values": [
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "disabled",
+      "attribute": "disabled",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "The button is disabled",
+      "description": "The button is disabled",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "fullWidth",
+      "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "full-width",
+      "attribute": "full-width",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "The button can be adapted to its container width",
+      "description": "The button can be adapted to its container width",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "false"
+        }
+      ],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "icon",
+      "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "icon",
+      "attribute": "icon",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "The code of the button's icon (used with iconPosition)",
+      "description": "The code of the button's icon (used with iconPosition)",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "iconPosition",
+      "type": "\"icon-only\" | \"left\" | \"none\" | \"right\"",
+      "complexType": {
+        "original": "ButtonIconPositions",
+        "resolved": "\"icon-only\" | \"left\" | \"none\" | \"right\"",
+        "references": {
+          "ButtonIconPositions": {
+            "location": "import",
+            "path": "./button.model",
+            "id": "src/components/button/button.model.ts::ButtonIconPositions",
+            "referenceLocation": "ButtonIconPositions"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "icon-position",
+      "attribute": "icon-position",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "Whether the button has an icon and his position",
+      "description": "Whether the button has an icon and his position",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "ButtonIconPosition.None"
+        }
+      ],
+      "default": "ButtonIconPosition.None",
+      "values": [
+        {
+          "value": "icon-only",
+          "type": "string"
+        },
+        {
+          "value": "left",
+          "type": "string"
+        },
+        {
+          "value": "none",
+          "type": "string"
+        },
+        {
+          "value": "right",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "size",
+      "type": "\"lg\" | \"md\" | \"sm\" | \"xs\"",
+      "complexType": {
+        "original": "ButtonSizes",
+        "resolved": "\"lg\" | \"md\" | \"sm\" | \"xs\"",
+        "references": {
+          "ButtonSizes": {
+            "location": "import",
+            "path": "./button.model",
+            "id": "src/components/button/button.model.ts::ButtonSizes",
+            "referenceLocation": "ButtonSizes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "size",
+      "attribute": "size",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "The size of the buton",
+      "description": "The size of the buton",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "ButtonSize.Medium"
+        }
+      ],
+      "default": "ButtonSize.Medium",
+      "values": [
+        {
+          "value": "lg",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        },
+        {
+          "value": "sm",
+          "type": "string"
+        },
+        {
+          "value": "xs",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "type",
+      "type": "\"button\" | \"reset\" | \"submit\"",
+      "complexType": {
+        "original": "ButtonTypes",
+        "resolved": "\"button\" | \"reset\" | \"submit\"",
+        "references": {
+          "ButtonTypes": {
+            "location": "import",
+            "path": "./button.model",
+            "id": "src/components/button/button.model.ts::ButtonTypes",
+            "referenceLocation": "ButtonTypes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "type",
+      "attribute": "type",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "The type of the button",
+      "description": "The type of the button",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "ButtonType.Button"
+        }
+      ],
+      "default": "ButtonType.Button",
+      "values": [
+        {
+          "value": "button",
+          "type": "string"
+        },
+        {
+          "value": "reset",
+          "type": "string"
+        },
+        {
+          "value": "submit",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    }
+  ],
+  "requiredProps": [],
+  "propConstraints": [],
+  "variantPropBindings": {
+    "color": {
+      "prop": "color",
+      "mapping": {
+        "primary": "primary",
+        "secondary": "secondary"
+      }
+    },
+    "size": {
+      "prop": "size",
+      "mapping": {
+        "xs": "xs",
+        "sm": "sm",
+        "md": "md",
+        "lg": "lg"
+      }
+    },
+    "iconPosition": {
+      "prop": "iconPosition",
+      "mapping": {
+        "none": "none",
+        "left": "left",
+        "right": "right",
+        "icon-only": "icon-only"
+      }
+    },
+    "clear": {
+      "prop": "clear",
+      "mapping": {
+        "no": false,
+        "yes": true
+      }
+    },
+    "disabled": {
+      "prop": "disabled",
+      "mapping": {
+        "no": false,
+        "yes": true
+      }
+    },
+    "fullWidth": {
+      "prop": "fullWidth",
+      "mapping": {
+        "no": false,
+        "yes": true
+      }
+    }
+  },
+  "methods": [
+    {
+      "name": "setFocus",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
+      "signature": "setFocus() => Promise<void>",
+      "parameters": [],
+      "docs": "",
+      "description": "",
+      "docsTags": [],
+      "internal": false
+    }
+  ],
+  "events": [
+    {
+      "event": "athBlur",
+      "name": "athBlur",
+      "detail": "void",
+      "detailType": "void",
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button loses focus",
+      "description": "Emitted when the button loses focus",
+      "docsTags": [],
+      "internal": false
+    },
+    {
+      "event": "athClick",
+      "name": "athClick",
+      "detail": "void",
+      "detailType": "void",
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button is clicked",
+      "description": "Emitted when the button is clicked",
+      "docsTags": [],
+      "internal": false
+    },
+    {
+      "event": "athFocus",
+      "name": "athFocus",
+      "detail": "void",
+      "detailType": "void",
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button gains focus",
+      "description": "Emitted when the button gains focus",
+      "docsTags": [],
+      "internal": false
+    }
+  ],
+  "listeners": [
+    {
+      "event": "keydown",
+      "capture": false,
+      "passive": false
+    }
+  ],
+  "styles": [],
+  "slots": [
+    {
+      "name": "default",
+      "docs": "Contenido textual del boton o etiqueta accesible para icon-only."
+    }
+  ],
+  "slotPolicies": [],
+  "parts": [
+    {
+      "name": "button-styles",
+      "docs": ""
+    }
+  ],
+  "childrenPolicy": {
+    "mode": "direct-any",
+    "minChildren": 0,
+    "maxChildren": 1,
+    "allowTextNodes": true
+  },
+  "contentModel": {
+    "kind": "text",
+    "allowedTextFormats": [
+      "plain"
+    ],
+    "allowedInlineComponents": []
+  },
+  "allowedParents": [],
+  "forbiddenParents": [],
+  "dependents": [
+    "ath-calendar",
+    "ath-datepicker",
+    "ath-datepicker-range",
+    "ath-input-counter",
+    "ath-menu-button",
+    "ath-pagination"
+  ],
+  "dependencies": [
+    "ath-icon"
+  ],
+  "dependencyGraph": {
+    "ath-button": [
+      "ath-icon"
+    ],
+    "ath-calendar": [
+      "ath-button"
+    ],
+    "ath-datepicker": [
+      "ath-button"
+    ],
+    "ath-datepicker-range": [
+      "ath-button"
+    ],
+    "ath-input-counter": [
+      "ath-button"
+    ],
+    "ath-menu-button": [
+      "ath-button"
+    ],
+    "ath-pagination": [
+      "ath-button"
+    ]
+  },
+  "typeLibrary": {}
+}

@@ -1,0 +1,67 @@
+@use 'progress-bar.mixin.scss' as mixins;
+
+:host {
+  width: 100%;
+
+  .ath-progress-bar {
+    display: flex;
+
+    &-temporal {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-item {
+      width: 100%;
+      height: var(--ath-sizing-progress-bar-item-height);
+      border-radius: var(--ath-border-radius-slider-controller-trail);
+      background: var(--ath-color-slider-controller-trail-bg-default);
+      position: relative;
+      overflow: hidden;
+    }
+
+    &__filler {
+      height: var(--ath-sizing-progress-bar-item-height);
+      border-radius: var(--ath-border-radius-progress-bar-item-track);
+      background: var(--ath-color-slider-controller-trail-bg-selected);
+      width: calc(var(--progress-value, 0) * 1%);
+      transition: width 0.3s ease;
+
+      &.infinite {
+        animation: loading 1.5s linear infinite;
+        position: absolute;
+        width: 75px;
+      }
+    }
+
+    &-label {
+      color: var(--ath-color-fg-default);
+      font-family: var(--ath-font-family-primary);
+      font-size: var(--ath-font-size-input-text);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-regular);
+      line-height: var(--ath-font-line-height-body);
+
+      &.left {
+        text-align: left;
+      }
+
+      &.right {
+        margin-left: auto;
+      }
+    }
+  }
+
+  @include mixins.alignment('stack');
+  @include mixins.alignment('inline');
+}
+
+@keyframes loading {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}

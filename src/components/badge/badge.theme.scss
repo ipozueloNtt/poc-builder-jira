@@ -1,0 +1,20 @@
+@mixin badgeColor($color) {
+  .ath-badge--#{$color} {
+    @if $color == 'disabled' {
+      background-color: var(--ath-color-bg-alpha-disabled);
+      color: var(--ath-color-fg-disabled);
+    } @else {
+      background-color: var(--ath-color-bg-#{$color}-default);
+      color: var(--ath-color-badge-fg-#{$color});
+    }
+  }
+}
+
+:host {
+  @include badgeColor('accent');
+  @include badgeColor('danger');
+  @include badgeColor('success');
+  @include badgeColor('warning');
+  @include badgeColor('info');
+  @include badgeColor('disabled');
+}

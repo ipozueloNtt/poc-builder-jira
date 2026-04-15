@@ -1,0 +1,392 @@
+{
+  "version": "v1",
+  "tag": "ath-badge",
+  "filePath": "src/components/badge/badge.tsx",
+  "encapsulation": "shadow",
+  "componentType": "display",
+  "docs": "Indicador visual para notificaciones, estados o cantidades sobre un elemento contenedor.",
+  "props": [
+    {
+      "name": "color",
+      "type": "\"accent\" | \"danger\" | \"disabled\" | \"info\" | \"success\" | \"warning\"",
+      "complexType": {
+        "original": "BadgeColorTypes",
+        "resolved": "\"accent\" | \"danger\" | \"disabled\" | \"info\" | \"success\" | \"warning\"",
+        "references": {
+          "BadgeColorTypes": {
+            "location": "import",
+            "path": "./badge.model",
+            "id": "src/components/badge/badge.model.ts::BadgeColorTypes",
+            "referenceLocation": "BadgeColorTypes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "color",
+      "attribute": "color",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "Badge color accompanying the purpose of the message",
+      "description": "Badge color accompanying the purpose of the message",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "BADGE_DEFAULT_COLOR"
+        }
+      ],
+      "default": "BADGE_DEFAULT_COLOR",
+      "values": [
+        {
+          "value": "accent",
+          "type": "string"
+        },
+        {
+          "value": "danger",
+          "type": "string"
+        },
+        {
+          "value": "disabled",
+          "type": "string"
+        },
+        {
+          "value": "info",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "distanceX",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "distance-x",
+      "attribute": "distance-x",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Custom horizontal distance of the badge from its default position",
+      "description": "Custom horizontal distance of the badge from its default position",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "distanceY",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "distance-y",
+      "attribute": "distance-y",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Custom vertical distance of the badge from its default position",
+      "description": "Custom vertical distance of the badge from its default position",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "label",
+      "type": "any",
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "label",
+      "attribute": "label",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Accessibility label describing the message",
+      "description": "Accessibility label describing the message",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "max",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "max",
+      "attribute": "max",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "Value from which a + will be added once exceeded by the \"value\"",
+      "description": "Value from which a + will be added once exceeded by the \"value\"",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "MAX_VALUE"
+        }
+      ],
+      "default": "MAX_VALUE",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "position",
+      "type": "\"right\" | \"top-right\"",
+      "complexType": {
+        "original": "BadgePositions",
+        "resolved": "\"right\" | \"top-right\"",
+        "references": {
+          "BadgePositions": {
+            "location": "import",
+            "path": "./badge.model",
+            "id": "src/components/badge/badge.model.ts::BadgePositions",
+            "referenceLocation": "BadgePositions"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "position",
+      "attribute": "position",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Positioning of the badge relative to the slot",
+      "description": "Positioning of the badge relative to the slot",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "right",
+          "type": "string"
+        },
+        {
+          "value": "top-right",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "type",
+      "type": "\"dot\" | \"numeric\"",
+      "complexType": {
+        "original": "BadgeTypes",
+        "resolved": "\"dot\" | \"numeric\"",
+        "references": {
+          "BadgeTypes": {
+            "location": "import",
+            "path": "./badge.model",
+            "id": "src/components/badge/badge.model.ts::BadgeTypes",
+            "referenceLocation": "BadgeTypes"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "type",
+      "attribute": "type",
+      "reflectToAttr": true,
+      "reflect": true,
+      "docs": "The badge can display a value or be a decorative element",
+      "description": "The badge can display a value or be a decorative element",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "BADGE_DEFAULT_TYPE"
+        }
+      ],
+      "default": "BADGE_DEFAULT_TYPE",
+      "values": [
+        {
+          "value": "dot",
+          "type": "string"
+        },
+        {
+          "value": "numeric",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    },
+    {
+      "name": "value",
+      "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "mutable": false,
+      "attr": "value",
+      "attribute": "value",
+      "reflectToAttr": false,
+      "reflect": false,
+      "docs": "Value displayed within the badge if it is \"numeric\"",
+      "description": "Value displayed within the badge if it is \"numeric\"",
+      "docsTags": [
+        {
+          "name": "default",
+          "text": "0"
+        }
+      ],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false,
+      "getter": false,
+      "setter": false,
+      "internal": false,
+      "deprecated": false
+    }
+  ],
+  "requiredProps": [],
+  "propConstraints": [],
+  "variantPropBindings": {
+    "color": {
+      "prop": "color",
+      "mapping": {
+        "accent": "accent",
+        "danger": "danger",
+        "success": "success",
+        "warning": "warning",
+        "info": "info",
+        "disabled": "disabled"
+      }
+    },
+    "type": {
+      "prop": "type",
+      "mapping": {
+        "dot": "dot",
+        "numeric": "numeric"
+      }
+    },
+    "position": {
+      "prop": "position",
+      "mapping": {
+        "right": "right",
+        "top-right": "top-right"
+      }
+    }
+  },
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [],
+  "slots": [
+    {
+      "name": "default",
+      "docs": "Elemento contenedor sobre el que se superpone el badge."
+    }
+  ],
+  "slotPolicies": [],
+  "parts": [],
+  "childrenPolicy": {
+    "mode": "direct-restricted",
+    "minChildren": 1,
+    "maxChildren": 1,
+    "allowTextNodes": false
+  },
+  "contentModel": {
+    "kind": "mixed",
+    "allowedTextFormats": [
+      "html"
+    ],
+    "allowedInlineComponents": []
+  },
+  "allowedParents": [],
+  "forbiddenParents": [],
+  "dependents": [
+    "ath-menu-horizontal",
+    "ath-menu-lateral"
+  ],
+  "dependencies": [],
+  "dependencyGraph": {
+    "ath-menu-horizontal": [
+      "ath-badge"
+    ],
+    "ath-menu-lateral": [
+      "ath-badge"
+    ]
+  },
+  "typeLibrary": {}
+}

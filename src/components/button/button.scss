@@ -1,0 +1,79 @@
+@use 'utilities';
+@use 'tools';
+@use './button.theme.scss';
+
+:host {
+  display: inline-block;
+  width: fit-content;
+  vertical-align: top; // the better option for most scenarios
+  vertical-align: -webkit-baseline-middle; // the best for those that support it
+  user-select: none;
+
+  .ath-button--container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--spacing-y) - var(--border-width)) calc(var(--spacing-x) - var(--border-width));
+    font-family: var(--ath-font-family-primary);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height);
+    color: var(--color);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: var(--border-color);
+    outline: none;
+    transition: background 0.5s;
+    cursor: pointer;
+
+    .ath-button__inner {
+      position: relative;
+      display: flex;
+      column-gap: var(--col-gap);
+      flex-flow: row nowrap;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.ath-button--clear {
+      text-decoration: underline;
+    }
+
+    &.ath-button--icon-only {
+      padding: calc(var(--spacing) - var(--border-width));
+    }
+
+    &.ath-button--link {
+      text-decoration: none;
+    }
+
+    &.ath-button--full-width {
+      width: 100%;
+    }
+
+    &.ath-button--disabled {
+      box-shadow: none;
+      cursor: not-allowed;
+
+      &.ath-button--clear {
+        border-style: none;
+      }
+    }
+  }
+}
+
+:host(:focus:not(:active)),
+:host(:focus-visible:not(:active)) {
+  outline: none;
+  .ath-button--container {
+    outline: 2px solid var(--ath-color-border-focus);
+    outline-offset: 2px;
+  }
+  .ath-button--clear {
+    text-decoration: none;
+  }
+}

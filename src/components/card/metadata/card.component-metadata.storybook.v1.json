@@ -1,0 +1,145 @@
+{
+  "stories": [
+    {
+      "id": "componentes-card-card--playground",
+      "name": "Playground",
+      "args": {
+        "orientation": "vertical",
+        "size": "sm",
+        "clickable": false,
+        "fluid": false
+      },
+      "controls": {
+        "orientation": {
+          "type": "radio",
+          "options": [
+            "vertical",
+            "horizontal"
+          ]
+        },
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md"
+          ]
+        },
+        "clickable": {
+          "type": "boolean"
+        },
+        "fluid": {
+          "type": "boolean"
+        },
+        "width": {
+          "type": "text"
+        },
+        "max-width": {
+          "type": "text"
+        }
+      }
+    },
+    {
+      "id": "componentes-card-card--clickable",
+      "name": "Clickable",
+      "args": {
+        "clickable": true,
+        "orientation": "vertical",
+        "size": "sm"
+      },
+      "controls": {
+        "clickable": {
+          "type": "boolean"
+        },
+        "orientation": {
+          "type": "radio",
+          "options": [
+            "vertical",
+            "horizontal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-card-card--orientation",
+      "name": "Orientation",
+      "args": {
+        "orientation": "vertical",
+        "size": "sm"
+      },
+      "controls": {
+        "orientation": {
+          "type": "radio",
+          "options": [
+            "vertical",
+            "horizontal"
+          ]
+        }
+      }
+    },
+    {
+      "id": "componentes-card-card--size",
+      "name": "Size",
+      "args": {
+        "size": "sm",
+        "orientation": "vertical"
+      },
+      "controls": {
+        "size": {
+          "type": "radio",
+          "options": [
+            "sm",
+            "md"
+          ]
+        }
+      }
+    }
+  ],
+  "canonicalStoryId": "componentes-card-card--docs",
+  "documentedStates": [
+    {
+      "name": "default",
+      "args": {
+        "orientation": "vertical",
+        "size": "sm",
+        "clickable": false
+      }
+    },
+    {
+      "name": "hover",
+      "args": {
+        "clickable": true,
+        "orientation": "vertical",
+        "size": "sm"
+      }
+    },
+    {
+      "name": "focus",
+      "args": {
+        "clickable": true,
+        "orientation": "vertical",
+        "size": "sm"
+      }
+    },
+    {
+      "name": "horizontal",
+      "args": {
+        "orientation": "horizontal",
+        "size": "md"
+      }
+    }
+  ],
+  "argValidation": {
+    "coveredProps": [
+      "orientation",
+      "size",
+      "clickable",
+      "fluid",
+      "width",
+      "maxWidth"
+    ],
+    "missingProps": [
+      "ariaLabelledBy"
+    ],
+    "invalidArgs": []
+  }
+}

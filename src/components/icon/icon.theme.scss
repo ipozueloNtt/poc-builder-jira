@@ -1,0 +1,51 @@
+@use 'sass:map';
+
+$color: (
+  'default': default,
+  'primary': primary-default,
+  'accent': accent-default,
+  'success': feedback-success,
+  'error': feedback-danger,
+  'warning': feedback-warning,
+  'info': feedback-info,
+  'inverse': inverse-default,
+  'disabled': disabled,
+);
+
+@mixin athIconColor($key) {
+  $value: map.get($color, $key);
+  .ath-icon--#{$key} {
+    color: var(--ath-color-icon-#{$value});
+  }
+}
+
+:host {
+  .ath-icon {
+    // SIZES
+    &--xs {
+      --font-size: var(--ath-font-size-icon-xs);
+    }
+
+    &--sm {
+      --font-size: var(--ath-font-size-icon-sm);
+    }
+
+    &--md {
+      --font-size: var(--ath-font-size-icon-md);
+    }
+
+    &--lg {
+      --font-size: var(--ath-font-size-icon-lg);
+    }
+  }
+  // COLOR
+  @include athIconColor('default');
+  @include athIconColor('primary');
+  @include athIconColor('info');
+  @include athIconColor('accent');
+  @include athIconColor('error');
+  @include athIconColor('warning');
+  @include athIconColor('success');
+  @include athIconColor('inverse');
+  @include athIconColor('disabled');
+}

@@ -1,0 +1,5 @@
+@mixin fontSize($size) {
+  &--#{$size} {
+    font-size: var(--ath-font-size-body-#{$size});
+  }
+}

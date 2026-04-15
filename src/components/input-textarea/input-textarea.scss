@@ -1,0 +1,30 @@
+@use '../../../sharedfc/input' as Input;
+
+@include Input.fc-input-element-vars;
+
+:host {
+  display: inline-block;
+  font-family: var(--ath-font-family-primary);
+  width: 100%;
+
+  @include Input.global-input;
+  @include Input.fc-input-element;
+  @include Input.fc-input-textarea-element;
+  @include Input.fc-input-label;
+  @include Input.fc-input-counter;
+  @include Input.fc-input-helper;
+  @include Input.fc-input-feedback;
+  .ath-input__field.ath-input__field--textarea {
+    --input-border-radius: var(--ath-border-radius-input-textarea);
+  }
+}
+
+:host([disabled]:not([disabled='false'])),
+:host([readonly]:not([readonly='false'])) {
+  .ath-input__field {
+    cursor: not-allowed;
+    input {
+      cursor: not-allowed;
+    }
+  }
+}
