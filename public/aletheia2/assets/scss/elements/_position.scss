@@ -1,0 +1,28 @@
+$justify: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly,
+);
+
+$align: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+);
+
+@each $position, $value in $justify {
+  .ath-justify-#{$position} {
+    display: flex;
+    justify-content: #{$value};
+  }
+}
+
+@each $position, $value in $align {
+  .ath-align-#{$position} {
+    display: flex;
+    align-items: #{$value};
+  }
+}

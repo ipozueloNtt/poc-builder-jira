@@ -1,0 +1,220 @@
+@mixin ath-main() {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.ath-main {
+  @include ath-main();
+}
+
+$size: (
+  'xs': xs,
+  'sm': sm,
+  'md': md,
+  'lg': lg,
+  'xl': xl,
+);
+
+.ath-container {
+  width: 100%;
+  &--full,
+  &--xl,
+  &--lg,
+  &--md,
+  &--sm,
+  &--xs {
+    @extend .ath-container;
+  }
+}
+
+//Content margin for row-gap and margin container
+@mixin athGridSize($size) {
+  .ath-container-margin--#{$size} {
+    margin: 0 var(--ath-spacing-container-margin-#{$size});
+  }
+  .ath-rowgap--#{$size} {
+    display: grid;
+    row-gap: var(--ath-spacing-container-margin-#{$size});
+  }
+}
+
+@for $i from 1 through 3 {
+  .ath-grid-g--#{$i} {
+    column-gap: var(--ath-spacing-grid-gutter-#{$i});
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.ath-col {
+  grid-column: span 12;
+  height: fit-content;
+}
+@for $i from 1 through 12 {
+  .ath-col--#{$i} {
+    grid-column: span #{$i};
+    height: fit-content;
+  }
+}
+@for $i from 1 through 11 {
+  .ath-offset--#{$i} {
+    margin-left: calc(100% / 12) * $i;
+  }
+}
+
+@media (min-width: 576px) {
+  .ath-container--xs {
+    min-width: 320px;
+    max-width: 576px;
+  }
+  .ath-main-xs {
+    @include ath-main();
+  }
+  @for $i from 1 through 12 {
+    .ath-col-xs--#{$i} {
+      grid-column: span #{$i};
+      height: fit-content;
+    }
+  }
+  @for $i from 1 through 11 {
+    .ath-offset-xs--#{$i} {
+      margin-left: calc(100% / 12) * $i;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .ath-container {
+    &--sm {
+      min-width: 576px;
+      max-width: 768px;
+    }
+    &--xs {
+      min-width: 320px;
+      max-width: 576px;
+    }
+  }
+  .ath-main-sm {
+    @include ath-main();
+  }
+  @for $i from 1 through 12 {
+    .ath-col-sm--#{$i} {
+      grid-column: span #{$i};
+      height: fit-content;
+    }
+  }
+  @for $i from 1 through 11 {
+    .ath-offset-sm--#{$i} {
+      margin-left: calc(100% / 12) * $i;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .ath-container {
+    &--md {
+      min-width: 768px;
+      max-width: 992px;
+    }
+    &--sm {
+      min-width: 576px;
+      max-width: 768px;
+    }
+    &--xs {
+      min-width: 320px;
+      max-width: 576px;
+    }
+  }
+  .ath-main-md {
+    @include ath-main();
+  }
+  @for $i from 1 through 12 {
+    .ath-col-md--#{$i} {
+      grid-column: span #{$i};
+      height: fit-content;
+    }
+  }
+  @for $i from 1 through 11 {
+    .ath-offset-md--#{$i} {
+      margin-left: calc(100% / 12) * $i;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .ath-container {
+    &--lg {
+      min-width: 992px;
+      max-width: 1200px;
+    }
+    &--md {
+      min-width: 768px;
+      max-width: 992px;
+    }
+    &--sm {
+      min-width: 576px;
+      max-width: 768px;
+    }
+    &--xs {
+      min-width: 320px;
+      max-width: 576px;
+    }
+  }
+  .ath-main-lg {
+    @include ath-main();
+  }
+  @for $i from 1 through 12 {
+    .ath-col-lg--#{$i} {
+      grid-column: span #{$i};
+      height: fit-content;
+    }
+  }
+  @for $i from 1 through 11 {
+    .ath-offset-lg--#{$i} {
+      margin-left: calc(100% / 12) * $i;
+    }
+  }
+}
+@media (min-width: 1400px) {
+  .ath-container {
+    &--xl {
+      min-width: 1200px;
+      max-width: 1920px;
+    }
+    &--lg {
+      min-width: 992px;
+      max-width: 1200px;
+    }
+    &--md {
+      min-width: 768px;
+      max-width: 992px;
+    }
+    &--sm {
+      min-width: 576px;
+      max-width: 768px;
+    }
+    &--xs {
+      min-width: 320px;
+      max-width: 576px;
+    }
+  }
+  .ath-main-xl {
+    @include ath-main();
+  }
+  @for $i from 1 through 12 {
+    .ath-col-xl--#{$i} {
+      grid-column: span #{$i};
+      height: fit-content;
+    }
+  }
+  @for $i from 1 through 11 {
+    .ath-offset-xl--#{$i} {
+      margin-left: calc(100% / 12) * $i;
+    }
+  }
+}
+
+@each $key, $val in $size {
+  @include athGridSize($val);
+}

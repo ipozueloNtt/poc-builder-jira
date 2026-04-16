@@ -1,0 +1,84 @@
+.ath {
+  &-color {
+    //Color textos
+    &-heading {
+      &--default {
+        color: var(--ath-color-fg-default);
+      }
+      &--primary {
+        color: var(--ath-color-fg-primary-heading);
+      }
+      &--accent {
+        color: var(--ath-color-fg-accent-heading);
+      }
+    }
+    &-text {
+      &--primary {
+        color: var(--ath-color-fg-primary-default);
+      }
+      &--default {
+        color: var(--ath-color-fg-default);
+      }
+      &--inverse {
+        color: var(--ath-color-fg-inverse-default);
+      }
+      &--accent {
+        color: var(--ath-color-fg-accent-default);
+      }
+      &--subtle {
+        color: var(--ath-color-fg-subtle);
+      }
+      &--disabled {
+        color: var(--ath-color-fg-disabled);
+      }
+    }
+    &-icon {
+      &--default {
+        color: var(--ath-color-icon-default);
+      }
+      &--inverse {
+        color: var(--ath-color-icon-inverse-default);
+      }
+      &--primary {
+        color: var(--ath-color-icon-primary-default);
+      }
+      &--accent {
+        color: var(--ath-color-icon-accent-default);
+      }
+      &--subtle {
+        color: var(--ath-color-icon-subtle);
+      }
+      &--disabled {
+        color: var(--ath-color-icon-disabled);
+      }
+    }
+
+    //BG color
+    &-bg {
+      &--primary {
+        background-color: var(--ath-color-bg-surface-primary);
+      }
+      &--accent {
+        background-color: var(--ath-color-bg-surface-accent);
+      }
+      &--scrim {
+        background-color: var(--ath-color-bg-surface-scrim);
+      }
+      &--100 {
+        background-color: var(--ath-color-bg-surface-secondary-subtlest);
+      }
+      &--200 {
+        background-color: var(--ath-color-bg-surface-secondary-subtler);
+      }
+      &--300 {
+        background-color: var(--ath-color-bg-surface-secondary-subtle);
+      }
+      &--400 {
+        background-color: var(--ath-color-bg-surface-secondary-bold);
+      }
+      &--700 {
+        background-color: var(--ath-color-bg-surface-secondary-strong);
+      }
+    }
+  }
+}

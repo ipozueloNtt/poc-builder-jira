@@ -1,0 +1,33 @@
+// Define your custom font-face here
+
+$font-path: "assets/fonts" !default;
+
+@font-face {
+font-family: 'Aletheia';
+font-weight: 300;
+src: url('#{$font-path}/aletheia/Aletheia-Light.ttf') format('truetype'),
+}
+
+@font-face {
+font-family: 'Aletheia';
+font-weight: 400;
+src: url('#{$font-path}/aletheia/Aletheia-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+font-family: 'Aletheia';
+font-weight: 500;
+src: url('#{$font-path}/aletheia/Aletheia-Medium.ttf') format('truetype'),
+}
+
+@font-face {
+font-family: 'Aletheia';
+font-weight: 700;
+src: url('#{$font-path}/aletheia/Aletheia-Bold.ttf') format('truetype'),
+}
+
+@font-face {
+font-family: 'Aletheia';
+font-weight: 600;
+src: url('#{$font-path}/aletheia/Aletheia-Italic.ttf') format('truetype'),
+}

@@ -1,0 +1,17 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="32" fill="#1E1E1E"/>
+<g id="Pictograms">
+<rect x="-583" y="-451" width="1144" height="1538" rx="20" fill="white"/>
+<g id="eb-picto_illu-male" clip-path="url(#clip0_40003776_761)">
+<path id="Vector" d="M16 2C13.25 2 11 4.24 11 7C11 9.76 13.24 12 16 12C18.76 12 21 9.76 21 7C21 4.24 18.76 2 16 2Z" fill="#FF4747"/>
+<path id="Vector_2" d="M22 13.99H20.91C20.62 16.46 18.54 18.39 15.99 18.39C13.44 18.39 11.36 16.46 11.07 13.99H9.99999C7.78999 13.99 5.99999 15.78 5.99999 17.99V27.99C5.98999 29.1 6.88999 30 7.99999 30H24C25.1 30 25.99 29.1 25.99 28V17.99C25.99 15.78 24.2 13.99 21.99 13.99H22ZM21.99 19.07V20.99L20 21.99V19H21.99V19.06V19.07Z" fill="#0168FF"/>
+<path id="Vector_3" d="M15.99 18.39C18.54 18.39 20.62 16.46 20.91 13.99H11.07C11.36 16.46 13.44 18.39 15.99 18.39Z" fill="black"/>
+<path id="Vector_4" d="M20 19V19.07V21.99L21.99 20.99V19.07V19H20Z" fill="#E8EAEA"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_40003776_761">
+<rect width="32" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

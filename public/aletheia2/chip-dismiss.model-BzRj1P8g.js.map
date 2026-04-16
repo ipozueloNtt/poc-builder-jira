@@ -1,0 +1,1 @@
+{"version":3,"file":"chip-dismiss.model-BzRj1P8g.js","sources":["src/components/chip-dismiss/chip-dismiss.model.ts"],"sourcesContent":["export type ChipDismissSizes = 'sm' | 'md';\r\n\r\nexport const ChipDismissSize = {\r\n  Medium: 'md',\r\n  Small: 'sm',\r\n} as const;\r\n"],"names":[],"mappings":"AAEa,MAAA,eAAe,GAAG;AAC7B,IAAA,MAAM,EAAE,IAAI;AACZ,IAAA,KAAK,EAAE,IAAI;;;;;"}

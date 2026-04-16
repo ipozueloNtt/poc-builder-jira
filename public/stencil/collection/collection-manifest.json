@@ -1,0 +1,11 @@
+{
+  "entries": [],
+  "mixins": [],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.43.4",
+    "typescriptVersion": "5.8.3"
+  },
+  "collections": [],
+  "bundles": []
+}

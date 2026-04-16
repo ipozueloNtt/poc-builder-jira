@@ -1,0 +1,67 @@
+@use "sass:map";
+
+@mixin spacing-size {
+  @each $size in none, xs, sm, md, lg, xl {
+    .ath-spacing-vertical--#{$size} {
+      row-gap: var(--ath-spacing-vertical-#{$size});
+    }
+    .ath-spacing-mb--#{$size} {
+      margin-bottom: var(--ath-spacing-vertical-#{$size});
+    }
+  }
+}
+
+@include spacing-size;
+
+$ath-direction: (
+  top: t,
+  bottom: b,
+  left: l,
+  right: r,
+  '': '',
+);
+
+$ath-spacings-size: '000', '025', '050', '075', 100, 150, 200, 250, 300, 400, 500, 600, 800, 1000;
+
+// Direcciones para padding
+$ath-padding-directions: (
+  '': padding,
+  top: padding-top,
+  bottom: padding-bottom,
+  left: padding-left,
+  right: padding-right,
+);
+
+@mixin padding-size {
+  @each $dir, $prop in $ath-padding-directions {
+    @each $size in $ath-spacings-size {
+      $short-dir: map.get($ath-direction, $dir);
+      .ath-pd#{if($short-dir != '', $short-dir, '')}--#{$size} {
+        #{$prop}: var(--ath-spacing-around-#{$size});
+      }
+    }
+  }
+}
+
+@include padding-size;
+
+$ath-margin-directions: (
+  '': margin,
+  top: margin-top,
+  bottom: margin-bottom,
+  left: margin-left,
+  right: margin-right,
+);
+
+@mixin margin-size {
+  @each $dir, $prop in $ath-margin-directions {
+    @each $size in $ath-spacings-size {
+      $short-dir: map.get($ath-direction, $dir);
+      .ath-mg#{if($short-dir != '', $short-dir, '')}--#{$size} {
+        #{$prop}: var(--ath-spacing-around-#{$size});
+      }
+    }
+  }
+}
+
+@include margin-size;

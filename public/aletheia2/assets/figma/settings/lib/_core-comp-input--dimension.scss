@@ -1,0 +1,71 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --ath-spacing-input-dropdown-option-group-row-gap: var(--ath-spacing-050);
+  --ath-spacing-input-datepicker-calendar-cell-group-row-gap: var(--ath-spacing-025);
+  --ath-font-size-input-text: var(--ath-font-size-comp-md);
+  --ath-font-size-input-label: var(--ath-font-size-comp-md);
+  --ath-font-size-input-dropdown-option: var(--ath-font-size-comp-md);
+  --ath-font-line-height-input-text: var(--ath-font-line-height-comp-md);
+  --ath-font-line-height-input-label: var(--ath-font-line-height-comp-md);
+  --ath-font-line-height-input-dropdown-option: var(--ath-font-line-height-comp-md);
+  --ath-font-line-height-input-multiselect-text-lg: var(--ath-font-line-height-comp-lg);
+  --ath-border-radius-input-default: var(--ath-border-radius-circle);
+  --ath-border-radius-input-readonly: var(--ath-border-radius-square);
+  --ath-border-radius-input-dropdown-open-top: var(--ath-border-radius-2xl);
+  --ath-border-radius-input-dropdown-open-top-lg: var(--ath-border-radius-3xl);
+  --ath-border-radius-input-dropdown-open-bottom: var(--ath-border-radius-square);
+  --ath-border-radius-input-dropdown-option: var(--ath-border-radius-xl);
+  --ath-border-radius-input-datepicker-overlay: var(--ath-border-radius-3xl);
+  --ath-border-radius-input-datepicker-cell: var(--ath-border-radius-circle);
+  --ath-border-radius-input-textarea: var(--ath-border-radius-3xl);
+  --ath-spacing-input-text-padding-x: var(--ath-spacing-around-100);
+  --ath-spacing-input-field-padding-y-sm: var(--ath-spacing-around-050);
+  --ath-spacing-input-field-padding-y-md: var(--ath-spacing-around-100);
+  --ath-spacing-input-field-padding-y-lg: var(--ath-spacing-around-150);
+  --ath-spacing-input-field-padding-x-sm: var(--ath-spacing-around-100);
+  --ath-spacing-input-field-padding-x-md: var(--ath-spacing-around-150);
+  --ath-spacing-input-field-padding-x-lg: var(--ath-spacing-around-150);
+  --ath-spacing-input-field-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-dropdown-text-padding-x: var(--ath-spacing-around-100);
+  --ath-spacing-input-dropdown-field-padding-y-sm: var(--ath-spacing-around-050);
+  --ath-spacing-input-dropdown-field-padding-y-md: var(--ath-spacing-around-100);
+  --ath-spacing-input-dropdown-field-padding-y-lg: var(--ath-spacing-around-150);
+  --ath-spacing-input-dropdown-field-padding-x-sm: var(--ath-spacing-around-100);
+  --ath-spacing-input-dropdown-field-padding-x-md: var(--ath-spacing-around-150);
+  --ath-spacing-input-dropdown-field-padding-x-lg: var(--ath-spacing-around-150);
+  --ath-spacing-input-dropdown-field-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-dropdown-multiselect-field-padding-y-lg: var(--ath-spacing-around-100);
+  --ath-spacing-input-dropdown-option-padding-y: var(--ath-spacing-around-100);
+  --ath-spacing-input-dropdown-option-padding-x: var(--ath-spacing-around-150);
+  --ath-spacing-input-dropdown-option-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-dropdown-overlay-padding-y: var(--ath-spacing-around-100);
+  --ath-spacing-input-dropdown-overlay-padding-x: var(--ath-spacing-around-200);
+  --ath-spacing-input-dropdown-overlay-row-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-datepicker-text-padding-x: var(--ath-spacing-around-100);
+  --ath-spacing-input-datepicker-field-padding-y-sm: var(--ath-spacing-around-050);
+  --ath-spacing-input-datepicker-field-padding-y-md: var(--ath-spacing-around-100);
+  --ath-spacing-input-datepicker-field-padding-y-lg: var(--ath-spacing-around-150);
+  --ath-spacing-input-datepicker-field-padding-x-sm: var(--ath-spacing-around-100);
+  --ath-spacing-input-datepicker-field-padding-x-md: var(--ath-spacing-around-150);
+  --ath-spacing-input-datepicker-field-padding-x-lg: var(--ath-spacing-around-150);
+  --ath-spacing-input-datepicker-field-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-datepicker-calendar-cell-padding-date: var(--ath-spacing-around-100);
+  --ath-spacing-input-datepicker-calendar-cell-padding-month: var(--ath-spacing-around-150);
+  --ath-spacing-input-datepicker-calendar-cell-padding-year: var(--ath-spacing-around-150);
+  --ath-spacing-input-datepicker-calendar-cell-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-datepicker-calendar-overlay-padding-around: var(--ath-spacing-around-300);
+  --ath-spacing-input-datepicker-calendar-overlay-row-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-datepicker-calendar-header-col-gap: var(--ath-spacing-between-250);
+  --ath-spacing-input-datepicker-calendar-header-date-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-datepicker-calendar-footer-button-group-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-row-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-addons-row-gap: var(--ath-spacing-between-100);
+  --ath-spacing-input-counter-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-label-col-gap: var(--ath-spacing-between-100);
+  --ath-spacing-label-required-col-gap: var(--ath-spacing-between-025);
+  --ath-spacing-feedback-text-col-gap: var(--ath-spacing-between-050);
+  --ath-spacing-feedback-text-padding-top: var(--ath-spacing-around-025);
+}

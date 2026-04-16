@@ -1,0 +1,62 @@
+// =============================================================================
+// SCROLLBAR STYLING
+// =============================================================================
+
+// Base overflow classes
+// -----------------------------------------------------------------------------
+.ath-scroll {
+  overflow: auto;
+}
+
+.ath-overflow-hidden {
+  overflow: hidden;
+}
+.ath-overflow-x-hidden {
+  overflow-x: hidden;
+}
+.ath-overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+// Firefox scrollbar styling (uses scrollbar-color and scrollbar-width)
+// -----------------------------------------------------------------------------
+@supports (-moz-appearance: none) {
+  .ath-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--ath-color-bg-alpha-bolder-default) var(--ath-color-scroll-track-bg);
+
+    &:hover {
+      scrollbar-color: var(--ath-color-bg-alpha-bolder-hovered) var(--ath-color-scroll-track-bg);
+    }
+  }
+}
+
+// WebKit scrollbar styling (Chrome, Safari, Edge, etc.)
+// -----------------------------------------------------------------------------
+.ath-scroll {
+  // Scrollbar dimensions
+  &::-webkit-scrollbar {
+    width: var(--ath-sizing-scroll);
+    height: var(--ath-sizing-scroll);
+  }
+
+  // Track (background)
+  &::-webkit-scrollbar-track {
+    background-color: var(--ath-color-scroll-track-bg);
+  }
+
+  // Thumb (draggable scrolling handle)
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--ath-color-bg-alpha-bolder-default);
+    border-radius: var(--ath-border-radius-scroll);
+
+    &:hover {
+      background-color: var(--ath-color-bg-alpha-bolder-hovered);
+    }
+  }
+
+  // Hide scrollbar buttons
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}

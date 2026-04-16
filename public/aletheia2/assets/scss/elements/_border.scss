@@ -1,0 +1,55 @@
+@use "sass:map";
+
+$ath-border-sizes: (
+  'sm': var(--ath-border-width-xs),
+  'md': var(--ath-border-width-sm),
+);
+
+$ath-border-colors: (
+  '100': var(--ath-color-border-alpha-bold-default),
+  '200': var(--ath-color-border-alpha-bolder-default),
+  '400': var(--ath-color-border-alpha-boldest-default),
+);
+
+$border-directions: (
+  '': '',
+  'top': 'top',
+  'right': 'right',
+  'bottom': 'bottom',
+  'left': 'left',
+);
+
+@mixin ath-border($direction, $size, $intensity) {
+  $border-size: map.get($ath-border-sizes, $size);
+  $border-color: map.get($ath-border-colors, $intensity);
+
+  @if $direction == '' {
+    border: $border-size solid $border-color;
+  } @else {
+    border-#{$direction}: $border-size solid $border-color;
+  }
+}
+
+@each $dir-key, $dir-value in $border-directions {
+  $prefix: if($dir-key == '', 'ath-border', 'ath-border-#{$dir-key}');
+
+  @each $size, $size-value in $ath-border-sizes {
+    @each $intensity, $color in $ath-border-colors {
+      .#{$prefix}--#{$size}--#{$intensity} {
+        @include ath-border($dir-value, $size, $intensity);
+      }
+    }
+  }
+}
+
+.ath-border-radius {
+  &--xs {
+    border-radius: var(--ath-border-radius-150);
+  }
+  &--sm {
+    border-radius: var(--ath-border-radius-200);
+  }
+  &--md {
+    border-radius: var(--ath-border-radius-250);
+  }
+}

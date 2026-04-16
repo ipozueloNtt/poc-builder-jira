@@ -4,25 +4,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:react": "vite",
-    "dev:stencil": "stencil build --dev --watch --serve false",
-    "build": "tsc -b && vite build",
-    "build:stencil": "stencil build",
-    "build:all": "npm run build:stencil && npm run build",
+    "sync:aletheia": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"New-Item -ItemType Directory -Force public\\aletheia2 | Out-Null; Copy-Item -Path node_modules\\@aletheia2\\core\\dist\\aletheia2\\* -Destination public\\aletheia2 -Recurse -Force\"",
+    "dev": "npm run sync:aletheia && vite",
+    "build": "npm run sync:aletheia && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@aletheia2/core": "^0.0.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@stencil/core": "^4.38.3",
     "@storybook/addon-essentials": "8.6.18",
     "@storybook/addon-interactions": "8.6.18",
     "@storybook/addon-links": "8.6.18",

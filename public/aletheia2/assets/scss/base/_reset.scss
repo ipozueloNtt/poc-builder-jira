@@ -1,0 +1,65 @@
+@use '../tools/rem' as *;
+/*--------------------------------
+	#RESET
+--------------------------------*/
+
+input,
+button,
+select,
+textarea {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 100%;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/*-----------------------------------
+	#TAGS HTML5 BROWSER NO SUPPORT
+-------------------------------------*/
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/*-----------------------------------
+	#LINKS
+-------------------------------------*/
+a {
+  cursor: pointer;
+}
+
+/*-----------------------------------
+	#BUTTONS
+-------------------------------------*/
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  @include rem-baseline;
+}

@@ -1,0 +1,116 @@
+@mixin heading($type) {
+  &-h#{$type} {
+    font-family: var(--ath-font-family-primary);
+    font-size: var(--ath-font-size-heading-#{$type});
+    font-style: normal;
+    font-weight: var(--ath-font-weight-heading);
+    line-height: var(--ath-font-line-height-heading-#{$type});
+  }
+}
+
+@mixin fontSize($size) {
+  &--#{$size} {
+    font-family: var(--ath-font-family-primary);
+    font-size: var(--ath-font-size-body-#{$size});
+    font-style: normal;
+    font-weight: var(--ath-font-weight-body);
+    line-height: var(--ath-font-line-height-body);
+  }
+}
+
+@mixin numericSize($size) {
+  &--#{$size} {
+    font-family: var(--ath-font-family-numeric);
+    font-size: var(--ath-font-size-numeric-#{$size});
+    font-style: normal;
+    font-weight: var(--ath-font-weight-numeric-medium);
+    line-height: var(--ath-font-line-height-numeric-#{$size});
+  }
+}
+
+.ath {
+  // HEADING
+  @include heading('1');
+  @include heading('2');
+  @include heading('3');
+  @include heading('4');
+  @include heading('5');
+  @include heading('6');
+
+  &-display-md {
+    font-family: var(--ath-font-family-primary);
+    font-size: var(--ath-font-size-display-md);
+    font-style: normal;
+    font-weight: var(--ath-font-weight-display);
+    line-height: var(--ath-font-line-height-display);
+  }
+  &-display-sm {
+    font-family: var(--ath-font-family-primary);
+    font-size: var(--ath-font-size-display-sm);
+    font-style: normal;
+    font-weight: var(--ath-font-weight-display);
+    line-height: var(--ath-font-line-height-display);
+  }
+
+  &-body {
+    //text Size
+    @include fontSize('xs');
+    @include fontSize('sm');
+    @include fontSize('md');
+    @include fontSize('lg');
+
+    // STRONG
+    &--light {
+      font-weight: var(--ath-font-weight-light);
+    }
+    &--regular {
+      font-weight: var(--ath-font-weight-regular);
+    }
+    &--medium {
+      font-weight: var(--ath-font-weight-medium);
+    }
+    &--bold {
+      font-weight: var(--ath-font-weight-bold);
+    }
+  }
+
+  &-numeric {
+    //numeric Size
+    @include numericSize('xs');
+    @include numericSize('sm');
+    @include numericSize('md');
+    @include numericSize('lg');
+    @include numericSize('xl');
+    &--display {
+      font-family: var(--ath-font-family-numeric);
+      font-size: var(--ath-font-size-numeric-display);
+      font-style: normal;
+      font-weight: var(--ath-font-weight-numeric-regular);
+      line-height: var(--ath-font-line-height-numeric-display);
+    }
+  }
+
+  &-text {
+    &--align {
+      &-left {
+        text-align: left;
+      }
+      &-right {
+        text-align: right;
+      }
+      &-center {
+        text-align: center;
+      }
+      &-justify {
+        text-align: justify;
+      }
+    }
+
+    &--underline {
+      text-decoration: var(--ath-font-text-decoration-underline);
+    }
+    &--line-through {
+      text-decoration: var(--ath-font-text-decoration-line-through);
+    }
+  }
+}
